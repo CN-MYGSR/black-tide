@@ -1,0 +1,20 @@
+# Godot 缓存
+.godot/
+*.import
+
+# 中间产物 / 原始素材（可由流水线重新生成）
+_source/
+_build/
+_tools/__pycache__/
+
+# 构建产物
+build/*.exe
+build/*.pck
+build/*.console.exe
+
+# 截图与本地工具输出
+_shots/
+
+# 系统
+Thumbs.db
+.DS_Store
