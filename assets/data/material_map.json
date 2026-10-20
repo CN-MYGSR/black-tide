@@ -1,0 +1,114 @@
+{
+ "FX_Soft": {
+  "tex": null,
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Camo_Netting_Mat": {
+  "tex": "PolygonMilitary_Camo_Netting_01.tga",
+  "mode": "scissor"
+ },
+ "PolygonMilitary_Decorative_Blocks": {
+  "tex": "vazado.tga",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Fence_Wire": {
+  "tex": "Fence_Alpha.tga",
+  "mode": "scissor"
+ },
+ "PolygonMilitary_Mat_01_A": {
+  "tex": "PolygonMilitary_Texture_01_A.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Mat_01_B": {
+  "tex": "PolygonMilitary_Texture_01_B.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Mat_01_C": {
+  "tex": "PolygonMilitary_Texture_01_C.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Mat_Air_Large_01": {
+  "tex": "Air_Veh_Large_01.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Mat_Air_Vehicles_01": {
+  "tex": "Veh_Jet_01_A.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Mat_Air_Vehicles_02": {
+  "tex": "Veh_Jet_02_A.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Mat_Air_Vehicles_Burnt": {
+  "tex": "Air_Vehicle_Burnt.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Mat_Gold_A": {
+  "tex": "PolygonMilitary_Texture_01_A.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Mat_Helicopters_01_A": {
+  "tex": "Veh_Heli_01_A.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Mat_Land_Vehicles": {
+  "tex": "Land_Vehicle_Master_01.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Mat_Land_Vehicles Burnt": {
+  "tex": "Land_Vehicle_Master_Burnt_01.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Mat_Land_Vehicles_1": {
+  "tex": "PolygonMilitary_Land_Vehicles_01.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Mat_Land_Vehicles_3": {
+  "tex": "PolygonMilitary_Land_Vehicles_03.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Mat_Land_Vehicles_4": {
+  "tex": "PolygonMilitary_Land_Vehicles_04.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Mat_Land_Vehicles_5": {
+  "tex": "PolygonMilitary_Land_Vehicles_05.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Mat_Road_01": {
+  "tex": "Road_Texture.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Mesh_01": {
+  "tex": "PolygonMilitary_Mesh_Cover.tga",
+  "mode": "scissor"
+ },
+ "PolygonMilitary_Rubble": {
+  "tex": "rubble.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Signs": {
+  "tex": "Signs 1.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Veh_Tank_Tracks": {
+  "tex": "PolygonMilitary_Tank_Tracks.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Veh_Tank_Tracks_Burnt": {
+  "tex": "Tank_Track_Burnt.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Water_01": {
+  "tex": "PolygonMilitary_Texture_01_A.png",
+  "mode": "opaque"
+ },
+ "PolygonMilitary_Weapon_Mat_01": {
+  "tex": "PolygonMilitary_Weapons_01.png",
+  "mode": "opaque"
+ },
+ "__glass__": {
+  "tex": null,
+  "mode": "glass"
+ }
+}

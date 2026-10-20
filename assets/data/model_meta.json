@@ -1,0 +1,6806 @@
+{
+ "SM_Bld_Archway_01": {
+  "category": "buildings",
+  "size": [
+   18.518,
+   7.516,
+   1.742
+  ],
+  "tris": 3428
+ },
+ "SM_Bld_Archway_02": {
+  "category": "buildings",
+  "size": [
+   21.036,
+   4.876,
+   1.704
+  ],
+  "tris": 5090
+ },
+ "SM_Bld_Archway_03": {
+  "category": "buildings",
+  "size": [
+   21.122,
+   4.195,
+   1.476
+  ],
+  "tris": 662
+ },
+ "SM_Bld_Barracks_01": {
+  "category": "buildings",
+  "size": [
+   7.431,
+   5.14,
+   13.357
+  ],
+  "tris": 4846
+ },
+ "SM_Bld_Barracks_Destroyed_01": {
+  "category": "buildings",
+  "size": [
+   7.431,
+   5.083,
+   13.901
+  ],
+  "tris": 6076
+ },
+ "SM_Bld_CamoNet_Tent_01": {
+  "category": "buildings",
+  "size": [
+   4.906,
+   3.011,
+   4.921
+  ],
+  "tris": 448
+ },
+ "SM_Bld_CamoNet_Tent_02": {
+  "category": "buildings",
+  "size": [
+   4.431,
+   4.056,
+   4.227
+  ],
+  "tris": 528
+ },
+ "SM_Bld_CamoNet_Tent_03": {
+  "category": "buildings",
+  "size": [
+   8.112,
+   3.718,
+   5.528
+  ],
+  "tris": 472
+ },
+ "SM_Bld_CamoNet_Tent_04": {
+  "category": "buildings",
+  "size": [
+   8.386,
+   4.056,
+   4.227
+  ],
+  "tris": 720
+ },
+ "SM_Bld_CamoNet_Tent_05": {
+  "category": "buildings",
+  "size": [
+   11.84,
+   3.814,
+   4.936
+  ],
+  "tris": 624
+ },
+ "SM_Bld_CamoNet_Tent_06": {
+  "category": "buildings",
+  "size": [
+   7.713,
+   0.47,
+   4.626
+  ],
+  "tris": 124
+ },
+ "SM_Bld_Clock_Tower_01": {
+  "category": "buildings",
+  "size": [
+   4.269,
+   11.91,
+   4.269
+  ],
+  "tris": 2328
+ },
+ "SM_Bld_Clock_Tower_Clock_01": {
+  "category": "buildings",
+  "size": [
+   0.983,
+   0.983,
+   0.157
+  ],
+  "tris": 212
+ },
+ "SM_Bld_ControlTower_01": {
+  "category": "buildings",
+  "size": [
+   9.718,
+   29.689,
+   9.35
+  ],
+  "tris": 6704
+ },
+ "SM_Bld_ControlTower_Destroyed_01": {
+  "category": "buildings",
+  "size": [
+   9.813,
+   22.491,
+   11.182
+  ],
+  "tris": 5332
+ },
+ "SM_Bld_Decorative_Block_01": {
+  "category": "buildings",
+  "size": [
+   3.15,
+   0.681,
+   0.254
+  ],
+  "tris": 492
+ },
+ "SM_Bld_Decorative_Block_02": {
+  "category": "buildings",
+  "size": [
+   1.819,
+   0.573,
+   0.236
+  ],
+  "tris": 70
+ },
+ "SM_Bld_Decorative_Block_03": {
+  "category": "buildings",
+  "size": [
+   1.819,
+   0.573,
+   0.236
+  ],
+  "tris": 106
+ },
+ "SM_Bld_Decorative_Block_04": {
+  "category": "buildings",
+  "size": [
+   1.819,
+   0.99,
+   0.236
+  ],
+  "tris": 52
+ },
+ "SM_Bld_Decorative_Block_05": {
+  "category": "buildings",
+  "size": [
+   1.819,
+   0.99,
+   0.236
+  ],
+  "tris": 96
+ },
+ "SM_Bld_Decorative_Block_06": {
+  "category": "buildings",
+  "size": [
+   0.99,
+   1.82,
+   0.236
+  ],
+  "tris": 56
+ },
+ "SM_Bld_Decorative_Block_07": {
+  "category": "buildings",
+  "size": [
+   1.819,
+   1.82,
+   0.236
+  ],
+  "tris": 72
+ },
+ "SM_Bld_Decorative_Block_08": {
+  "category": "buildings",
+  "size": [
+   1.819,
+   3.481,
+   0.236
+  ],
+  "tris": 68
+ },
+ "SM_Bld_Destroyed_01": {
+  "category": "buildings",
+  "size": [
+   14.108,
+   10.053,
+   11.655
+  ],
+  "tris": 3051
+ },
+ "SM_Bld_Destroyed_02": {
+  "category": "buildings",
+  "size": [
+   10.536,
+   4.714,
+   8.202
+  ],
+  "tris": 2074
+ },
+ "SM_Bld_Door_Cage_01": {
+  "category": "buildings",
+  "size": [
+   2.736,
+   2.736,
+   0.189
+  ],
+  "tris": 560
+ },
+ "SM_Bld_Door_Cage_02": {
+  "category": "buildings",
+  "size": [
+   2.736,
+   2.736,
+   0.168
+  ],
+  "tris": 572
+ },
+ "SM_Bld_Door_Cage_03": {
+  "category": "buildings",
+  "size": [
+   1.247,
+   2.388,
+   0.119
+  ],
+  "tris": 172
+ },
+ "SM_Bld_Door_Garage_01": {
+  "category": "buildings",
+  "size": [
+   2.765,
+   3.119,
+   0.427
+  ],
+  "tris": 610
+ },
+ "SM_Bld_Door_Garage_02": {
+  "category": "buildings",
+  "size": [
+   2.82,
+   2.875,
+   0.109
+  ],
+  "tris": 340
+ },
+ "SM_Bld_Door_Plug_01": {
+  "category": "buildings",
+  "size": [
+   1.119,
+   2.265,
+   0.22
+  ],
+  "tris": 12
+ },
+ "SM_Bld_Door_Shop_01": {
+  "category": "buildings",
+  "size": [
+   1.025,
+   2.224,
+   0.127
+  ],
+  "tris": 90
+ },
+ "SM_Bld_Fountain_01": {
+  "category": "buildings",
+  "size": [
+   6.348,
+   5.017,
+   5.569
+  ],
+  "tris": 2584
+ },
+ "SM_Bld_Fountain_02": {
+  "category": "buildings",
+  "size": [
+   2.588,
+   4.62,
+   2.588
+  ],
+  "tris": 1879
+ },
+ "SM_Bld_Fountain_Spring_02": {
+  "category": "buildings",
+  "size": [
+   2.377,
+   2.772,
+   2.161
+  ],
+  "tris": 1259
+ },
+ "SM_Bld_GasStation_01": {
+  "category": "buildings",
+  "size": [
+   15.865,
+   5.027,
+   10.796
+  ],
+  "tris": 1688
+ },
+ "SM_Bld_GasTower_01": {
+  "category": "buildings",
+  "size": [
+   33.841,
+   10.972,
+   33.841
+  ],
+  "tris": 1848
+ },
+ "SM_Bld_GasTower_02": {
+  "category": "buildings",
+  "size": [
+   14.37,
+   13.258,
+   14.37
+  ],
+  "tris": 1350
+ },
+ "SM_Bld_GasTower_Destroyed_01": {
+  "category": "buildings",
+  "size": [
+   35.28,
+   12.64,
+   34.111
+  ],
+  "tris": 3623
+ },
+ "SM_Bld_GasTower_Destroyed_02": {
+  "category": "buildings",
+  "size": [
+   15.34,
+   12.256,
+   14.525
+  ],
+  "tris": 2224
+ },
+ "SM_Bld_GasTower_Pipe_01": {
+  "category": "buildings",
+  "size": [
+   3.992,
+   7.597,
+   22.987
+  ],
+  "tris": 408
+ },
+ "SM_Bld_GasTower_Pipe_02": {
+  "category": "buildings",
+  "size": [
+   1.298,
+   4.511,
+   13.932
+  ],
+  "tris": 272
+ },
+ "SM_Bld_GasTower_Pipe_03": {
+  "category": "buildings",
+  "size": [
+   1.767,
+   8.022,
+   5.132
+  ],
+  "tris": 272
+ },
+ "SM_Bld_GuardTower_01": {
+  "category": "buildings",
+  "size": [
+   2.905,
+   8.855,
+   3.901
+  ],
+  "tris": 2056
+ },
+ "SM_Bld_GuardTower_02": {
+  "category": "buildings",
+  "size": [
+   3.961,
+   5.83,
+   6.642
+  ],
+  "tris": 1544
+ },
+ "SM_Bld_GuardTower_Destroyed_01": {
+  "category": "buildings",
+  "size": [
+   3.584,
+   8.911,
+   4.467
+  ],
+  "tris": 1939
+ },
+ "SM_Bld_GuardTower_Destroyed_02": {
+  "category": "buildings",
+  "size": [
+   4.117,
+   5.691,
+   5.711
+  ],
+  "tris": 1631
+ },
+ "SM_Bld_Hall_01": {
+  "category": "buildings",
+  "size": [
+   22.469,
+   22.177,
+   35.005
+  ],
+  "tris": 31201
+ },
+ "SM_Bld_Hall_02": {
+  "category": "buildings",
+  "size": [
+   22.469,
+   22.177,
+   17.858
+  ],
+  "tris": 15105
+ },
+ "SM_Bld_Hangar_01": {
+  "category": "buildings",
+  "size": [
+   30.633,
+   12.519,
+   36.256
+  ],
+  "tris": 2514
+ },
+ "SM_Bld_Hangar_Destroyed_01": {
+  "category": "buildings",
+  "size": [
+   30.633,
+   12.59,
+   36.256
+  ],
+  "tris": 3174
+ },
+ "SM_Bld_Hangar_Open_01": {
+  "category": "buildings",
+  "size": [
+   30.633,
+   12.519,
+   36.256
+  ],
+  "tris": 1962
+ },
+ "SM_Bld_Monument_01": {
+  "category": "buildings",
+  "size": [
+   3.236,
+   5.14,
+   2.803
+  ],
+  "tris": 634
+ },
+ "SM_Bld_Monument_01_Preset": {
+  "category": "buildings",
+  "size": [
+   3.236,
+   5.14,
+   2.84
+  ],
+  "tris": 1692
+ },
+ "SM_Bld_OilTower_01": {
+  "category": "buildings",
+  "size": [
+   10.148,
+   27.254,
+   11.112
+  ],
+  "tris": 16134
+ },
+ "SM_Bld_Pillar_01": {
+  "category": "buildings",
+  "size": [
+   1.765,
+   8.868,
+   1.76
+  ],
+  "tris": 836
+ },
+ "SM_Bld_Pillar_02": {
+  "category": "buildings",
+  "size": [
+   2.04,
+   8.346,
+   2.04
+  ],
+  "tris": 312
+ },
+ "SM_Bld_Plinth_01": {
+  "category": "buildings",
+  "size": [
+   7.027,
+   3.0,
+   10.221
+  ],
+  "tris": 100
+ },
+ "SM_Bld_Plinth_02": {
+  "category": "buildings",
+  "size": [
+   21.479,
+   3.0,
+   10.221
+  ],
+  "tris": 112
+ },
+ "SM_Bld_Plywood_Shed_01": {
+  "category": "buildings",
+  "size": [
+   8.067,
+   5.126,
+   6.255
+  ],
+  "tris": 1710
+ },
+ "SM_Bld_Plywood_Shed_Destroyed_01": {
+  "category": "buildings",
+  "size": [
+   8.065,
+   5.083,
+   6.38
+  ],
+  "tris": 1889
+ },
+ "SM_Bld_Plywood_Shed_Small_01": {
+  "category": "buildings",
+  "size": [
+   6.64,
+   3.699,
+   4.365
+  ],
+  "tris": 1428
+ },
+ "SM_Bld_Plywood_Shed_Small_Destroyed_01": {
+  "category": "buildings",
+  "size": [
+   6.571,
+   3.671,
+   4.389
+  ],
+  "tris": 1601
+ },
+ "SM_Bld_Railing_01": {
+  "category": "buildings",
+  "size": [
+   1.913,
+   1.283,
+   0.169
+  ],
+  "tris": 264
+ },
+ "SM_Bld_Roof_Cap_01": {
+  "category": "buildings",
+  "size": [
+   6.06,
+   6.982,
+   6.064
+  ],
+  "tris": 528
+ },
+ "SM_Bld_Roof_Cap_02": {
+  "category": "buildings",
+  "size": [
+   5.229,
+   5.008,
+   5.229
+  ],
+  "tris": 396
+ },
+ "SM_Bld_Roof_Cap_03": {
+  "category": "buildings",
+  "size": [
+   2.543,
+   3.566,
+   2.419
+  ],
+  "tris": 520
+ },
+ "SM_Bld_Roof_Cap_04": {
+  "category": "buildings",
+  "size": [
+   0.778,
+   2.082,
+   0.674
+  ],
+  "tris": 198
+ },
+ "SM_Bld_Roof_Cap_Destroyed_01": {
+  "category": "buildings",
+  "size": [
+   5.552,
+   3.906,
+   6.064
+  ],
+  "tris": 414
+ },
+ "SM_Bld_Roof_Cap_Destroyed_02": {
+  "category": "buildings",
+  "size": [
+   5.229,
+   1.994,
+   5.229
+  ],
+  "tris": 190
+ },
+ "SM_Bld_Roof_Cap_Destroyed_03": {
+  "category": "buildings",
+  "size": [
+   2.543,
+   2.26,
+   2.419
+  ],
+  "tris": 412
+ },
+ "SM_Bld_Roof_Cap_Destroyed_04": {
+  "category": "buildings",
+  "size": [
+   0.75,
+   0.904,
+   0.674
+  ],
+  "tris": 90
+ },
+ "SM_Bld_Ruins_01": {
+  "category": "buildings",
+  "size": [
+   3.394,
+   6.297,
+   8.596
+  ],
+  "tris": 1432
+ },
+ "SM_Bld_Ruins_02": {
+  "category": "buildings",
+  "size": [
+   6.112,
+   4.197,
+   3.67
+  ],
+  "tris": 332
+ },
+ "SM_Bld_Ruins_03": {
+  "category": "buildings",
+  "size": [
+   6.883,
+   4.197,
+   4.39
+  ],
+  "tris": 486
+ },
+ "SM_Bld_Ruins_04": {
+  "category": "buildings",
+  "size": [
+   6.259,
+   3.508,
+   3.955
+  ],
+  "tris": 146
+ },
+ "SM_Bld_Ruins_05": {
+  "category": "buildings",
+  "size": [
+   6.689,
+   2.572,
+   0.25
+  ],
+  "tris": 82
+ },
+ "SM_Bld_Shack_01": {
+  "category": "buildings",
+  "size": [
+   3.121,
+   2.854,
+   5.331
+  ],
+  "tris": 2709
+ },
+ "SM_Bld_Shack_02": {
+  "category": "buildings",
+  "size": [
+   2.647,
+   2.852,
+   2.738
+  ],
+  "tris": 1454
+ },
+ "SM_Bld_Shack_03": {
+  "category": "buildings",
+  "size": [
+   4.469,
+   3.591,
+   3.901
+  ],
+  "tris": 1864
+ },
+ "SM_Bld_Shop_01": {
+  "category": "buildings",
+  "size": [
+   9.557,
+   10.156,
+   6.003
+  ],
+  "tris": 3708
+ },
+ "SM_Bld_Shop_01_Destroyed": {
+  "category": "buildings",
+  "size": [
+   9.785,
+   9.563,
+   6.088
+  ],
+  "tris": 2890
+ },
+ "SM_Bld_Shop_02": {
+  "category": "buildings",
+  "size": [
+   3.075,
+   13.99,
+   12.296
+  ],
+  "tris": 1471
+ },
+ "SM_Bld_Shop_02_Destroyed": {
+  "category": "buildings",
+  "size": [
+   3.245,
+   13.138,
+   12.322
+  ],
+  "tris": 1673
+ },
+ "SM_Bld_Shop_03": {
+  "category": "buildings",
+  "size": [
+   3.075,
+   10.27,
+   12.296
+  ],
+  "tris": 1045
+ },
+ "SM_Bld_Shop_03_Destroyed": {
+  "category": "buildings",
+  "size": [
+   3.075,
+   10.572,
+   12.296
+  ],
+  "tris": 1472
+ },
+ "SM_Bld_Shop_04": {
+  "category": "buildings",
+  "size": [
+   9.195,
+   11.639,
+   11.592
+  ],
+  "tris": 3683
+ },
+ "SM_Bld_Shop_04_Destroyed": {
+  "category": "buildings",
+  "size": [
+   9.478,
+   12.286,
+   12.121
+  ],
+  "tris": 4195
+ },
+ "SM_Bld_Shop_05": {
+  "category": "buildings",
+  "size": [
+   10.677,
+   14.537,
+   10.58
+  ],
+  "tris": 3904
+ },
+ "SM_Bld_Shop_05_Destroyed": {
+  "category": "buildings",
+  "size": [
+   10.677,
+   14.537,
+   10.58
+  ],
+  "tris": 4424
+ },
+ "SM_Bld_Shop_06": {
+  "category": "buildings",
+  "size": [
+   21.467,
+   10.27,
+   12.781
+  ],
+  "tris": 7059
+ },
+ "SM_Bld_Shop_06_Destroyed": {
+  "category": "buildings",
+  "size": [
+   21.467,
+   10.357,
+   12.781
+  ],
+  "tris": 6405
+ },
+ "SM_Bld_Shop_07": {
+  "category": "buildings",
+  "size": [
+   15.2,
+   7.142,
+   9.192
+  ],
+  "tris": 892
+ },
+ "SM_Bld_Shop_07_Destroyed": {
+  "category": "buildings",
+  "size": [
+   15.2,
+   7.142,
+   9.192
+  ],
+  "tris": 1020
+ },
+ "SM_Bld_Shop_08": {
+  "category": "buildings",
+  "size": [
+   22.819,
+   10.434,
+   12.583
+  ],
+  "tris": 3175
+ },
+ "SM_Bld_Shop_08_Destroyed": {
+  "category": "buildings",
+  "size": [
+   21.397,
+   8.504,
+   12.557
+  ],
+  "tris": 2330
+ },
+ "SM_Bld_Shop_09": {
+  "category": "buildings",
+  "size": [
+   7.019,
+   7.732,
+   11.359
+  ],
+  "tris": 1037
+ },
+ "SM_Bld_Shop_09_Destroyed": {
+  "category": "buildings",
+  "size": [
+   7.019,
+   6.793,
+   11.358
+  ],
+  "tris": 1017
+ },
+ "SM_Bld_Shop_10": {
+  "category": "buildings",
+  "size": [
+   7.019,
+   7.732,
+   11.359
+  ],
+  "tris": 889
+ },
+ "SM_Bld_Shop_10_Destroyed": {
+  "category": "buildings",
+  "size": [
+   7.019,
+   7.732,
+   11.359
+  ],
+  "tris": 953
+ },
+ "SM_Bld_Shop_11": {
+  "category": "buildings",
+  "size": [
+   9.455,
+   10.05,
+   12.196
+  ],
+  "tris": 1408
+ },
+ "SM_Bld_Shop_11_Destroyed": {
+  "category": "buildings",
+  "size": [
+   9.455,
+   10.05,
+   12.196
+  ],
+  "tris": 1902
+ },
+ "SM_Bld_Shop_12": {
+  "category": "buildings",
+  "size": [
+   3.075,
+   13.99,
+   12.296
+  ],
+  "tris": 1471
+ },
+ "SM_Bld_Shop_13": {
+  "category": "buildings",
+  "size": [
+   3.075,
+   10.27,
+   12.296
+  ],
+  "tris": 1045
+ },
+ "SM_Bld_Shop_Door_01": {
+  "category": "buildings",
+  "size": [
+   1.27,
+   2.663,
+   0.28
+  ],
+  "tris": 316
+ },
+ "SM_Bld_Shop_Door_02": {
+  "category": "buildings",
+  "size": [
+   1.27,
+   2.663,
+   0.28
+  ],
+  "tris": 364
+ },
+ "SM_Bld_Shop_Door_03": {
+  "category": "buildings",
+  "size": [
+   2.296,
+   2.663,
+   0.346
+  ],
+  "tris": 778
+ },
+ "SM_Bld_Shop_Door_04": {
+  "category": "buildings",
+  "size": [
+   2.335,
+   3.226,
+   0.359
+  ],
+  "tris": 796
+ },
+ "SM_Bld_Shop_Door_05": {
+  "category": "buildings",
+  "size": [
+   1.27,
+   2.663,
+   0.342
+  ],
+  "tris": 410
+ },
+ "SM_Bld_Shops_ClothCover_Large_01": {
+  "category": "buildings",
+  "size": [
+   4.131,
+   0.957,
+   2.895
+  ],
+  "tris": 252
+ },
+ "SM_Bld_Shops_ClothCover_Small_01": {
+  "category": "buildings",
+  "size": [
+   2.956,
+   0.938,
+   2.895
+  ],
+  "tris": 196
+ },
+ "SM_Bld_Tent_01": {
+  "category": "buildings",
+  "size": [
+   7.799,
+   4.072,
+   12.03
+  ],
+  "tris": 4538
+ },
+ "SM_Bld_Tent_Cover_01": {
+  "category": "buildings",
+  "size": [
+   10.029,
+   4.465,
+   10.992
+  ],
+  "tris": 816
+ },
+ "SM_Bld_Tent_Desert_01": {
+  "category": "buildings",
+  "size": [
+   8.022,
+   2.312,
+   9.654
+  ],
+  "tris": 1888
+ },
+ "SM_Bld_Tent_Destroyed_01": {
+  "category": "buildings",
+  "size": [
+   7.799,
+   4.072,
+   12.479
+  ],
+  "tris": 5286
+ },
+ "SM_Bld_Tent_Entrance_01": {
+  "category": "buildings",
+  "size": [
+   7.799,
+   4.072,
+   14.494
+  ],
+  "tris": 4614
+ },
+ "SM_Bld_Tent_Open_01": {
+  "category": "buildings",
+  "size": [
+   7.799,
+   4.072,
+   12.03
+  ],
+  "tris": 3490
+ },
+ "SM_Bld_Tent_Refugee_01": {
+  "category": "buildings",
+  "size": [
+   5.938,
+   2.92,
+   9.009
+  ],
+  "tris": 3102
+ },
+ "SM_Bld_Tent_Refugee_Closed_01": {
+  "category": "buildings",
+  "size": [
+   5.938,
+   2.901,
+   8.814
+  ],
+  "tris": 938
+ },
+ "SM_Bld_Tent_Refugee_Damaged_01": {
+  "category": "buildings",
+  "size": [
+   5.921,
+   2.935,
+   9.072
+  ],
+  "tris": 2862
+ },
+ "SM_Bld_Tent_Sandbags_01": {
+  "category": "buildings",
+  "size": [
+   7.799,
+   4.181,
+   13.949
+  ],
+  "tris": 5766
+ },
+ "SM_Bld_Tent_Shelter_01": {
+  "category": "buildings",
+  "size": [
+   7.778,
+   5.795,
+   9.598
+  ],
+  "tris": 1316
+ },
+ "SM_Bld_Tent_Shelter_Destroyed_01": {
+  "category": "buildings",
+  "size": [
+   7.753,
+   5.683,
+   9.768
+  ],
+  "tris": 1366
+ },
+ "SM_Bld_Tiles_01": {
+  "category": "buildings",
+  "size": [
+   10.732,
+   1.035,
+   11.467
+  ],
+  "tris": 376
+ },
+ "SM_Bld_Village_01_Destroyed": {
+  "category": "buildings",
+  "size": [
+   9.433,
+   6.0,
+   0.341
+  ],
+  "tris": 406
+ },
+ "SM_Bld_Village_02_Destroyed": {
+  "category": "buildings",
+  "size": [
+   4.578,
+   2.344,
+   1.96
+  ],
+  "tris": 85
+ },
+ "SM_Bld_Village_03_Destroyed": {
+  "category": "buildings",
+  "size": [
+   4.649,
+   3.236,
+   0.341
+  ],
+  "tris": 148
+ },
+ "SM_Bld_Village_04_Destroyed": {
+  "category": "buildings",
+  "size": [
+   5.253,
+   4.002,
+   0.25
+  ],
+  "tris": 54
+ },
+ "SM_Bld_Village_05_Destroyed": {
+  "category": "buildings",
+  "size": [
+   2.503,
+   2.465,
+   0.36
+  ],
+  "tris": 46
+ },
+ "SM_Bld_Village_06_Destroyed": {
+  "category": "buildings",
+  "size": [
+   4.03,
+   3.535,
+   0.25
+  ],
+  "tris": 102
+ },
+ "SM_Bld_Village_ArchwayBridge_01": {
+  "category": "buildings",
+  "size": [
+   4.113,
+   6.674,
+   2.51
+  ],
+  "tris": 478
+ },
+ "SM_Bld_Village_ArchwayBridge_01_Destroyed": {
+  "category": "buildings",
+  "size": [
+   4.113,
+   6.674,
+   2.288
+  ],
+  "tris": 416
+ },
+ "SM_Bld_Village_ArchwayBridge_02": {
+  "category": "buildings",
+  "size": [
+   4.113,
+   4.478,
+   2.51
+  ],
+  "tris": 478
+ },
+ "SM_Bld_Village_ArchwayBridge_02_Destroyed": {
+  "category": "buildings",
+  "size": [
+   4.113,
+   4.478,
+   2.288
+  ],
+  "tris": 302
+ },
+ "SM_Bld_Village_Archway_01": {
+  "category": "buildings",
+  "size": [
+   9.696,
+   4.231,
+   0.502
+  ],
+  "tris": 462
+ },
+ "SM_Bld_Village_Archway_01_Destroyed": {
+  "category": "buildings",
+  "size": [
+   9.696,
+   4.238,
+   0.544
+  ],
+  "tris": 448
+ },
+ "SM_Bld_Village_Archway_02": {
+  "category": "buildings",
+  "size": [
+   9.696,
+   4.231,
+   0.502
+  ],
+  "tris": 462
+ },
+ "SM_Bld_Village_Archway_Pillar_01": {
+  "category": "buildings",
+  "size": [
+   0.708,
+   4.293,
+   0.708
+  ],
+  "tris": 92
+ },
+ "SM_Bld_Village_Archway_Pillar_01_Destroyed": {
+  "category": "buildings",
+  "size": [
+   0.708,
+   3.246,
+   0.708
+  ],
+  "tris": 80
+ },
+ "SM_Bld_Village_Archway_Single_01": {
+  "category": "buildings",
+  "size": [
+   2.815,
+   4.231,
+   0.502
+  ],
+  "tris": 182
+ },
+ "SM_Bld_Village_Chimney_01": {
+  "category": "buildings",
+  "size": [
+   1.711,
+   7.798,
+   1.711
+  ],
+  "tris": 642
+ },
+ "SM_Bld_Village_ClothCover_01": {
+  "category": "buildings",
+  "size": [
+   3.631,
+   3.485,
+   2.388
+  ],
+  "tris": 276
+ },
+ "SM_Bld_Village_ClothCover_02": {
+  "category": "buildings",
+  "size": [
+   3.631,
+   3.485,
+   2.388
+  ],
+  "tris": 276
+ },
+ "SM_Bld_Village_ClothCover_03": {
+  "category": "buildings",
+  "size": [
+   2.143,
+   2.853,
+   2.704
+  ],
+  "tris": 332
+ },
+ "SM_Bld_Village_ClothCover_04": {
+  "category": "buildings",
+  "size": [
+   2.143,
+   2.853,
+   2.704
+  ],
+  "tris": 332
+ },
+ "SM_Bld_Village_ClothCover_Large_01": {
+  "category": "buildings",
+  "size": [
+   4.168,
+   4.001,
+   4.879
+  ],
+  "tris": 492
+ },
+ "SM_Bld_Village_ClothCover_Large_02": {
+  "category": "buildings",
+  "size": [
+   4.168,
+   4.001,
+   4.879
+  ],
+  "tris": 492
+ },
+ "SM_Bld_Village_ClothCover_Slope_01": {
+  "category": "buildings",
+  "size": [
+   3.631,
+   3.485,
+   2.235
+  ],
+  "tris": 276
+ },
+ "SM_Bld_Village_ClothCover_Slope_02": {
+  "category": "buildings",
+  "size": [
+   3.631,
+   3.485,
+   2.235
+  ],
+  "tris": 276
+ },
+ "SM_Bld_Village_ClothCover_Small_01": {
+  "category": "buildings",
+  "size": [
+   2.434,
+   0.752,
+   2.026
+  ],
+  "tris": 212
+ },
+ "SM_Bld_Village_ClothCover_Small_02": {
+  "category": "buildings",
+  "size": [
+   2.434,
+   0.752,
+   2.026
+  ],
+  "tris": 212
+ },
+ "SM_Bld_Village_ClothCover_Small_03": {
+  "category": "buildings",
+  "size": [
+   2.01,
+   1.633,
+   1.876
+  ],
+  "tris": 260
+ },
+ "SM_Bld_Village_ClothCover_Small_04": {
+  "category": "buildings",
+  "size": [
+   2.01,
+   1.633,
+   1.876
+  ],
+  "tris": 260
+ },
+ "SM_Bld_Village_Cover_01": {
+  "category": "buildings",
+  "size": [
+   5.729,
+   4.369,
+   5.106
+  ],
+  "tris": 1136
+ },
+ "SM_Bld_Village_Dome_01": {
+  "category": "buildings",
+  "size": [
+   3.538,
+   2.906,
+   3.538
+  ],
+  "tris": 360
+ },
+ "SM_Bld_Village_Door_01": {
+  "category": "buildings",
+  "size": [
+   1.27,
+   2.455,
+   0.432
+  ],
+  "tris": 476
+ },
+ "SM_Bld_Village_Door_02": {
+  "category": "buildings",
+  "size": [
+   1.27,
+   2.566,
+   0.459
+  ],
+  "tris": 498
+ },
+ "SM_Bld_Village_Door_Basic_01": {
+  "category": "buildings",
+  "size": [
+   1.205,
+   2.394,
+   0.307
+  ],
+  "tris": 570
+ },
+ "SM_Bld_Village_Edge_01": {
+  "category": "buildings",
+  "size": [
+   4.868,
+   2.005,
+   0.533
+  ],
+  "tris": 280
+ },
+ "SM_Bld_Village_Edge_02": {
+  "category": "buildings",
+  "size": [
+   2.566,
+   2.005,
+   0.533
+  ],
+  "tris": 244
+ },
+ "SM_Bld_Village_Fence_01": {
+  "category": "buildings",
+  "size": [
+   2.91,
+   1.719,
+   0.248
+  ],
+  "tris": 302
+ },
+ "SM_Bld_Village_Fence_02": {
+  "category": "buildings",
+  "size": [
+   2.91,
+   1.719,
+   0.248
+  ],
+  "tris": 266
+ },
+ "SM_Bld_Village_Fence_03": {
+  "category": "buildings",
+  "size": [
+   1.746,
+   1.719,
+   0.248
+  ],
+  "tris": 302
+ },
+ "SM_Bld_Village_Fence_04": {
+  "category": "buildings",
+  "size": [
+   2.932,
+   0.897,
+   0.174
+  ],
+  "tris": 230
+ },
+ "SM_Bld_Village_Hatch_01": {
+  "category": "buildings",
+  "size": [
+   1.619,
+   0.526,
+   1.709
+  ],
+  "tris": 282
+ },
+ "SM_Bld_Village_House_01": {
+  "category": "buildings",
+  "size": [
+   8.965,
+   6.736,
+   12.84
+  ],
+  "tris": 1918
+ },
+ "SM_Bld_Village_House_01_Destroyed": {
+  "category": "buildings",
+  "size": [
+   9.102,
+   6.778,
+   12.84
+  ],
+  "tris": 1908
+ },
+ "SM_Bld_Village_House_02": {
+  "category": "buildings",
+  "size": [
+   7.812,
+   6.736,
+   6.795
+  ],
+  "tris": 1355
+ },
+ "SM_Bld_Village_House_02_Destroyed": {
+  "category": "buildings",
+  "size": [
+   8.062,
+   6.736,
+   6.942
+  ],
+  "tris": 1590
+ },
+ "SM_Bld_Village_House_03": {
+  "category": "buildings",
+  "size": [
+   11.268,
+   6.736,
+   7.743
+  ],
+  "tris": 1840
+ },
+ "SM_Bld_Village_House_03_Destroyed": {
+  "category": "buildings",
+  "size": [
+   11.494,
+   6.736,
+   7.743
+  ],
+  "tris": 1733
+ },
+ "SM_Bld_Village_House_04": {
+  "category": "buildings",
+  "size": [
+   6.634,
+   12.114,
+   5.916
+  ],
+  "tris": 2722
+ },
+ "SM_Bld_Village_House_04_Destroyed": {
+  "category": "buildings",
+  "size": [
+   6.714,
+   12.114,
+   5.916
+  ],
+  "tris": 2709
+ },
+ "SM_Bld_Village_House_05": {
+  "category": "buildings",
+  "size": [
+   7.18,
+   4.577,
+   4.39
+  ],
+  "tris": 506
+ },
+ "SM_Bld_Village_House_05_Destroyed": {
+  "category": "buildings",
+  "size": [
+   7.18,
+   4.577,
+   4.298
+  ],
+  "tris": 579
+ },
+ "SM_Bld_Village_House_06": {
+  "category": "buildings",
+  "size": [
+   8.487,
+   6.738,
+   8.579
+  ],
+  "tris": 1452
+ },
+ "SM_Bld_Village_House_06_Destroyed": {
+  "category": "buildings",
+  "size": [
+   8.593,
+   6.738,
+   8.604
+  ],
+  "tris": 1478
+ },
+ "SM_Bld_Village_House_07": {
+  "category": "buildings",
+  "size": [
+   5.0,
+   3.394,
+   2.816
+  ],
+  "tris": 534
+ },
+ "SM_Bld_Village_House_07_Destroyed": {
+  "category": "buildings",
+  "size": [
+   5.0,
+   3.394,
+   2.816
+  ],
+  "tris": 652
+ },
+ "SM_Bld_Village_House_Plinth_01": {
+  "category": "buildings",
+  "size": [
+   10.248,
+   4.718,
+   10.265
+  ],
+  "tris": 84
+ },
+ "SM_Bld_Village_House_Plinth_02": {
+  "category": "buildings",
+  "size": [
+   7.607,
+   4.718,
+   12.649
+  ],
+  "tris": 84
+ },
+ "SM_Bld_Village_House_Stairs_01": {
+  "category": "buildings",
+  "size": [
+   5.92,
+   6.766,
+   7.18
+  ],
+  "tris": 676
+ },
+ "SM_Bld_Village_Planter_01": {
+  "category": "buildings",
+  "size": [
+   2.398,
+   0.947,
+   2.398
+  ],
+  "tris": 142
+ },
+ "SM_Bld_Village_Stairs_01": {
+  "category": "buildings",
+  "size": [
+   1.324,
+   0.846,
+   1.882
+  ],
+  "tris": 80
+ },
+ "SM_Bld_Village_Stairs_02": {
+  "category": "buildings",
+  "size": [
+   1.324,
+   1.631,
+   2.692
+  ],
+  "tris": 154
+ },
+ "SM_Bld_Village_Stairs_03": {
+  "category": "buildings",
+  "size": [
+   1.324,
+   3.237,
+   4.292
+  ],
+  "tris": 268
+ },
+ "SM_Bld_Village_Stairs_Large_01": {
+  "category": "buildings",
+  "size": [
+   1.964,
+   4.577,
+   5.435
+  ],
+  "tris": 178
+ },
+ "SM_Bld_Village_Stairs_Small_01": {
+  "category": "buildings",
+  "size": [
+   1.837,
+   0.255,
+   0.329
+  ],
+  "tris": 28
+ },
+ "SM_Bld_Village_Stairs_Small_02": {
+  "category": "buildings",
+  "size": [
+   1.837,
+   0.835,
+   0.865
+  ],
+  "tris": 52
+ },
+ "SM_Bld_Village_Village_House_Tower_01": {
+  "category": "buildings",
+  "size": [
+   2.57,
+   5.47,
+   2.445
+  ],
+  "tris": 398
+ },
+ "SM_Bld_Village_Wall_01": {
+  "category": "buildings",
+  "size": [
+   2.85,
+   1.602,
+   0.358
+  ],
+  "tris": 34
+ },
+ "SM_Bld_Village_Wall_02": {
+  "category": "buildings",
+  "size": [
+   4.843,
+   1.602,
+   0.358
+  ],
+  "tris": 48
+ },
+ "SM_Bld_Village_Wall_Gate_01": {
+  "category": "buildings",
+  "size": [
+   2.708,
+   3.19,
+   0.603
+  ],
+  "tris": 136
+ },
+ "SM_Bld_Village_Wall_Pillar_01": {
+  "category": "buildings",
+  "size": [
+   0.603,
+   1.747,
+   0.601
+  ],
+  "tris": 36
+ },
+ "SM_Bld_Village_Well_01": {
+  "category": "buildings",
+  "size": [
+   2.654,
+   2.36,
+   2.402
+  ],
+  "tris": 452
+ },
+ "SM_Bld_Village_Window_01": {
+  "category": "buildings",
+  "size": [
+   2.738,
+   1.795,
+   0.526
+  ],
+  "tris": 554
+ },
+ "SM_Bld_Village_Window_02": {
+  "category": "buildings",
+  "size": [
+   1.19,
+   1.59,
+   0.231
+  ],
+  "tris": 246
+ },
+ "SM_Bld_Village_Window_Shutter_01": {
+  "category": "buildings",
+  "size": [
+   1.189,
+   1.526,
+   0.165
+  ],
+  "tris": 242
+ },
+ "SM_Bld_WaterTank_01": {
+  "category": "buildings",
+  "size": [
+   2.874,
+   8.058,
+   3.44
+  ],
+  "tris": 2114
+ },
+ "SM_Bld_Window_Bars_01": {
+  "category": "buildings",
+  "size": [
+   1.913,
+   1.518,
+   0.203
+  ],
+  "tris": 498
+ },
+ "SM_Bld_Window_Bars_02": {
+  "category": "buildings",
+  "size": [
+   2.304,
+   1.518,
+   0.268
+  ],
+  "tris": 704
+ },
+ "SM_Bld_Window_Bars_03": {
+  "category": "buildings",
+  "size": [
+   2.0,
+   1.198,
+   0.113
+  ],
+  "tris": 144
+ },
+ "SM_Bld_Window_Shutter_01": {
+  "category": "buildings",
+  "size": [
+   2.433,
+   1.469,
+   1.443
+  ],
+  "tris": 340
+ },
+ "SM_Bld_Window_Shutter_02": {
+  "category": "buildings",
+  "size": [
+   2.433,
+   1.824,
+   0.224
+  ],
+  "tris": 316
+ },
+ "SM_Bld_Window_Shutter_03": {
+  "category": "buildings",
+  "size": [
+   2.433,
+   1.233,
+   1.112
+  ],
+  "tris": 214
+ },
+ "SM_Bld_Window_Shutter_04": {
+  "category": "buildings",
+  "size": [
+   2.433,
+   1.356,
+   0.224
+  ],
+  "tris": 190
+ },
+ "SM_Env_Bush_Group_01": {
+  "category": "environment",
+  "size": [
+   2.965,
+   1.871,
+   2.032
+  ],
+  "tris": 226
+ },
+ "SM_Env_Bush_Group_02": {
+  "category": "environment",
+  "size": [
+   3.358,
+   1.871,
+   3.22
+  ],
+  "tris": 352
+ },
+ "SM_Env_Bush_Group_03": {
+  "category": "environment",
+  "size": [
+   3.008,
+   1.545,
+   2.151
+  ],
+  "tris": 214
+ },
+ "SM_Env_Bush_Large_01": {
+  "category": "environment",
+  "size": [
+   5.322,
+   2.856,
+   5.464
+  ],
+  "tris": 224
+ },
+ "SM_Env_Bush_Large_02": {
+  "category": "environment",
+  "size": [
+   5.889,
+   3.888,
+   6.653
+  ],
+  "tris": 340
+ },
+ "SM_Env_Bush_Large_03": {
+  "category": "environment",
+  "size": [
+   7.85,
+   3.612,
+   5.14
+  ],
+  "tris": 346
+ },
+ "SM_Env_Bush_Large_04": {
+  "category": "environment",
+  "size": [
+   7.341,
+   3.656,
+   7.696
+  ],
+  "tris": 420
+ },
+ "SM_Env_Bush_Large_05": {
+  "category": "environment",
+  "size": [
+   4.674,
+   2.29,
+   6.072
+  ],
+  "tris": 198
+ },
+ "SM_Env_Bush_Small_01": {
+  "category": "environment",
+  "size": [
+   1.194,
+   1.522,
+   1.037
+  ],
+  "tris": 102
+ },
+ "SM_Env_Bush_Small_02": {
+  "category": "environment",
+  "size": [
+   0.819,
+   1.12,
+   0.867
+  ],
+  "tris": 68
+ },
+ "SM_Env_Bush_Small_03": {
+  "category": "environment",
+  "size": [
+   0.449,
+   0.594,
+   0.486
+  ],
+  "tris": 24
+ },
+ "SM_Env_Cactus_01": {
+  "category": "environment",
+  "size": [
+   0.777,
+   0.558,
+   0.785
+  ],
+  "tris": 216
+ },
+ "SM_Env_Cactus_02": {
+  "category": "environment",
+  "size": [
+   0.565,
+   0.382,
+   0.571
+  ],
+  "tris": 216
+ },
+ "SM_Env_Cactus_03": {
+  "category": "environment",
+  "size": [
+   0.402,
+   0.66,
+   0.4
+  ],
+  "tris": 216
+ },
+ "SM_Env_Crater_01": {
+  "category": "environment",
+  "size": [
+   5.011,
+   0.595,
+   4.775
+  ],
+  "tris": 142
+ },
+ "SM_Env_DirtRoad_Corner_01": {
+  "category": "environment",
+  "size": [
+   5.263,
+   0.311,
+   7.217
+  ],
+  "tris": 203
+ },
+ "SM_Env_DirtRoad_End_01": {
+  "category": "environment",
+  "size": [
+   7.843,
+   0.383,
+   10.945
+  ],
+  "tris": 287
+ },
+ "SM_Env_DirtRoad_Exit_01": {
+  "category": "environment",
+  "size": [
+   15.187,
+   1.366,
+   9.384
+  ],
+  "tris": 264
+ },
+ "SM_Env_DirtRoad_Exit_02": {
+  "category": "environment",
+  "size": [
+   13.714,
+   1.366,
+   9.481
+  ],
+  "tris": 264
+ },
+ "SM_Env_DirtRoad_Slope_Down_01": {
+  "category": "environment",
+  "size": [
+   2.678,
+   1.115,
+   8.312
+  ],
+  "tris": 160
+ },
+ "SM_Env_DirtRoad_Slope_Up_01": {
+  "category": "environment",
+  "size": [
+   2.678,
+   0.982,
+   8.377
+  ],
+  "tris": 160
+ },
+ "SM_Env_DirtRoad_Straight_01": {
+  "category": "environment",
+  "size": [
+   2.678,
+   0.313,
+   8.433
+  ],
+  "tris": 160
+ },
+ "SM_Env_Fern_01": {
+  "category": "environment",
+  "size": [
+   2.435,
+   1.082,
+   2.45
+  ],
+  "tris": 248
+ },
+ "SM_Env_Fern_02": {
+  "category": "environment",
+  "size": [
+   2.77,
+   1.813,
+   2.698
+  ],
+  "tris": 546
+ },
+ "SM_Env_Flowers_01": {
+  "category": "environment",
+  "size": [
+   1.025,
+   1.109,
+   1.023
+  ],
+  "tris": 340
+ },
+ "SM_Env_Flowers_02": {
+  "category": "environment",
+  "size": [
+   1.157,
+   1.31,
+   1.305
+  ],
+  "tris": 378
+ },
+ "SM_Env_Flowers_03": {
+  "category": "environment",
+  "size": [
+   0.96,
+   0.481,
+   0.931
+  ],
+  "tris": 146
+ },
+ "SM_Env_Flowers_04": {
+  "category": "environment",
+  "size": [
+   1.017,
+   0.468,
+   1.096
+  ],
+  "tris": 122
+ },
+ "SM_Env_Flowers_05": {
+  "category": "environment",
+  "size": [
+   1.202,
+   0.776,
+   1.27
+  ],
+  "tris": 292
+ },
+ "SM_Env_Grass_01": {
+  "category": "environment",
+  "size": [
+   0.867,
+   0.872,
+   0.924
+  ],
+  "tris": 60
+ },
+ "SM_Env_Grass_02": {
+  "category": "environment",
+  "size": [
+   1.121,
+   1.106,
+   1.004
+  ],
+  "tris": 96
+ },
+ "SM_Env_Grass_03": {
+  "category": "environment",
+  "size": [
+   1.338,
+   1.106,
+   1.181
+  ],
+  "tris": 192
+ },
+ "SM_Env_Grass_04": {
+  "category": "environment",
+  "size": [
+   1.992,
+   1.143,
+   1.792
+  ],
+  "tris": 288
+ },
+ "SM_Env_Ground_Crater_02": {
+  "category": "environment",
+  "size": [
+   2.882,
+   0.342,
+   2.916
+  ],
+  "tris": 215
+ },
+ "SM_Env_Ground_Hill_01": {
+  "category": "environment",
+  "size": [
+   11.072,
+   1.621,
+   11.192
+  ],
+  "tris": 151
+ },
+ "SM_Env_Ground_Hill_02": {
+  "category": "environment",
+  "size": [
+   16.691,
+   2.444,
+   16.918
+  ],
+  "tris": 314
+ },
+ "SM_Env_Ground_Hill_Flat_01": {
+  "category": "environment",
+  "size": [
+   16.691,
+   1.092,
+   16.918
+  ],
+  "tris": 316
+ },
+ "SM_Env_Ground_Hill_Flat_02": {
+  "category": "environment",
+  "size": [
+   13.263,
+   1.074,
+   13.654
+  ],
+  "tris": 271
+ },
+ "SM_Env_Ground_Hill_Flat_03": {
+  "category": "environment",
+  "size": [
+   11.18,
+   0.903,
+   11.514
+  ],
+  "tris": 125
+ },
+ "SM_Env_Ground_Hill_Flat_Square_01": {
+  "category": "environment",
+  "size": [
+   18.132,
+   1.061,
+   17.671
+  ],
+  "tris": 316
+ },
+ "SM_Env_Ground_Hill_Slope_01": {
+  "category": "environment",
+  "size": [
+   16.631,
+   0.994,
+   16.105
+  ],
+  "tris": 233
+ },
+ "SM_Env_Ground_Oasis_01": {
+  "category": "environment",
+  "size": [
+   28.892,
+   1.347,
+   29.228
+  ],
+  "tris": 229
+ },
+ "SM_Env_Ground_Round_01": {
+  "category": "environment",
+  "size": [
+   13.047,
+   0.398,
+   13.344
+  ],
+  "tris": 74
+ },
+ "SM_Env_Ground_Round_02": {
+  "category": "environment",
+  "size": [
+   20.402,
+   0.517,
+   21.333
+  ],
+  "tris": 220
+ },
+ "SM_Env_Ground_Round_03": {
+  "category": "environment",
+  "size": [
+   5.227,
+   0.361,
+   4.276
+  ],
+  "tris": 51
+ },
+ "SM_Env_Ground_Round_04": {
+  "category": "environment",
+  "size": [
+   36.428,
+   0.73,
+   36.961
+  ],
+  "tris": 224
+ },
+ "SM_Env_Ground_Square_01": {
+  "category": "environment",
+  "size": [
+   14.017,
+   0.398,
+   13.311
+  ],
+  "tris": 74
+ },
+ "SM_Env_Ground_Square_02": {
+  "category": "environment",
+  "size": [
+   20.871,
+   0.753,
+   20.659
+  ],
+  "tris": 220
+ },
+ "SM_Env_Ground_White_01": {
+  "category": "environment",
+  "size": [
+   36.442,
+   0.73,
+   36.965
+  ],
+  "tris": 224
+ },
+ "SM_Env_Helipad_01": {
+  "category": "environment",
+  "size": [
+   30.52,
+   0.783,
+   28.803
+  ],
+  "tris": 468
+ },
+ "SM_Env_Mountain_01": {
+  "category": "environment",
+  "size": [
+   63.711,
+   13.969,
+   64.377
+  ],
+  "tris": 1536
+ },
+ "SM_Env_Mountain_02": {
+  "category": "environment",
+  "size": [
+   47.573,
+   11.091,
+   51.18
+  ],
+  "tris": 724
+ },
+ "SM_Env_Mountain_03": {
+  "category": "environment",
+  "size": [
+   25.625,
+   6.928,
+   24.03
+  ],
+  "tris": 406
+ },
+ "SM_Env_Mountain_04": {
+  "category": "environment",
+  "size": [
+   46.2,
+   12.49,
+   43.324
+  ],
+  "tris": 754
+ },
+ "SM_Env_Mountain_05": {
+  "category": "environment",
+  "size": [
+   77.428,
+   11.12,
+   51.411
+  ],
+  "tris": 1246
+ },
+ "SM_Env_Mountain_06": {
+  "category": "environment",
+  "size": [
+   60.927,
+   15.842,
+   62.815
+  ],
+  "tris": 1288
+ },
+ "SM_Env_Mountain_07": {
+  "category": "environment",
+  "size": [
+   47.573,
+   8.299,
+   51.18
+  ],
+  "tris": 1506
+ },
+ "SM_Env_Pebbles_01": {
+  "category": "environment",
+  "size": [
+   0.789,
+   0.153,
+   0.796
+  ],
+  "tris": 39
+ },
+ "SM_Env_Pebbles_02": {
+  "category": "environment",
+  "size": [
+   0.893,
+   0.153,
+   0.886
+  ],
+  "tris": 52
+ },
+ "SM_Env_Pebbles_03": {
+  "category": "environment",
+  "size": [
+   1.381,
+   0.153,
+   1.535
+  ],
+  "tris": 104
+ },
+ "SM_Env_Pebbles_04": {
+  "category": "environment",
+  "size": [
+   3.041,
+   0.153,
+   2.492
+  ],
+  "tris": 208
+ },
+ "SM_Env_Plant_01": {
+  "category": "environment",
+  "size": [
+   0.657,
+   0.405,
+   0.67
+  ],
+  "tris": 192
+ },
+ "SM_Env_Plant_02": {
+  "category": "environment",
+  "size": [
+   0.568,
+   0.307,
+   0.469
+  ],
+  "tris": 138
+ },
+ "SM_Env_Plant_03": {
+  "category": "environment",
+  "size": [
+   1.364,
+   0.639,
+   1.538
+  ],
+  "tris": 116
+ },
+ "SM_Env_Plant_Tall_01": {
+  "category": "environment",
+  "size": [
+   0.839,
+   1.667,
+   0.833
+  ],
+  "tris": 282
+ },
+ "SM_Env_Plant_Tall_02": {
+  "category": "environment",
+  "size": [
+   0.524,
+   1.542,
+   0.646
+  ],
+  "tris": 196
+ },
+ "SM_Env_Road_01": {
+  "category": "environment",
+  "size": [
+   15.597,
+   1.102,
+   50.0
+  ],
+  "tris": 99
+ },
+ "SM_Env_Road_02": {
+  "category": "environment",
+  "size": [
+   15.597,
+   1.102,
+   25.0
+  ],
+  "tris": 99
+ },
+ "SM_Env_Road_Edge_01": {
+  "category": "environment",
+  "size": [
+   0.478,
+   0.666,
+   50.0
+  ],
+  "tris": 52
+ },
+ "SM_Env_Road_Lights_01": {
+  "category": "environment",
+  "size": [
+   1.42,
+   10.681,
+   0.305
+  ],
+  "tris": 200
+ },
+ "SM_Env_Rock_01": {
+  "category": "environment",
+  "size": [
+   1.133,
+   0.831,
+   1.133
+  ],
+  "tris": 34
+ },
+ "SM_Env_Rock_02": {
+  "category": "environment",
+  "size": [
+   2.353,
+   0.993,
+   2.246
+  ],
+  "tris": 94
+ },
+ "SM_Env_Rock_03": {
+  "category": "environment",
+  "size": [
+   3.302,
+   1.303,
+   3.425
+  ],
+  "tris": 228
+ },
+ "SM_Env_Rock_04": {
+  "category": "environment",
+  "size": [
+   4.129,
+   1.985,
+   4.616
+  ],
+  "tris": 224
+ },
+ "SM_Env_Rock_05": {
+  "category": "environment",
+  "size": [
+   6.694,
+   2.38,
+   6.751
+  ],
+  "tris": 286
+ },
+ "SM_Env_Rock_06": {
+  "category": "environment",
+  "size": [
+   10.729,
+   3.982,
+   9.974
+  ],
+  "tris": 326
+ },
+ "SM_Env_Rock_Archway_01": {
+  "category": "environment",
+  "size": [
+   4.764,
+   6.194,
+   14.007
+  ],
+  "tris": 474
+ },
+ "SM_Env_Rock_Flat_01": {
+  "category": "environment",
+  "size": [
+   9.361,
+   3.424,
+   9.03
+  ],
+  "tris": 434
+ },
+ "SM_Env_Rock_Flat_02": {
+  "category": "environment",
+  "size": [
+   15.306,
+   3.22,
+   11.837
+  ],
+  "tris": 434
+ },
+ "SM_Env_Ruin_01": {
+  "category": "environment",
+  "size": [
+   1.822,
+   3.55,
+   0.903
+  ],
+  "tris": 92
+ },
+ "SM_Env_Ruin_02": {
+  "category": "environment",
+  "size": [
+   4.804,
+   3.55,
+   0.903
+  ],
+  "tris": 188
+ },
+ "SM_Env_Ruin_03": {
+  "category": "environment",
+  "size": [
+   1.822,
+   3.55,
+   0.903
+  ],
+  "tris": 92
+ },
+ "SM_Env_Ruin_04": {
+  "category": "environment",
+  "size": [
+   3.743,
+   3.55,
+   0.903
+  ],
+  "tris": 188
+ },
+ "SM_Env_Runway_01": {
+  "category": "environment",
+  "size": [
+   209.343,
+   1.485,
+   33.292
+  ],
+  "tris": 206
+ },
+ "SM_Env_SandDunes_01": {
+  "category": "environment",
+  "size": [
+   72.558,
+   7.742,
+   55.675
+  ],
+  "tris": 368
+ },
+ "SM_Env_SandDunes_02": {
+  "category": "environment",
+  "size": [
+   78.067,
+   7.422,
+   54.843
+  ],
+  "tris": 368
+ },
+ "SM_Env_SandDunes_03": {
+  "category": "environment",
+  "size": [
+   115.948,
+   7.208,
+   70.58
+  ],
+  "tris": 531
+ },
+ "SM_Env_SandEdge_01": {
+  "category": "environment",
+  "size": [
+   4.527,
+   0.743,
+   1.629
+  ],
+  "tris": 28
+ },
+ "SM_Env_SandEdge_02": {
+  "category": "environment",
+  "size": [
+   8.111,
+   0.972,
+   1.794
+  ],
+  "tris": 48
+ },
+ "SM_Env_SandEdge_03": {
+  "category": "environment",
+  "size": [
+   8.111,
+   0.972,
+   2.085
+  ],
+  "tris": 37
+ },
+ "SM_Env_SandEdge_04": {
+  "category": "environment",
+  "size": [
+   8.12,
+   1.243,
+   3.432
+  ],
+  "tris": 73
+ },
+ "SM_Env_SandEdge_05": {
+  "category": "environment",
+  "size": [
+   8.111,
+   0.972,
+   3.799
+  ],
+  "tris": 75
+ },
+ "SM_Env_SandEdge_06": {
+  "category": "environment",
+  "size": [
+   6.296,
+   0.929,
+   5.605
+  ],
+  "tris": 39
+ },
+ "SM_Env_Sidewalk_Corner_01": {
+  "category": "environment",
+  "size": [
+   2.5,
+   1.053,
+   2.5
+  ],
+  "tris": 144
+ },
+ "SM_Env_Sidewalk_Corner_02": {
+  "category": "environment",
+  "size": [
+   5.057,
+   1.053,
+   5.029
+  ],
+  "tris": 310
+ },
+ "SM_Env_Sidewalk_Straight_01": {
+  "category": "environment",
+  "size": [
+   5.066,
+   1.064,
+   2.515
+  ],
+  "tris": 304
+ },
+ "SM_Env_Sidewalk_Straight_02": {
+  "category": "environment",
+  "size": [
+   5.066,
+   1.053,
+   2.505
+  ],
+  "tris": 282
+ },
+ "SM_Env_Tree_01": {
+  "category": "environment",
+  "size": [
+   4.663,
+   6.064,
+   3.687
+  ],
+  "tris": 614
+ },
+ "SM_Env_Tree_02": {
+  "category": "environment",
+  "size": [
+   4.985,
+   6.828,
+   4.014
+  ],
+  "tris": 614
+ },
+ "SM_Env_Tree_03": {
+  "category": "environment",
+  "size": [
+   4.766,
+   8.113,
+   5.671
+  ],
+  "tris": 614
+ },
+ "SM_Env_Tree_Big_01": {
+  "category": "environment",
+  "size": [
+   5.285,
+   9.209,
+   5.015
+  ],
+  "tris": 1352
+ },
+ "SM_Env_Tree_Big_02": {
+  "category": "environment",
+  "size": [
+   5.616,
+   10.43,
+   5.329
+  ],
+  "tris": 1352
+ },
+ "SM_Env_Tree_Big_03": {
+  "category": "environment",
+  "size": [
+   6.057,
+   11.854,
+   6.383
+  ],
+  "tris": 1352
+ },
+ "SM_Env_Tree_Bush_01": {
+  "category": "environment",
+  "size": [
+   2.511,
+   2.022,
+   2.521
+  ],
+  "tris": 1034
+ },
+ "SM_Env_Tree_Bush_02": {
+  "category": "environment",
+  "size": [
+   3.497,
+   2.816,
+   3.511
+  ],
+  "tris": 1034
+ },
+ "SM_Env_Tree_Bush_03": {
+  "category": "environment",
+  "size": [
+   4.44,
+   3.575,
+   4.457
+  ],
+  "tris": 1034
+ },
+ "SM_Env_Tree_Large_01": {
+  "category": "environment",
+  "size": [
+   5.493,
+   11.226,
+   5.873
+  ],
+  "tris": 2044
+ },
+ "SM_Env_Tree_Large_02": {
+  "category": "environment",
+  "size": [
+   6.303,
+   13.084,
+   6.74
+  ],
+  "tris": 2044
+ },
+ "SM_Env_Tree_Large_03": {
+  "category": "environment",
+  "size": [
+   7.707,
+   15.375,
+   7.208
+  ],
+  "tris": 2044
+ },
+ "SM_Env_Tree_Round_01": {
+  "category": "environment",
+  "size": [
+   4.218,
+   5.037,
+   3.682
+  ],
+  "tris": 293
+ },
+ "SM_Env_Tree_Round_02": {
+  "category": "environment",
+  "size": [
+   5.502,
+   6.215,
+   5.24
+  ],
+  "tris": 428
+ },
+ "SM_Env_Tree_Round_03": {
+  "category": "environment",
+  "size": [
+   6.656,
+   7.026,
+   6.091
+  ],
+  "tris": 676
+ },
+ "SM_Env_Tree_Small_01": {
+  "category": "environment",
+  "size": [
+   3.19,
+   3.623,
+   2.706
+  ],
+  "tris": 600
+ },
+ "SM_Env_Tree_Small_02": {
+  "category": "environment",
+  "size": [
+   3.869,
+   4.394,
+   3.282
+  ],
+  "tris": 600
+ },
+ "SM_Env_Tree_Small_03": {
+  "category": "environment",
+  "size": [
+   3.871,
+   5.182,
+   4.562
+  ],
+  "tris": 600
+ },
+ "SM_Prop_Aerial_01": {
+  "category": "props",
+  "size": [
+   1.104,
+   1.973,
+   1.127
+  ],
+  "tris": 284
+ },
+ "SM_Prop_AmmoBox_01": {
+  "category": "props",
+  "size": [
+   0.539,
+   0.362,
+   0.245
+  ],
+  "tris": 364
+ },
+ "SM_Prop_AmmoBox_02": {
+  "category": "props",
+  "size": [
+   0.514,
+   0.348,
+   0.245
+  ],
+  "tris": 124
+ },
+ "SM_Prop_AmmoBox_03": {
+  "category": "props",
+  "size": [
+   0.527,
+   0.362,
+   0.245
+  ],
+  "tris": 380
+ },
+ "SM_Prop_AmmoBox_04": {
+  "category": "props",
+  "size": [
+   0.541,
+   0.307,
+   0.244
+  ],
+  "tris": 216
+ },
+ "SM_Prop_Ammo_Bullet_Cases_01": {
+  "category": "props",
+  "size": [
+   0.024,
+   0.02,
+   0.099
+  ],
+  "tris": 46
+ },
+ "SM_Prop_Ammo_Bullet_Cases_02": {
+  "category": "props",
+  "size": [
+   0.421,
+   0.021,
+   0.479
+  ],
+  "tris": 238
+ },
+ "SM_Prop_Ammo_Bullet_Cases_03": {
+  "category": "props",
+  "size": [
+   0.801,
+   0.047,
+   0.653
+  ],
+  "tris": 408
+ },
+ "SM_Prop_BarrelPile_01": {
+  "category": "props",
+  "size": [
+   5.516,
+   1.892,
+   1.095
+  ],
+  "tris": 6000
+ },
+ "SM_Prop_BarrelPile_02": {
+  "category": "props",
+  "size": [
+   8.248,
+   1.892,
+   1.095
+  ],
+  "tris": 9000
+ },
+ "SM_Prop_Barrel_01": {
+  "category": "props",
+  "size": [
+   0.711,
+   1.049,
+   0.696
+  ],
+  "tris": 300
+ },
+ "SM_Prop_Barrel_02": {
+  "category": "props",
+  "size": [
+   0.711,
+   1.049,
+   0.696
+  ],
+  "tris": 300
+ },
+ "SM_Prop_Barrel_03": {
+  "category": "props",
+  "size": [
+   0.726,
+   1.045,
+   0.705
+  ],
+  "tris": 342
+ },
+ "SM_Prop_Barrel_Stack_01": {
+  "category": "props",
+  "size": [
+   1.458,
+   1.283,
+   1.442
+  ],
+  "tris": 1726
+ },
+ "SM_Prop_Barrier_01": {
+  "category": "props",
+  "size": [
+   0.7,
+   0.954,
+   2.103
+  ],
+  "tris": 164
+ },
+ "SM_Prop_Barrier_02": {
+  "category": "props",
+  "size": [
+   0.7,
+   0.954,
+   2.103
+  ],
+  "tris": 178
+ },
+ "SM_Prop_Barrier_03": {
+  "category": "props",
+  "size": [
+   0.7,
+   0.954,
+   2.103
+  ],
+  "tris": 190
+ },
+ "SM_Prop_Barrier_04": {
+  "category": "props",
+  "size": [
+   0.7,
+   0.954,
+   2.103
+  ],
+  "tris": 224
+ },
+ "SM_Prop_Barrier_05": {
+  "category": "props",
+  "size": [
+   1.062,
+   0.954,
+   2.277
+  ],
+  "tris": 290
+ },
+ "SM_Prop_Barrier_06": {
+  "category": "props",
+  "size": [
+   2.103,
+   0.954,
+   0.7
+  ],
+  "tris": 220
+ },
+ "SM_Prop_Barrier_07": {
+  "category": "props",
+  "size": [
+   1.241,
+   0.954,
+   0.7
+  ],
+  "tris": 170
+ },
+ "SM_Prop_Barrier_Base_Dirt_01": {
+  "category": "props",
+  "size": [
+   6.555,
+   0.664,
+   2.407
+  ],
+  "tris": 300
+ },
+ "SM_Prop_Barrier_Base_Dirt_02": {
+  "category": "props",
+  "size": [
+   12.386,
+   0.664,
+   2.413
+  ],
+  "tris": 300
+ },
+ "SM_Prop_Barrier_Base_Group_01": {
+  "category": "props",
+  "size": [
+   2.965,
+   2.124,
+   2.974
+  ],
+  "tris": 1374
+ },
+ "SM_Prop_Barrier_Base_Group_02": {
+  "category": "props",
+  "size": [
+   5.802,
+   2.218,
+   3.44
+  ],
+  "tris": 1357
+ },
+ "SM_Prop_Barrier_Base_Group_03": {
+  "category": "props",
+  "size": [
+   8.954,
+   2.218,
+   3.08
+  ],
+  "tris": 2072
+ },
+ "SM_Prop_Barrier_Base_Group_04": {
+  "category": "props",
+  "size": [
+   8.954,
+   2.194,
+   3.08
+  ],
+  "tris": 2176
+ },
+ "SM_Prop_Barrier_Base_Row_01": {
+  "category": "props",
+  "size": [
+   3.423,
+   1.053,
+   1.219
+  ],
+  "tris": 184
+ },
+ "SM_Prop_Barrier_Base_Row_02": {
+  "category": "props",
+  "size": [
+   5.563,
+   1.053,
+   1.219
+  ],
+  "tris": 280
+ },
+ "SM_Prop_Barrier_Base_Row_03": {
+  "category": "props",
+  "size": [
+   10.956,
+   1.053,
+   1.234
+  ],
+  "tris": 520
+ },
+ "SM_Prop_Barrier_Base_Single_01": {
+  "category": "props",
+  "size": [
+   1.247,
+   1.033,
+   1.152
+  ],
+  "tris": 104
+ },
+ "SM_Prop_Barrier_Base_Single_02": {
+  "category": "props",
+  "size": [
+   1.15,
+   1.072,
+   1.15
+  ],
+  "tris": 282
+ },
+ "SM_Prop_Barrier_Tall_01": {
+  "category": "props",
+  "size": [
+   0.7,
+   3.258,
+   1.723
+  ],
+  "tris": 266
+ },
+ "SM_Prop_Barrier_Tall_02": {
+  "category": "props",
+  "size": [
+   0.7,
+   3.258,
+   1.723
+  ],
+  "tris": 276
+ },
+ "SM_Prop_Barrier_Tall_03": {
+  "category": "props",
+  "size": [
+   0.7,
+   3.258,
+   1.723
+  ],
+  "tris": 320
+ },
+ "SM_Prop_Barrier_Tall_04": {
+  "category": "props",
+  "size": [
+   1.059,
+   3.258,
+   1.83
+  ],
+  "tris": 432
+ },
+ "SM_Prop_Barrier_Tall_05": {
+  "category": "props",
+  "size": [
+   1.863,
+   1.791,
+   1.993
+  ],
+  "tris": 562
+ },
+ "SM_Prop_Barrier_Tall_06": {
+  "category": "props",
+  "size": [
+   3.426,
+   0.717,
+   1.874
+  ],
+  "tris": 388
+ },
+ "SM_Prop_Barrier_Tall_Group_01": {
+  "category": "props",
+  "size": [
+   0.816,
+   3.258,
+   5.173
+  ],
+  "tris": 882
+ },
+ "SM_Prop_Barrier_Tall_Group_02": {
+  "category": "props",
+  "size": [
+   0.886,
+   3.258,
+   5.155
+  ],
+  "tris": 882
+ },
+ "SM_Prop_Barrier_Tall_Group_03": {
+  "category": "props",
+  "size": [
+   3.701,
+   3.273,
+   8.749
+  ],
+  "tris": 1690
+ },
+ "SM_Prop_Basket_01": {
+  "category": "props",
+  "size": [
+   0.93,
+   1.049,
+   1.027
+  ],
+  "tris": 468
+ },
+ "SM_Prop_Basket_02": {
+  "category": "props",
+  "size": [
+   0.917,
+   1.303,
+   1.083
+  ],
+  "tris": 566
+ },
+ "SM_Prop_Basket_03": {
+  "category": "props",
+  "size": [
+   1.163,
+   0.761,
+   1.171
+  ],
+  "tris": 420
+ },
+ "SM_Prop_Basket_04": {
+  "category": "props",
+  "size": [
+   1.263,
+   0.764,
+   0.857
+  ],
+  "tris": 524
+ },
+ "SM_Prop_Basket_05": {
+  "category": "props",
+  "size": [
+   1.754,
+   0.601,
+   1.754
+  ],
+  "tris": 384
+ },
+ "SM_Prop_Bathroom_Pipes_01": {
+  "category": "props",
+  "size": [
+   0.478,
+   2.062,
+   0.278
+  ],
+  "tris": 164
+ },
+ "SM_Prop_Bathroom_Pipes_02": {
+  "category": "props",
+  "size": [
+   0.332,
+   2.129,
+   0.19
+  ],
+  "tris": 176
+ },
+ "SM_Prop_Bed_Medical_01": {
+  "category": "props",
+  "size": [
+   1.057,
+   1.487,
+   2.326
+  ],
+  "tris": 1132
+ },
+ "SM_Prop_Bed_Military_01": {
+  "category": "props",
+  "size": [
+   1.06,
+   1.158,
+   2.241
+  ],
+  "tris": 458
+ },
+ "SM_Prop_Bed_Military_Bunk_01": {
+  "category": "props",
+  "size": [
+   1.085,
+   2.163,
+   2.241
+  ],
+  "tris": 812
+ },
+ "SM_Prop_Bed_Military_Frame_01": {
+  "category": "props",
+  "size": [
+   1.06,
+   1.158,
+   2.241
+  ],
+  "tris": 252
+ },
+ "SM_Prop_Bed_SleepingBag_01": {
+  "category": "props",
+  "size": [
+   0.91,
+   0.095,
+   2.239
+  ],
+  "tris": 162
+ },
+ "SM_Prop_Bed_SleepingBag_Roll_01": {
+  "category": "props",
+  "size": [
+   0.891,
+   0.352,
+   0.378
+  ],
+  "tris": 338
+ },
+ "SM_Prop_Bed_Stretcher_01": {
+  "category": "props",
+  "size": [
+   1.043,
+   0.521,
+   2.427
+  ],
+  "tris": 344
+ },
+ "SM_Prop_Bed_Stretcher_02": {
+  "category": "props",
+  "size": [
+   1.043,
+   0.607,
+   2.427
+  ],
+  "tris": 482
+ },
+ "SM_Prop_Bedside_Table_01": {
+  "category": "props",
+  "size": [
+   1.235,
+   0.653,
+   0.799
+  ],
+  "tris": 178
+ },
+ "SM_Prop_BloodPool_01": {
+  "category": "props",
+  "size": [
+   0.754,
+   0.043,
+   0.813
+  ],
+  "tris": 88
+ },
+ "SM_Prop_BloodPool_02": {
+  "category": "props",
+  "size": [
+   0.893,
+   0.043,
+   0.925
+  ],
+  "tris": 82
+ },
+ "SM_Prop_BloodPool_03": {
+  "category": "props",
+  "size": [
+   1.108,
+   0.043,
+   0.869
+  ],
+  "tris": 75
+ },
+ "SM_Prop_BloodPool_04": {
+  "category": "props",
+  "size": [
+   0.396,
+   0.043,
+   0.252
+  ],
+  "tris": 39
+ },
+ "SM_Prop_BloodPool_05": {
+  "category": "props",
+  "size": [
+   0.154,
+   0.043,
+   0.14
+  ],
+  "tris": 13
+ },
+ "SM_Prop_Bomb_C4_01": {
+  "category": "props",
+  "size": [
+   0.088,
+   0.204,
+   0.051
+  ],
+  "tris": 244
+ },
+ "SM_Prop_Briefing_Board_01": {
+  "category": "props",
+  "size": [
+   1.817,
+   2.116,
+   0.232
+  ],
+  "tris": 282
+ },
+ "SM_Prop_C4_01": {
+  "category": "props",
+  "size": [
+   0.51,
+   0.13,
+   0.302
+  ],
+  "tris": 326
+ },
+ "SM_Prop_Cabinet_01": {
+  "category": "props",
+  "size": [
+   1.051,
+   2.384,
+   0.614
+  ],
+  "tris": 190
+ },
+ "SM_Prop_Cabinet_Small_01": {
+  "category": "props",
+  "size": [
+   1.051,
+   1.82,
+   0.614
+  ],
+  "tris": 214
+ },
+ "SM_Prop_Cable_01": {
+  "category": "props",
+  "size": [
+   0.489,
+   0.111,
+   0.574
+  ],
+  "tris": 492
+ },
+ "SM_Prop_CardboardBox_01": {
+  "category": "props",
+  "size": [
+   0.5,
+   0.465,
+   0.5
+  ],
+  "tris": 106
+ },
+ "SM_Prop_CardboardBox_02": {
+  "category": "props",
+  "size": [
+   0.33,
+   0.275,
+   0.472
+  ],
+  "tris": 68
+ },
+ "SM_Prop_CardboardBox_03": {
+  "category": "props",
+  "size": [
+   0.583,
+   0.282,
+   0.645
+  ],
+  "tris": 44
+ },
+ "SM_Prop_Cardboard_Box_04": {
+  "category": "props",
+  "size": [
+   0.5,
+   0.36,
+   0.728
+  ],
+  "tris": 42
+ },
+ "SM_Prop_Cardboard_Box_05": {
+  "category": "props",
+  "size": [
+   1.077,
+   0.48,
+   0.728
+  ],
+  "tris": 82
+ },
+ "SM_Prop_Cardboard_Box_06": {
+  "category": "props",
+  "size": [
+   0.5,
+   0.485,
+   0.728
+  ],
+  "tris": 80
+ },
+ "SM_Prop_Chair_01": {
+  "category": "props",
+  "size": [
+   0.534,
+   0.972,
+   0.635
+  ],
+  "tris": 480
+ },
+ "SM_Prop_Chair_02": {
+  "category": "props",
+  "size": [
+   0.503,
+   0.969,
+   0.593
+  ],
+  "tris": 252
+ },
+ "SM_Prop_Chair_03": {
+  "category": "props",
+  "size": [
+   0.469,
+   0.976,
+   0.549
+  ],
+  "tris": 228
+ },
+ "SM_Prop_Chair_Folding_01": {
+  "category": "props",
+  "size": [
+   0.736,
+   1.128,
+   0.611
+  ],
+  "tris": 356
+ },
+ "SM_Prop_Chair_Metal_01": {
+  "category": "props",
+  "size": [
+   0.586,
+   1.038,
+   0.737
+  ],
+  "tris": 232
+ },
+ "SM_Prop_Chair_Plastic_01": {
+  "category": "props",
+  "size": [
+   0.665,
+   1.004,
+   0.602
+  ],
+  "tris": 540
+ },
+ "SM_Prop_Cone_01": {
+  "category": "props",
+  "size": [
+   0.471,
+   0.844,
+   0.483
+  ],
+  "tris": 128
+ },
+ "SM_Prop_Crate_Ammo_01": {
+  "category": "props",
+  "size": [
+   1.403,
+   0.387,
+   0.86
+  ],
+  "tris": 296
+ },
+ "SM_Prop_Crate_Ammo_02": {
+  "category": "props",
+  "size": [
+   1.237,
+   0.312,
+   0.51
+  ],
+  "tris": 212
+ },
+ "SM_Prop_Crate_Cube_01": {
+  "category": "props",
+  "size": [
+   0.828,
+   0.818,
+   0.828
+  ],
+  "tris": 236
+ },
+ "SM_Prop_Crate_Cube_02": {
+  "category": "props",
+  "size": [
+   1.855,
+   1.855,
+   1.855
+  ],
+  "tris": 838
+ },
+ "SM_Prop_Crate_Cube_03": {
+  "category": "props",
+  "size": [
+   0.639,
+   0.632,
+   0.64
+  ],
+  "tris": 194
+ },
+ "SM_Prop_Crate_Plastic_01": {
+  "category": "props",
+  "size": [
+   1.456,
+   0.582,
+   0.819
+  ],
+  "tris": 832
+ },
+ "SM_Prop_Crate_Plastic_02": {
+  "category": "props",
+  "size": [
+   1.214,
+   0.582,
+   0.819
+  ],
+  "tris": 822
+ },
+ "SM_Prop_Crate_Plastic_03": {
+  "category": "props",
+  "size": [
+   1.047,
+   0.582,
+   0.819
+  ],
+  "tris": 768
+ },
+ "SM_Prop_Crate_Plastic_04": {
+  "category": "props",
+  "size": [
+   1.214,
+   0.913,
+   0.819
+  ],
+  "tris": 822
+ },
+ "SM_Prop_Crate_Stack_01": {
+  "category": "props",
+  "size": [
+   1.552,
+   1.202,
+   1.612
+  ],
+  "tris": 2744
+ },
+ "SM_Prop_Crate_Stack_02": {
+  "category": "props",
+  "size": [
+   1.786,
+   1.735,
+   1.693
+  ],
+  "tris": 4368
+ },
+ "SM_Prop_Crate_Stack_03": {
+  "category": "props",
+  "size": [
+   1.62,
+   1.392,
+   1.635
+  ],
+  "tris": 960
+ },
+ "SM_Prop_Crate_Stack_Cover_01": {
+  "category": "props",
+  "size": [
+   1.592,
+   1.218,
+   1.681
+  ],
+  "tris": 316
+ },
+ "SM_Prop_Crate_Stack_Cover_02": {
+  "category": "props",
+  "size": [
+   1.854,
+   1.779,
+   1.8
+  ],
+  "tris": 464
+ },
+ "SM_Prop_Crate_Stack_Cover_03": {
+  "category": "props",
+  "size": [
+   1.701,
+   1.444,
+   1.715
+  ],
+  "tris": 320
+ },
+ "SM_Prop_Crate_Tuckbox_01": {
+  "category": "props",
+  "size": [
+   0.965,
+   0.501,
+   0.463
+  ],
+  "tris": 304
+ },
+ "SM_Prop_Crate_Wood_01": {
+  "category": "props",
+  "size": [
+   0.922,
+   0.348,
+   0.725
+  ],
+  "tris": 120
+ },
+ "SM_Prop_Crate_Wood_02": {
+  "category": "props",
+  "size": [
+   2.02,
+   0.805,
+   0.728
+  ],
+  "tris": 140
+ },
+ "SM_Prop_Crate_Wood_03": {
+  "category": "props",
+  "size": [
+   1.46,
+   0.348,
+   0.725
+  ],
+  "tris": 120
+ },
+ "SM_Prop_DebrisPile_01": {
+  "category": "props",
+  "size": [
+   8.111,
+   1.702,
+   3.799
+  ],
+  "tris": 402
+ },
+ "SM_Prop_DebrisPile_02": {
+  "category": "props",
+  "size": [
+   6.734,
+   1.907,
+   2.719
+  ],
+  "tris": 312
+ },
+ "SM_Prop_DebrisPile_03": {
+  "category": "props",
+  "size": [
+   6.296,
+   1.645,
+   3.755
+  ],
+  "tris": 285
+ },
+ "SM_Prop_DebrisPile_04": {
+  "category": "props",
+  "size": [
+   6.734,
+   1.907,
+   2.719
+  ],
+  "tris": 312
+ },
+ "SM_Prop_Desk_01": {
+  "category": "props",
+  "size": [
+   2.3,
+   0.918,
+   1.103
+  ],
+  "tris": 184
+ },
+ "SM_Prop_DownPipe_Connector_01": {
+  "category": "props",
+  "size": [
+   0.278,
+   0.195,
+   0.241
+  ],
+  "tris": 24
+ },
+ "SM_Prop_DownPipe_Connector_02": {
+  "category": "props",
+  "size": [
+   0.486,
+   0.195,
+   0.241
+  ],
+  "tris": 44
+ },
+ "SM_Prop_DownPipe_Connector_03": {
+  "category": "props",
+  "size": [
+   0.278,
+   0.195,
+   0.468
+  ],
+  "tris": 44
+ },
+ "SM_Prop_DownPipe_Corner_01": {
+  "category": "props",
+  "size": [
+   1.1,
+   0.174,
+   1.1
+  ],
+  "tris": 60
+ },
+ "SM_Prop_DownPipe_End_01": {
+  "category": "props",
+  "size": [
+   0.447,
+   1.1,
+   0.174
+  ],
+  "tris": 60
+ },
+ "SM_Prop_DownPipe_Straight_01": {
+  "category": "props",
+  "size": [
+   0.2,
+   5.0,
+   0.173
+  ],
+  "tris": 24
+ },
+ "SM_Prop_Drone_Control_Room_01": {
+  "category": "props",
+  "size": [
+   3.316,
+   4.074,
+   7.255
+  ],
+  "tris": 8790
+ },
+ "SM_Prop_Drone_Control_Room_02": {
+  "category": "props",
+  "size": [
+   3.316,
+   4.074,
+   4.376
+  ],
+  "tris": 6531
+ },
+ "SM_Prop_Drone_Control_Station_01": {
+  "category": "props",
+  "size": [
+   2.131,
+   2.406,
+   1.857
+  ],
+  "tris": 1575
+ },
+ "SM_Prop_Electronics_Shelf_01": {
+  "category": "props",
+  "size": [
+   1.789,
+   2.153,
+   0.568
+  ],
+  "tris": 148
+ },
+ "SM_Prop_Electronics_Shelf_Preset_01": {
+  "category": "props",
+  "size": [
+   2.088,
+   2.925,
+   0.927
+  ],
+  "tris": 1626
+ },
+ "SM_Prop_Electronics_Shelf_Preset_02": {
+  "category": "props",
+  "size": [
+   2.128,
+   3.062,
+   0.924
+  ],
+  "tris": 1572
+ },
+ "SM_Prop_Electronics_Tv_Aerial_01": {
+  "category": "props",
+  "size": [
+   0.723,
+   0.615,
+   0.183
+  ],
+  "tris": 112
+ },
+ "SM_Prop_Fence_01": {
+  "category": "props",
+  "size": [
+   3.035,
+   3.185,
+   0.072
+  ],
+  "tris": 360
+ },
+ "SM_Prop_Fence_02": {
+  "category": "props",
+  "size": [
+   3.035,
+   3.185,
+   0.072
+  ],
+  "tris": 368
+ },
+ "SM_Prop_Fence_03": {
+  "category": "props",
+  "size": [
+   2.962,
+   3.185,
+   0.072
+  ],
+  "tris": 318
+ },
+ "SM_Prop_Fence_04": {
+  "category": "props",
+  "size": [
+   11.752,
+   3.185,
+   0.072
+  ],
+  "tris": 1272
+ },
+ "SM_Prop_Fence_Damaged_01": {
+  "category": "props",
+  "size": [
+   3.075,
+   2.658,
+   1.452
+  ],
+  "tris": 384
+ },
+ "SM_Prop_Fence_Damaged_02": {
+  "category": "props",
+  "size": [
+   3.193,
+   0.936,
+   2.399
+  ],
+  "tris": 408
+ },
+ "SM_Prop_Fence_Damaged_03": {
+  "category": "props",
+  "size": [
+   3.035,
+   3.185,
+   0.186
+  ],
+  "tris": 410
+ },
+ "SM_Prop_Fence_Damaged_04": {
+  "category": "props",
+  "size": [
+   11.673,
+   3.183,
+   2.92
+  ],
+  "tris": 1240
+ },
+ "SM_Prop_Fence_Gate_01": {
+  "category": "props",
+  "size": [
+   6.033,
+   3.438,
+   0.121
+  ],
+  "tris": 776
+ },
+ "SM_Prop_Fridge_01": {
+  "category": "props",
+  "size": [
+   0.934,
+   2.313,
+   0.938
+  ],
+  "tris": 510
+ },
+ "SM_Prop_Fuel_Bladder_01": {
+  "category": "props",
+  "size": [
+   9.038,
+   1.981,
+   13.068
+  ],
+  "tris": 4019
+ },
+ "SM_Prop_Fuel_Bladder_02": {
+  "category": "props",
+  "size": [
+   9.038,
+   1.518,
+   13.213
+  ],
+  "tris": 4039
+ },
+ "SM_Prop_GasCan_01": {
+  "category": "props",
+  "size": [
+   0.487,
+   0.63,
+   0.16
+  ],
+  "tris": 342
+ },
+ "SM_Prop_Gaspump_01": {
+  "category": "props",
+  "size": [
+   1.452,
+   2.427,
+   0.64
+  ],
+  "tris": 680
+ },
+ "SM_Prop_Gaspump_Cover_01": {
+  "category": "props",
+  "size": [
+   5.811,
+   4.512,
+   2.427
+  ],
+  "tris": 470
+ },
+ "SM_Prop_Gastank_01": {
+  "category": "props",
+  "size": [
+   6.654,
+   3.421,
+   2.435
+  ],
+  "tris": 786
+ },
+ "SM_Prop_Generator_Large_01": {
+  "category": "props",
+  "size": [
+   1.95,
+   2.18,
+   4.289
+  ],
+  "tris": 1032
+ },
+ "SM_Prop_Generator_Small_01": {
+  "category": "props",
+  "size": [
+   0.425,
+   0.561,
+   0.64
+  ],
+  "tris": 1800
+ },
+ "SM_Prop_Gunlocker_01": {
+  "category": "props",
+  "size": [
+   1.417,
+   1.758,
+   0.73
+  ],
+  "tris": 646
+ },
+ "SM_Prop_Gunrack_01": {
+  "category": "props",
+  "size": [
+   1.256,
+   1.295,
+   0.406
+  ],
+  "tris": 454
+ },
+ "SM_Prop_IED_01": {
+  "category": "props",
+  "size": [
+   0.162,
+   0.167,
+   0.708
+  ],
+  "tris": 260
+ },
+ "SM_Prop_IED_02": {
+  "category": "props",
+  "size": [
+   0.148,
+   0.172,
+   0.601
+  ],
+  "tris": 144
+ },
+ "SM_Prop_IED_03": {
+  "category": "props",
+  "size": [
+   0.145,
+   0.167,
+   0.634
+  ],
+  "tris": 214
+ },
+ "SM_Prop_IED_04": {
+  "category": "props",
+  "size": [
+   0.151,
+   0.321,
+   0.231
+  ],
+  "tris": 350
+ },
+ "SM_Prop_IED_05": {
+  "category": "props",
+  "size": [
+   0.205,
+   0.374,
+   0.246
+  ],
+  "tris": 466
+ },
+ "SM_Prop_IED_06": {
+  "category": "props",
+  "size": [
+   0.232,
+   0.292,
+   0.298
+  ],
+  "tris": 410
+ },
+ "SM_Prop_IED_07": {
+  "category": "props",
+  "size": [
+   0.077,
+   0.334,
+   0.062
+  ],
+  "tris": 469
+ },
+ "SM_Prop_IED_08": {
+  "category": "props",
+  "size": [
+   0.124,
+   0.239,
+   0.089
+  ],
+  "tris": 457
+ },
+ "SM_Prop_IED_Pile_01": {
+  "category": "props",
+  "size": [
+   1.067,
+   0.346,
+   1.691
+  ],
+  "tris": 3270
+ },
+ "SM_Prop_Ladder_01": {
+  "category": "props",
+  "size": [
+   0.702,
+   7.496,
+   0.161
+  ],
+  "tris": 220
+ },
+ "SM_Prop_Ladder_02": {
+  "category": "props",
+  "size": [
+   0.702,
+   4.126,
+   0.161
+  ],
+  "tris": 126
+ },
+ "SM_Prop_Ladder_Folding_01": {
+  "category": "props",
+  "size": [
+   0.737,
+   2.435,
+   1.118
+  ],
+  "tris": 494
+ },
+ "SM_Prop_Lamp_01": {
+  "category": "props",
+  "size": [
+   0.384,
+   0.781,
+   0.41
+  ],
+  "tris": 352
+ },
+ "SM_Prop_Lamp_02": {
+  "category": "props",
+  "size": [
+   0.294,
+   0.677,
+   0.612
+  ],
+  "tris": 300
+ },
+ "SM_Prop_LightPole_01": {
+  "category": "props",
+  "size": [
+   0.562,
+   9.818,
+   0.782
+  ],
+  "tris": 350
+ },
+ "SM_Prop_LightPole_02": {
+  "category": "props",
+  "size": [
+   0.569,
+   9.818,
+   1.378
+  ],
+  "tris": 536
+ },
+ "SM_Prop_Light_Portable_01": {
+  "category": "props",
+  "size": [
+   0.998,
+   2.081,
+   0.868
+  ],
+  "tris": 512
+ },
+ "SM_Prop_Locker_01": {
+  "category": "props",
+  "size": [
+   0.657,
+   2.318,
+   0.683
+  ],
+  "tris": 244
+ },
+ "SM_Prop_Lockers_01": {
+  "category": "props",
+  "size": [
+   2.204,
+   2.277,
+   0.615
+  ],
+  "tris": 1198
+ },
+ "SM_Prop_Makeshift_Fence_01": {
+  "category": "props",
+  "size": [
+   0.525,
+   2.345,
+   2.721
+  ],
+  "tris": 326
+ },
+ "SM_Prop_Makeshift_Fence_02": {
+  "category": "props",
+  "size": [
+   0.61,
+   2.42,
+   6.923
+  ],
+  "tris": 642
+ },
+ "SM_Prop_Makeshift_Table_01": {
+  "category": "props",
+  "size": [
+   2.272,
+   0.659,
+   1.165
+  ],
+  "tris": 458
+ },
+ "SM_Prop_Makeshift_Table_02": {
+  "category": "props",
+  "size": [
+   2.581,
+   0.765,
+   1.72
+  ],
+  "tris": 370
+ },
+ "SM_Prop_Makeshift_Table_03": {
+  "category": "props",
+  "size": [
+   3.567,
+   0.877,
+   1.679
+  ],
+  "tris": 1005
+ },
+ "SM_Prop_Medic_IV_01": {
+  "category": "props",
+  "size": [
+   0.599,
+   1.64,
+   1.548
+  ],
+  "tris": 1836
+ },
+ "SM_Prop_MedicalBox_01": {
+  "category": "props",
+  "size": [
+   0.489,
+   0.176,
+   0.514
+  ],
+  "tris": 180
+ },
+ "SM_Prop_Medical_Shelf_01": {
+  "category": "props",
+  "size": [
+   0.868,
+   1.057,
+   0.56
+  ],
+  "tris": 180
+ },
+ "SM_Prop_Mine_01": {
+  "category": "props",
+  "size": [
+   0.312,
+   0.113,
+   0.312
+  ],
+  "tris": 176
+ },
+ "SM_Prop_Mine_02": {
+  "category": "props",
+  "size": [
+   0.116,
+   0.034,
+   0.101
+  ],
+  "tris": 188
+ },
+ "SM_Prop_Missle_01": {
+  "category": "props",
+  "size": [
+   0.168,
+   0.168,
+   1.336
+  ],
+  "tris": 222
+ },
+ "SM_Prop_Missle_02": {
+  "category": "props",
+  "size": [
+   0.879,
+   0.879,
+   5.032
+  ],
+  "tris": 252
+ },
+ "SM_Prop_Missle_03": {
+  "category": "props",
+  "size": [
+   0.381,
+   0.381,
+   3.787
+  ],
+  "tris": 270
+ },
+ "SM_Prop_Missle_Crate_01": {
+  "category": "props",
+  "size": [
+   0.732,
+   0.694,
+   1.972
+  ],
+  "tris": 1908
+ },
+ "SM_Prop_Missle_Crate_02": {
+  "category": "props",
+  "size": [
+   0.407,
+   0.307,
+   1.509
+  ],
+  "tris": 496
+ },
+ "SM_Prop_Missle_Launcher_01": {
+  "category": "props",
+  "size": [
+   4.923,
+   3.166,
+   4.98
+  ],
+  "tris": 2837
+ },
+ "SM_Prop_Missle_Launcher_02": {
+  "category": "props",
+  "size": [
+   4.923,
+   4.095,
+   4.987
+  ],
+  "tris": 5925
+ },
+ "SM_Prop_Mobile_Radar_01": {
+  "category": "props",
+  "size": [
+   4.923,
+   3.794,
+   4.032
+  ],
+  "tris": 2607
+ },
+ "SM_Prop_Mortar_Shell_01": {
+  "category": "props",
+  "size": [
+   0.096,
+   0.111,
+   0.475
+  ],
+  "tris": 132
+ },
+ "SM_Prop_Pallet_01": {
+  "category": "props",
+  "size": [
+   1.765,
+   0.235,
+   1.737
+  ],
+  "tris": 294
+ },
+ "SM_Prop_Pallet_02": {
+  "category": "props",
+  "size": [
+   1.807,
+   0.172,
+   1.807
+  ],
+  "tris": 32
+ },
+ "SM_Prop_Pallet_03": {
+  "category": "props",
+  "size": [
+   1.762,
+   0.176,
+   1.762
+  ],
+  "tris": 388
+ },
+ "SM_Prop_Pipeline_Pipe_Large_01": {
+  "category": "props",
+  "size": [
+   1.857,
+   1.857,
+   10.0
+  ],
+  "tris": 96
+ },
+ "SM_Prop_Pipeline_Pipe_Large_02": {
+  "category": "props",
+  "size": [
+   1.721,
+   1.879,
+   10.0
+  ],
+  "tris": 152
+ },
+ "SM_Prop_Pipeline_Pipe_Large_Connector_01": {
+  "category": "props",
+  "size": [
+   1.857,
+   1.857,
+   2.634
+  ],
+  "tris": 120
+ },
+ "SM_Prop_Pipeline_Pipe_Large_Connector_02": {
+  "category": "props",
+  "size": [
+   2.072,
+   1.857,
+   2.778
+  ],
+  "tris": 192
+ },
+ "SM_Prop_Pipeline_Pipe_Large_Connector_03": {
+  "category": "props",
+  "size": [
+   2.255,
+   1.857,
+   2.896
+  ],
+  "tris": 192
+ },
+ "SM_Prop_Pipeline_Pipe_Large_Connector_04": {
+  "category": "props",
+  "size": [
+   2.561,
+   1.857,
+   3.015
+  ],
+  "tris": 192
+ },
+ "SM_Prop_Pipeline_Pipe_Large_Connector_05": {
+  "category": "props",
+  "size": [
+   2.569,
+   1.857,
+   2.569
+  ],
+  "tris": 192
+ },
+ "SM_Prop_Pipeline_Pipe_Large_End_01": {
+  "category": "props",
+  "size": [
+   1.857,
+   1.857,
+   0.415
+  ],
+  "tris": 132
+ },
+ "SM_Prop_Pipeline_Pipe_Large_End_02": {
+  "category": "props",
+  "size": [
+   2.165,
+   2.481,
+   3.2
+  ],
+  "tris": 308
+ },
+ "SM_Prop_Pipeline_Pipe_Large_Section_01": {
+  "category": "props",
+  "size": [
+   4.876,
+   4.937,
+   60.0
+  ],
+  "tris": 2086
+ },
+ "SM_Prop_Pipeline_Pipe_Large_Support_01": {
+  "category": "props",
+  "size": [
+   4.374,
+   4.749,
+   1.705
+  ],
+  "tris": 302
+ },
+ "SM_Prop_Pipeline_Pipe_Small_Connector_01": {
+  "category": "props",
+  "size": [
+   0.862,
+   0.862,
+   0.17
+  ],
+  "tris": 32
+ },
+ "SM_Prop_Pipeline_Pipe_Small_Curve_01": {
+  "category": "props",
+  "size": [
+   2.83,
+   0.66,
+   2.83
+  ],
+  "tris": 96
+ },
+ "SM_Prop_Pipeline_Pipe_Small_End_01": {
+  "category": "props",
+  "size": [
+   0.862,
+   0.862,
+   0.267
+  ],
+  "tris": 88
+ },
+ "SM_Prop_Pipeline_Pipe_Small_Straight_01": {
+  "category": "props",
+  "size": [
+   0.66,
+   0.66,
+   5.0
+  ],
+  "tris": 16
+ },
+ "SM_Prop_Pipeline_Pipe_Small_Straight_02": {
+  "category": "props",
+  "size": [
+   0.66,
+   0.66,
+   2.5
+  ],
+  "tris": 16
+ },
+ "SM_Prop_Pipeline_Pipe_Small_Support_01": {
+  "category": "props",
+  "size": [
+   2.193,
+   7.679,
+   0.56
+  ],
+  "tris": 188
+ },
+ "SM_Prop_Pipeline_SmokeStack_01": {
+  "category": "props",
+  "size": [
+   6.077,
+   49.574,
+   6.077
+  ],
+  "tris": 372
+ },
+ "SM_Prop_Pipeline_SmokeStack_02": {
+  "category": "props",
+  "size": [
+   6.077,
+   49.574,
+   6.077
+  ],
+  "tris": 636
+ },
+ "SM_Prop_Pipeline_SmokeStack_03": {
+  "category": "props",
+  "size": [
+   10.005,
+   52.736,
+   10.005
+  ],
+  "tris": 252
+ },
+ "SM_Prop_Pipeline_SmokeStack_04": {
+  "category": "props",
+  "size": [
+   1.81,
+   49.574,
+   2.09
+  ],
+  "tris": 138
+ },
+ "SM_Prop_Pipeline_SmokeStack_Background_01": {
+  "category": "props",
+  "size": [
+   67.252,
+   56.592,
+   68.123
+  ],
+  "tris": 816
+ },
+ "SM_Prop_Pipeline_SmokeStack_Pipe_01": {
+  "category": "props",
+  "size": [
+   0.66,
+   50.951,
+   3.03
+  ],
+  "tris": 176
+ },
+ "SM_Prop_Pipeline_SmokeStack_Platform_01": {
+  "category": "props",
+  "size": [
+   10.436,
+   1.203,
+   10.436
+  ],
+  "tris": 192
+ },
+ "SM_Prop_Pipeline_SmokeStack_Platform_02": {
+  "category": "props",
+  "size": [
+   9.037,
+   1.203,
+   5.235
+  ],
+  "tris": 112
+ },
+ "SM_Prop_Pipeline_Tank_01": {
+  "category": "props",
+  "size": [
+   13.356,
+   24.085,
+   6.876
+  ],
+  "tris": 372
+ },
+ "SM_Prop_PowerBox_01": {
+  "category": "props",
+  "size": [
+   0.399,
+   1.788,
+   0.19
+  ],
+  "tris": 190
+ },
+ "SM_Prop_PowerBox_02": {
+  "category": "props",
+  "size": [
+   0.421,
+   1.337,
+   0.19
+  ],
+  "tris": 190
+ },
+ "SM_Prop_PowerBox_03": {
+  "category": "props",
+  "size": [
+   0.263,
+   0.93,
+   0.167
+  ],
+  "tris": 114
+ },
+ "SM_Prop_PowerBox_04": {
+  "category": "props",
+  "size": [
+   0.399,
+   3.872,
+   0.19
+  ],
+  "tris": 206
+ },
+ "SM_Prop_PowerBox_05": {
+  "category": "props",
+  "size": [
+   1.025,
+   1.119,
+   0.793
+  ],
+  "tris": 588
+ },
+ "SM_Prop_PowerBox_06": {
+  "category": "props",
+  "size": [
+   0.225,
+   0.204,
+   0.342
+  ],
+  "tris": 100
+ },
+ "SM_Prop_Powerline_01": {
+  "category": "props",
+  "size": [
+   0.044,
+   0.061,
+   7.696
+  ],
+  "tris": 8
+ },
+ "SM_Prop_Powerline_02": {
+  "category": "props",
+  "size": [
+   0.046,
+   0.265,
+   7.696
+  ],
+  "tris": 20
+ },
+ "SM_Prop_Powerline_03": {
+  "category": "props",
+  "size": [
+   0.105,
+   0.652,
+   7.736
+  ],
+  "tris": 56
+ },
+ "SM_Prop_Powerline_04": {
+  "category": "props",
+  "size": [
+   0.137,
+   0.419,
+   7.696
+  ],
+  "tris": 118
+ },
+ "SM_Prop_Powerline_05": {
+  "category": "props",
+  "size": [
+   0.336,
+   0.928,
+   7.751
+  ],
+  "tris": 146
+ },
+ "SM_Prop_Powerline_06": {
+  "category": "props",
+  "size": [
+   0.434,
+   1.296,
+   7.751
+  ],
+  "tris": 200
+ },
+ "SM_Prop_Powerline_07": {
+  "category": "props",
+  "size": [
+   0.102,
+   0.888,
+   7.696
+  ],
+  "tris": 118
+ },
+ "SM_Prop_Powerline_08": {
+  "category": "props",
+  "size": [
+   3.052,
+   0.888,
+   7.71
+  ],
+  "tris": 170
+ },
+ "SM_Prop_Powerline_09": {
+  "category": "props",
+  "size": [
+   1.927,
+   5.295,
+   0.995
+  ],
+  "tris": 124
+ },
+ "SM_Prop_Powerline_Bundle_01": {
+  "category": "props",
+  "size": [
+   1.419,
+   1.138,
+   0.947
+  ],
+  "tris": 164
+ },
+ "SM_Prop_Powerline_Bundle_02": {
+  "category": "props",
+  "size": [
+   1.006,
+   1.37,
+   0.902
+  ],
+  "tris": 134
+ },
+ "SM_Prop_Powerline_Bundle_03": {
+  "category": "props",
+  "size": [
+   0.958,
+   0.694,
+   0.663
+  ],
+  "tris": 134
+ },
+ "SM_Prop_Powerline_Bundle_04": {
+  "category": "props",
+  "size": [
+   0.962,
+   0.982,
+   0.847
+  ],
+  "tris": 128
+ },
+ "SM_Prop_Powerpole_01": {
+  "category": "props",
+  "size": [
+   2.223,
+   6.303,
+   0.351
+  ],
+  "tris": 232
+ },
+ "SM_Prop_Powerpole_02": {
+  "category": "props",
+  "size": [
+   2.216,
+   6.323,
+   0.404
+  ],
+  "tris": 232
+ },
+ "SM_Prop_Powerpole_03": {
+  "category": "props",
+  "size": [
+   2.618,
+   8.147,
+   3.06
+  ],
+  "tris": 3454
+ },
+ "SM_Prop_RadioPhone_01": {
+  "category": "props",
+  "size": [
+   0.082,
+   0.326,
+   0.11
+  ],
+  "tris": 132
+ },
+ "SM_Prop_Radio_01": {
+  "category": "props",
+  "size": [
+   0.37,
+   0.199,
+   0.615
+  ],
+  "tris": 618
+ },
+ "SM_Prop_Radio_02": {
+  "category": "props",
+  "size": [
+   0.386,
+   0.241,
+   0.221
+  ],
+  "tris": 282
+ },
+ "SM_Prop_Radio_Control_Box_01": {
+  "category": "props",
+  "size": [
+   3.716,
+   8.051,
+   8.531
+  ],
+  "tris": 2180
+ },
+ "SM_Prop_RazorWire_01": {
+  "category": "props",
+  "size": [
+   4.202,
+   0.991,
+   0.949
+  ],
+  "tris": 972
+ },
+ "SM_Prop_Road_Barrier_01": {
+  "category": "props",
+  "size": [
+   6.593,
+   1.348,
+   0.388
+  ],
+  "tris": 306
+ },
+ "SM_Prop_Rubble_Pile_01": {
+  "category": "props",
+  "size": [
+   0.645,
+   0.334,
+   0.791
+  ],
+  "tris": 168
+ },
+ "SM_Prop_Rubble_Pile_02": {
+  "category": "props",
+  "size": [
+   0.908,
+   0.315,
+   0.769
+  ],
+  "tris": 226
+ },
+ "SM_Prop_Rubble_Pile_03": {
+  "category": "props",
+  "size": [
+   2.24,
+   0.695,
+   1.853
+  ],
+  "tris": 718
+ },
+ "SM_Prop_Rubble_Pile_04": {
+  "category": "props",
+  "size": [
+   3.038,
+   0.751,
+   2.294
+  ],
+  "tris": 1012
+ },
+ "SM_Prop_Rubble_Pile_05": {
+  "category": "props",
+  "size": [
+   4.764,
+   0.779,
+   1.478
+  ],
+  "tris": 987
+ },
+ "SM_Prop_Rubble_Pile_06": {
+  "category": "props",
+  "size": [
+   3.153,
+   0.994,
+   2.948
+  ],
+  "tris": 1003
+ },
+ "SM_Prop_Rug_Basket_01": {
+  "category": "props",
+  "size": [
+   0.936,
+   2.798,
+   1.027
+  ],
+  "tris": 919
+ },
+ "SM_Prop_Runway_Barrier_01": {
+  "category": "props",
+  "size": [
+   1.023,
+   1.497,
+   10.752
+  ],
+  "tris": 172
+ },
+ "SM_Prop_Runway_Barrier_02": {
+  "category": "props",
+  "size": [
+   1.03,
+   1.977,
+   10.752
+  ],
+  "tris": 172
+ },
+ "SM_Prop_Runway_Light_01": {
+  "category": "props",
+  "size": [
+   0.293,
+   0.489,
+   0.254
+  ],
+  "tris": 156
+ },
+ "SM_Prop_Rusted_Barrel_01": {
+  "category": "props",
+  "size": [
+   0.738,
+   0.678,
+   0.702
+  ],
+  "tris": 280
+ },
+ "SM_Prop_Sack_01": {
+  "category": "props",
+  "size": [
+   0.699,
+   0.623,
+   0.775
+  ],
+  "tris": 298
+ },
+ "SM_Prop_Sack_02": {
+  "category": "props",
+  "size": [
+   0.668,
+   0.455,
+   0.631
+  ],
+  "tris": 262
+ },
+ "SM_Prop_Sack_03": {
+  "category": "props",
+  "size": [
+   0.704,
+   0.543,
+   0.659
+  ],
+  "tris": 300
+ },
+ "SM_Prop_Sack_04": {
+  "category": "props",
+  "size": [
+   0.787,
+   0.419,
+   0.684
+  ],
+  "tris": 409
+ },
+ "SM_Prop_Sack_05": {
+  "category": "props",
+  "size": [
+   0.461,
+   0.528,
+   0.483
+  ],
+  "tris": 372
+ },
+ "SM_Prop_Sack_06": {
+  "category": "props",
+  "size": [
+   0.451,
+   0.504,
+   0.483
+  ],
+  "tris": 180
+ },
+ "SM_Prop_Sack_Large_01": {
+  "category": "props",
+  "size": [
+   0.905,
+   1.044,
+   0.928
+  ],
+  "tris": 354
+ },
+ "SM_Prop_Sack_Large_02": {
+  "category": "props",
+  "size": [
+   1.155,
+   0.814,
+   1.576
+  ],
+  "tris": 365
+ },
+ "SM_Prop_Satelite_Dish_02": {
+  "category": "props",
+  "size": [
+   7.196,
+   8.138,
+   4.457
+  ],
+  "tris": 2768
+ },
+ "SM_Prop_Satellite_Dish_01": {
+  "category": "props",
+  "size": [
+   1.208,
+   1.54,
+   0.981
+  ],
+  "tris": 258
+ },
+ "SM_Prop_Satellite_Dish_02": {
+  "category": "props",
+  "size": [
+   1.26,
+   2.142,
+   1.65
+  ],
+  "tris": 424
+ },
+ "SM_Prop_Satellite_Dish_03": {
+  "category": "props",
+  "size": [
+   1.226,
+   1.425,
+   1.297
+  ],
+  "tris": 362
+ },
+ "SM_Prop_Satellite_Dish_04": {
+  "category": "props",
+  "size": [
+   1.176,
+   1.505,
+   0.895
+  ],
+  "tris": 322
+ },
+ "SM_Prop_Shelf_05": {
+  "category": "props",
+  "size": [
+   1.073,
+   1.522,
+   0.448
+  ],
+  "tris": 228
+ },
+ "SM_Prop_Shell_01": {
+  "category": "props",
+  "size": [
+   0.222,
+   0.257,
+   0.776
+  ],
+  "tris": 92
+ },
+ "SM_Prop_Shell_02": {
+  "category": "props",
+  "size": [
+   0.222,
+   0.257,
+   0.776
+  ],
+  "tris": 80
+ },
+ "SM_Prop_Shell_Pile_01": {
+  "category": "props",
+  "size": [
+   1.37,
+   0.507,
+   1.297
+  ],
+  "tris": 400
+ },
+ "SM_Prop_Shell_Pile_02": {
+  "category": "props",
+  "size": [
+   1.712,
+   0.626,
+   1.442
+  ],
+  "tris": 720
+ },
+ "SM_Prop_Shelves_01": {
+  "category": "props",
+  "size": [
+   2.393,
+   0.675,
+   1.18
+  ],
+  "tris": 112
+ },
+ "SM_Prop_Shelves_02": {
+  "category": "props",
+  "size": [
+   2.393,
+   1.212,
+   1.18
+  ],
+  "tris": 224
+ },
+ "SM_Prop_Shelves_03": {
+  "category": "props",
+  "size": [
+   2.393,
+   1.746,
+   1.18
+  ],
+  "tris": 350
+ },
+ "SM_Prop_Shelves_Preset_01": {
+  "category": "props",
+  "size": [
+   2.393,
+   2.294,
+   1.18
+  ],
+  "tris": 8440
+ },
+ "SM_Prop_Sign_Billboard_01": {
+  "category": "props",
+  "size": [
+   4.131,
+   5.731,
+   1.212
+  ],
+  "tris": 506
+ },
+ "SM_Prop_Sign_Bracket_01": {
+  "category": "props",
+  "size": [
+   0.431,
+   0.608,
+   0.243
+  ],
+  "tris": 66
+ },
+ "SM_Prop_Sign_Medical_01": {
+  "category": "props",
+  "size": [
+   0.502,
+   0.502,
+   0.036
+  ],
+  "tris": 60
+ },
+ "SM_Prop_Sign_Poster_01": {
+  "category": "props",
+  "size": [
+   0.68,
+   0.934,
+   0.031
+  ],
+  "tris": 12
+ },
+ "SM_Prop_Sign_Poster_02": {
+  "category": "props",
+  "size": [
+   1.158,
+   1.588,
+   0.031
+  ],
+  "tris": 12
+ },
+ "SM_Prop_Sign_Poster_03": {
+  "category": "props",
+  "size": [
+   1.175,
+   1.588,
+   0.032
+  ],
+  "tris": 12
+ },
+ "SM_Prop_Sign_Poster_04": {
+  "category": "props",
+  "size": [
+   1.153,
+   1.638,
+   0.031
+  ],
+  "tris": 12
+ },
+ "SM_Prop_Sign_Poster_05": {
+  "category": "props",
+  "size": [
+   2.91,
+   2.037,
+   0.162
+  ],
+  "tris": 74
+ },
+ "SM_Prop_Sign_Poster_06": {
+  "category": "props",
+  "size": [
+   2.399,
+   0.804,
+   0.065
+  ],
+  "tris": 12
+ },
+ "SM_Prop_Sign_Safety_01": {
+  "category": "props",
+  "size": [
+   0.943,
+   0.945,
+   0.044
+  ],
+  "tris": 28
+ },
+ "SM_Prop_Sign_Safety_02": {
+  "category": "props",
+  "size": [
+   1.758,
+   1.099,
+   0.037
+  ],
+  "tris": 12
+ },
+ "SM_Prop_Sign_Safety_03": {
+  "category": "props",
+  "size": [
+   1.691,
+   0.925,
+   0.048
+  ],
+  "tris": 12
+ },
+ "SM_Prop_Sign_Safety_04": {
+  "category": "props",
+  "size": [
+   0.963,
+   0.69,
+   0.042
+  ],
+  "tris": 28
+ },
+ "SM_Prop_Sign_Safety_05": {
+  "category": "props",
+  "size": [
+   1.151,
+   0.87,
+   0.042
+  ],
+  "tris": 12
+ },
+ "SM_Prop_Sign_Safety_06": {
+  "category": "props",
+  "size": [
+   1.19,
+   0.887,
+   0.036
+  ],
+  "tris": 12
+ },
+ "SM_Prop_Sign_Shop_01": {
+  "category": "props",
+  "size": [
+   0.898,
+   0.619,
+   0.12
+  ],
+  "tris": 12
+ },
+ "SM_Prop_Sign_Shop_02": {
+  "category": "props",
+  "size": [
+   1.045,
+   0.748,
+   0.255
+  ],
+  "tris": 28
+ },
+ "SM_Prop_Sign_Shop_03": {
+  "category": "props",
+  "size": [
+   3.764,
+   0.779,
+   0.228
+  ],
+  "tris": 44
+ },
+ "SM_Prop_Sign_Shop_04": {
+  "category": "props",
+  "size": [
+   1.788,
+   0.834,
+   0.155
+  ],
+  "tris": 28
+ },
+ "SM_Prop_Sign_Shop_05": {
+  "category": "props",
+  "size": [
+   2.418,
+   1.496,
+   0.278
+  ],
+  "tris": 44
+ },
+ "SM_Prop_Sign_Shop_06": {
+  "category": "props",
+  "size": [
+   2.548,
+   1.28,
+   0.227
+  ],
+  "tris": 28
+ },
+ "SM_Prop_Sign_Shop_07": {
+  "category": "props",
+  "size": [
+   2.489,
+   0.504,
+   0.147
+  ],
+  "tris": 12
+ },
+ "SM_Prop_Slatbox_01": {
+  "category": "props",
+  "size": [
+   0.854,
+   0.331,
+   0.546
+  ],
+  "tris": 196
+ },
+ "SM_Prop_SmokePipe_01": {
+  "category": "props",
+  "size": [
+   0.513,
+   0.985,
+   0.351
+  ],
+  "tris": 474
+ },
+ "SM_Prop_SmokePipe_02": {
+  "category": "props",
+  "size": [
+   0.535,
+   0.924,
+   0.575
+  ],
+  "tris": 836
+ },
+ "SM_Prop_Stool_01": {
+  "category": "props",
+  "size": [
+   0.553,
+   0.662,
+   0.553
+  ],
+  "tris": 252
+ },
+ "SM_Prop_Street_Light_01": {
+  "category": "props",
+  "size": [
+   0.344,
+   0.649,
+   2.73
+  ],
+  "tris": 86
+ },
+ "SM_Prop_Street_Light_02": {
+  "category": "props",
+  "size": [
+   0.142,
+   0.459,
+   1.843
+  ],
+  "tris": 170
+ },
+ "SM_Prop_Street_Light_03": {
+  "category": "props",
+  "size": [
+   0.266,
+   0.467,
+   1.905
+  ],
+  "tris": 190
+ },
+ "SM_Prop_TV_Antenna_01": {
+  "category": "props",
+  "size": [
+   2.02,
+   1.428,
+   1.721
+  ],
+  "tris": 468
+ },
+ "SM_Prop_TV_Antenna_02": {
+  "category": "props",
+  "size": [
+   1.524,
+   2.247,
+   1.395
+  ],
+  "tris": 668
+ },
+ "SM_Prop_TV_Antenna_03": {
+  "category": "props",
+  "size": [
+   0.529,
+   1.837,
+   1.426
+  ],
+  "tris": 624
+ },
+ "SM_Prop_Table_01": {
+  "category": "props",
+  "size": [
+   2.051,
+   0.691,
+   0.954
+  ],
+  "tris": 142
+ },
+ "SM_Prop_Table_02": {
+  "category": "props",
+  "size": [
+   1.765,
+   0.774,
+   0.897
+  ],
+  "tris": 148
+ },
+ "SM_Prop_Table_03": {
+  "category": "props",
+  "size": [
+   2.483,
+   0.774,
+   0.897
+  ],
+  "tris": 266
+ },
+ "SM_Prop_Table_04": {
+  "category": "props",
+  "size": [
+   1.296,
+   0.774,
+   0.655
+  ],
+  "tris": 243
+ },
+ "SM_Prop_Table_Metal": {
+  "category": "props",
+  "size": [
+   2.276,
+   0.969,
+   1.253
+  ],
+  "tris": 396
+ },
+ "SM_Prop_Table_Outdoor_01": {
+  "category": "props",
+  "size": [
+   2.147,
+   0.997,
+   1.933
+  ],
+  "tris": 455
+ },
+ "SM_Prop_Taxi_Sign_01": {
+  "category": "props",
+  "size": [
+   0.388,
+   0.155,
+   0.159
+  ],
+  "tris": 24
+ },
+ "SM_Prop_TentPole_01": {
+  "category": "props",
+  "size": [
+   0.281,
+   3.304,
+   0.324
+  ],
+  "tris": 180
+ },
+ "SM_Prop_Tire_01": {
+  "category": "props",
+  "size": [
+   0.725,
+   0.224,
+   0.725
+  ],
+  "tris": 192
+ },
+ "SM_Prop_Vehicle_Debris_01": {
+  "category": "props",
+  "size": [
+   1.438,
+   0.328,
+   0.965
+  ],
+  "tris": 114
+ },
+ "SM_Prop_Vehicle_Debris_02": {
+  "category": "props",
+  "size": [
+   1.171,
+   0.195,
+   0.7
+  ],
+  "tris": 68
+ },
+ "SM_Prop_Vehicle_Debris_03": {
+  "category": "props",
+  "size": [
+   0.768,
+   0.662,
+   0.815
+  ],
+  "tris": 256
+ },
+ "SM_Prop_Vehicle_Debris_04": {
+  "category": "props",
+  "size": [
+   0.567,
+   0.327,
+   0.54
+  ],
+  "tris": 140
+ },
+ "SM_Prop_Vehicle_Debris_05": {
+  "category": "props",
+  "size": [
+   0.922,
+   0.239,
+   2.467
+  ],
+  "tris": 68
+ },
+ "SM_Prop_Vehicle_Debris_06": {
+  "category": "props",
+  "size": [
+   0.632,
+   0.222,
+   2.854
+  ],
+  "tris": 72
+ },
+ "SM_Prop_Vehicle_Debris_07": {
+  "category": "props",
+  "size": [
+   1.28,
+   0.377,
+   1.28
+  ],
+  "tris": 480
+ },
+ "SM_Prop_Wardrobe_01": {
+  "category": "props",
+  "size": [
+   1.125,
+   1.932,
+   0.646
+  ],
+  "tris": 268
+ },
+ "SM_Prop_WaterTank_01": {
+  "category": "props",
+  "size": [
+   1.838,
+   4.18,
+   2.245
+  ],
+  "tris": 688
+ },
+ "SM_Prop_WaterTank_02": {
+  "category": "props",
+  "size": [
+   2.099,
+   3.586,
+   2.327
+  ],
+  "tris": 694
+ },
+ "SM_Prop_WaterTank_03": {
+  "category": "props",
+  "size": [
+   1.608,
+   4.444,
+   2.035
+  ],
+  "tris": 632
+ },
+ "SM_Prop_WaterTank_04": {
+  "category": "props",
+  "size": [
+   1.944,
+   2.162,
+   1.944
+  ],
+  "tris": 694
+ },
+ "SM_Prop_WaterTank_05": {
+  "category": "props",
+  "size": [
+   2.757,
+   2.626,
+   2.757
+  ],
+  "tris": 766
+ },
+ "SM_Prop_WeaponCase_01": {
+  "category": "props",
+  "size": [
+   0.727,
+   0.237,
+   0.458
+  ],
+  "tris": 736
+ },
+ "SM_Prop_WireSpool_01": {
+  "category": "props",
+  "size": [
+   0.966,
+   0.503,
+   0.966
+  ],
+  "tris": 400
+ },
+ "SM_Prop_Wire_Pole_01": {
+  "category": "props",
+  "size": [
+   0.172,
+   3.081,
+   0.156
+  ],
+  "tris": 72
+ },
+ "SM_Prop_Wood_Plinth_01": {
+  "category": "props",
+  "size": [
+   2.0,
+   0.4,
+   2.0
+  ],
+  "tris": 52
+ },
+ "SM_Prop_Wood_Plinth_01_Clean": {
+  "category": "props",
+  "size": [
+   2.0,
+   0.4,
+   2.0
+  ],
+  "tris": 12
+ },
+ "SM_Veh_APC_01": {
+  "category": "vehicles",
+  "size": [
+   3.341,
+   2.235,
+   5.256
+  ],
+  "tris": 9905
+ },
+ "SM_Veh_APC_01_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   3.35,
+   2.195,
+   5.256
+  ],
+  "tris": 9241
+ },
+ "SM_Veh_APC_02": {
+  "category": "vehicles",
+  "size": [
+   2.633,
+   2.755,
+   5.951
+  ],
+  "tris": 8322
+ },
+ "SM_Veh_APC_02_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   2.663,
+   2.667,
+   6.322
+  ],
+  "tris": 7096
+ },
+ "SM_Veh_APC_Heavy_01": {
+  "category": "vehicles",
+  "size": [
+   3.022,
+   3.057,
+   7.609
+  ],
+  "tris": 23585
+ },
+ "SM_Veh_APC_Heavy_01_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   4.02,
+   2.911,
+   7.608
+  ],
+  "tris": 17468
+ },
+ "SM_Veh_Car_Medium_01": {
+  "category": "vehicles",
+  "size": [
+   2.172,
+   1.632,
+   4.981
+  ],
+  "tris": 5557
+ },
+ "SM_Veh_Car_Medium_Destroyed_01": {
+  "category": "vehicles",
+  "size": [
+   2.185,
+   1.42,
+   4.997
+  ],
+  "tris": 3707
+ },
+ "SM_Veh_Car_Small_01": {
+  "category": "vehicles",
+  "size": [
+   2.053,
+   1.619,
+   3.849
+  ],
+  "tris": 4489
+ },
+ "SM_Veh_Car_Small_Destroyed_01": {
+  "category": "vehicles",
+  "size": [
+   2.053,
+   1.476,
+   3.849
+  ],
+  "tris": 3161
+ },
+ "SM_Veh_Drone_01": {
+  "category": "vehicles",
+  "size": [
+   19.41,
+   3.827,
+   11.846
+  ],
+  "tris": 3112
+ },
+ "SM_Veh_Drone_Destroyed_01": {
+  "category": "vehicles",
+  "size": [
+   12.927,
+   4.868,
+   11.595
+  ],
+  "tris": 2736
+ },
+ "SM_Veh_Helicopter_Attack_01": {
+  "category": "vehicles",
+  "size": [
+   13.629,
+   4.42,
+   17.063
+  ],
+  "tris": 5708
+ },
+ "SM_Veh_Helicopter_Attack_01_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   9.569,
+   5.492,
+   16.341
+  ],
+  "tris": 7006
+ },
+ "SM_Veh_Helicopter_Attack_02": {
+  "category": "vehicles",
+  "size": [
+   7.936,
+   3.078,
+   10.373
+  ],
+  "tris": 4008
+ },
+ "SM_Veh_Helicopter_Attack_02_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   7.412,
+   4.009,
+   10.199
+  ],
+  "tris": 3692
+ },
+ "SM_Veh_Helicopter_Transport_01": {
+  "category": "vehicles",
+  "size": [
+   16.42,
+   5.505,
+   20.075
+  ],
+  "tris": 6197
+ },
+ "SM_Veh_Helicopter_Transport_01_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   8.8,
+   4.394,
+   17.939
+  ],
+  "tris": 5815
+ },
+ "SM_Veh_Helicopter_Transport_01_Destroyed_Back": {
+  "category": "vehicles",
+  "size": [
+   4.059,
+   4.394,
+   8.12
+  ],
+  "tris": 1190
+ },
+ "SM_Veh_Helicopter_Transport_01_Destroyed_Front": {
+  "category": "vehicles",
+  "size": [
+   8.772,
+   3.527,
+   10.853
+  ],
+  "tris": 4625
+ },
+ "SM_Veh_Jet_01": {
+  "category": "vehicles",
+  "size": [
+   12.431,
+   5.697,
+   19.097
+  ],
+  "tris": 5266
+ },
+ "SM_Veh_Jet_02": {
+  "category": "vehicles",
+  "size": [
+   14.872,
+   6.349,
+   22.826
+  ],
+  "tris": 5502
+ },
+ "SM_Veh_Jet_Destroyed_01": {
+  "category": "vehicles",
+  "size": [
+   9.598,
+   5.642,
+   19.844
+  ],
+  "tris": 5525
+ },
+ "SM_Veh_Jet_Destroyed_02": {
+  "category": "vehicles",
+  "size": [
+   8.334,
+   9.678,
+   22.991
+  ],
+  "tris": 4924
+ },
+ "SM_Veh_Light_Armored_Car_01": {
+  "category": "vehicles",
+  "size": [
+   2.506,
+   2.711,
+   4.654
+  ],
+  "tris": 24394
+ },
+ "SM_Veh_Light_Armored_Car_01_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   2.481,
+   1.579,
+   4.664
+  ],
+  "tris": 6394
+ },
+ "SM_Veh_Light_Tank_01": {
+  "category": "vehicles",
+  "size": [
+   3.293,
+   2.973,
+   6.604
+  ],
+  "tris": 8856
+ },
+ "SM_Veh_Light_Tank_01_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   3.431,
+   2.893,
+   6.568
+  ],
+  "tris": 8668
+ },
+ "SM_Veh_Motorbike_01": {
+  "category": "vehicles",
+  "size": [
+   2.0,
+   1.804,
+   4.551
+  ],
+  "tris": 6674
+ },
+ "SM_Veh_Motorbike_Destroyed_01": {
+  "category": "vehicles",
+  "size": [
+   2.134,
+   1.247,
+   4.945
+  ],
+  "tris": 5756
+ },
+ "SM_Veh_Pickup_Small_01": {
+  "category": "vehicles",
+  "size": [
+   2.374,
+   2.954,
+   4.723
+  ],
+  "tris": 13031
+ },
+ "SM_Veh_Pickup_Small_Destroyed_01": {
+  "category": "vehicles",
+  "size": [
+   2.431,
+   1.952,
+   5.109
+  ],
+  "tris": 4183
+ },
+ "SM_Veh_Pickup_Technical_01": {
+  "category": "vehicles",
+  "size": [
+   2.357,
+   2.639,
+   5.865
+  ],
+  "tris": 13846
+ },
+ "SM_Veh_Pickup_Technical_Destroyed_01": {
+  "category": "vehicles",
+  "size": [
+   2.357,
+   1.949,
+   5.865
+  ],
+  "tris": 6108
+ },
+ "SM_Veh_Radar_Tank_01": {
+  "category": "vehicles",
+  "size": [
+   3.609,
+   5.536,
+   6.604
+  ],
+  "tris": 8701
+ },
+ "SM_Veh_Radar_Tank_01_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   3.616,
+   3.971,
+   6.522
+  ],
+  "tris": 8152
+ },
+ "SM_Veh_Rocket_Truck_01": {
+  "category": "vehicles",
+  "size": [
+   3.485,
+   3.588,
+   9.292
+  ],
+  "tris": 10314
+ },
+ "SM_Veh_Rocket_Truck_01_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   7.119,
+   4.272,
+   10.489
+  ],
+  "tris": 8810
+ },
+ "SM_Veh_SUV_01": {
+  "category": "vehicles",
+  "size": [
+   2.276,
+   2.875,
+   5.964
+  ],
+  "tris": 20916
+ },
+ "SM_Veh_SUV_Destroyed_01": {
+  "category": "vehicles",
+  "size": [
+   2.391,
+   2.131,
+   5.756
+  ],
+  "tris": 7699
+ },
+ "SM_Veh_Tank_German_01": {
+  "category": "vehicles",
+  "size": [
+   3.78,
+   2.994,
+   10.561
+  ],
+  "tris": 19958
+ },
+ "SM_Veh_Tank_German_01_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   7.517,
+   2.961,
+   8.652
+  ],
+  "tris": 18670
+ },
+ "SM_Veh_Tank_Russian_01": {
+  "category": "vehicles",
+  "size": [
+   4.331,
+   2.794,
+   11.305
+  ],
+  "tris": 11973
+ },
+ "SM_Veh_Tank_Russian_01_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   7.318,
+   2.794,
+   9.218
+  ],
+  "tris": 11369
+ },
+ "SM_Veh_Tank_USA_01": {
+  "category": "vehicles",
+  "size": [
+   4.044,
+   2.83,
+   9.978
+  ],
+  "tris": 10472
+ },
+ "SM_Veh_Tank_USA_Destroyed_01": {
+  "category": "vehicles",
+  "size": [
+   4.626,
+   2.88,
+   9.705
+  ],
+  "tris": 10424
+ },
+ "SM_Veh_TransportPlane_01": {
+  "category": "vehicles",
+  "size": [
+   47.028,
+   14.899,
+   48.889
+  ],
+  "tris": 8861
+ },
+ "SM_Veh_TransportPlane_Destroyed_Cockpit_01": {
+  "category": "vehicles",
+  "size": [
+   7.873,
+   6.057,
+   9.045
+  ],
+  "tris": 3718
+ },
+ "SM_Veh_TransportPlane_Destroyed_Fuselage_01": {
+  "category": "vehicles",
+  "size": [
+   45.694,
+   8.837,
+   24.554
+  ],
+  "tris": 5184
+ },
+ "SM_Veh_TransportPlane_Destroyed_Tail_01": {
+  "category": "vehicles",
+  "size": [
+   16.217,
+   9.418,
+   25.962
+  ],
+  "tris": 511
+ },
+ "SM_Veh_Truck_01": {
+  "category": "vehicles",
+  "size": [
+   3.052,
+   3.153,
+   6.834
+  ],
+  "tris": 15275
+ },
+ "SM_Veh_Truck_01_Canopy": {
+  "category": "vehicles",
+  "size": [
+   2.79,
+   1.315,
+   3.811
+  ],
+  "tris": 300
+ },
+ "SM_Veh_Truck_01_Canopy_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   2.789,
+   1.378,
+   1.987
+  ],
+  "tris": 172
+ },
+ "SM_Veh_Truck_01_Canopy_Structure": {
+  "category": "vehicles",
+  "size": [
+   2.51,
+   1.84,
+   3.599
+  ],
+  "tris": 536
+ },
+ "SM_Veh_Truck_01_Canopy_Structure_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   2.826,
+   2.122,
+   3.901
+  ],
+  "tris": 1510
+ },
+ "SM_Veh_Truck_01_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   3.094,
+   2.813,
+   6.677
+  ],
+  "tris": 7663
+ },
+ "SM_Veh_Truck_01_Tanker": {
+  "category": "vehicles",
+  "size": [
+   2.638,
+   1.936,
+   4.27
+  ],
+  "tris": 756
+ },
+ "SM_Veh_Truck_01_Tanker_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   2.678,
+   2.087,
+   4.345
+  ],
+  "tris": 836
+ },
+ "SM_Veh_Truck_01_Tray": {
+  "category": "vehicles",
+  "size": [
+   2.766,
+   0.843,
+   3.799
+  ],
+  "tris": 974
+ },
+ "SM_Veh_Truck_01_Tray_Destroyed": {
+  "category": "vehicles",
+  "size": [
+   2.826,
+   0.952,
+   3.901
+  ],
+  "tris": 974
+ },
+ "SM_Veh_Van_01": {
+  "category": "vehicles",
+  "size": [
+   2.287,
+   2.108,
+   4.627
+  ],
+  "tris": 5207
+ },
+ "SM_Veh_Van_02": {
+  "category": "vehicles",
+  "size": [
+   2.287,
+   2.553,
+   4.761
+  ],
+  "tris": 10615
+ },
+ "SM_Veh_Van_Destroyed_01": {
+  "category": "vehicles",
+  "size": [
+   2.417,
+   1.86,
+   4.753
+  ],
+  "tris": 4271
+ },
+ "SM_Veh_Van_Destroyed_02": {
+  "category": "vehicles",
+  "size": [
+   2.33,
+   2.125,
+   5.613
+  ],
+  "tris": 5643
+ },
+ "SM_Wep_Claymore_01": {
+  "category": "weapons",
+  "size": [
+   0.287,
+   0.232,
+   0.077
+  ],
+  "tris": 232
+ },
+ "SM_Wep_Flashbang_01": {
+  "category": "weapons",
+  "size": [
+   0.057,
+   0.175,
+   0.067
+  ],
+  "tris": 286
+ },
+ "SM_Wep_Grenade_01": {
+  "category": "weapons",
+  "size": [
+   0.086,
+   0.131,
+   0.102
+  ],
+  "tris": 300
+ },
+ "SM_Wep_Grenade_Smoke_01": {
+  "category": "weapons",
+  "size": [
+   0.065,
+   0.167,
+   0.075
+  ],
+  "tris": 206
+ },
+ "SM_Wep_Knife_01": {
+  "category": "weapons",
+  "size": [
+   0.106,
+   0.384,
+   0.034
+  ],
+  "tris": 636
+ },
+ "SM_Wep_Knife_Kukri_01": {
+  "category": "weapons",
+  "size": [
+   0.03,
+   0.666,
+   0.171
+  ],
+  "tris": 696
+ },
+ "SM_Wep_Machete_01": {
+  "category": "weapons",
+  "size": [
+   0.039,
+   1.13,
+   0.126
+  ],
+  "tris": 372
+ },
+ "SM_Wep_MachineGun_Bandit_01": {
+  "category": "weapons",
+  "size": [
+   0.306,
+   0.299,
+   1.276
+  ],
+  "tris": 4584
+ },
+ "SM_Wep_MachineGun_USA_01": {
+  "category": "weapons",
+  "size": [
+   0.186,
+   0.306,
+   1.29
+  ],
+  "tris": 5940
+ },
+ "SM_Wep_Pistol_01": {
+  "category": "weapons",
+  "size": [
+   0.043,
+   0.187,
+   0.279
+  ],
+  "tris": 1038
+ },
+ "SM_Wep_Pistol_Metal_01": {
+  "category": "weapons",
+  "size": [
+   0.047,
+   0.204,
+   0.301
+  ],
+  "tris": 896
+ },
+ "SM_Wep_Pistol_Small_01": {
+  "category": "weapons",
+  "size": [
+   0.048,
+   0.171,
+   0.238
+  ],
+  "tris": 898
+ },
+ "SM_Wep_Preset_A_Complex_01": {
+  "category": "weapons",
+  "size": [
+   0.18,
+   0.425,
+   1.412
+  ],
+  "tris": 7842
+ },
+ "SM_Wep_Preset_A_Heavy_01": {
+  "category": "weapons",
+  "size": [
+   0.286,
+   0.366,
+   1.365
+  ],
+  "tris": 8240
+ },
+ "SM_Wep_Preset_A_Rifle_01": {
+  "category": "weapons",
+  "size": [
+   0.094,
+   0.329,
+   1.031
+  ],
+  "tris": 3966
+ },
+ "SM_Wep_Preset_A_Rifle_02": {
+  "category": "weapons",
+  "size": [
+   0.094,
+   0.391,
+   1.197
+  ],
+  "tris": 6120
+ },
+ "SM_Wep_Preset_A_Rifle_03": {
+  "category": "weapons",
+  "size": [
+   0.091,
+   0.319,
+   1.39
+  ],
+  "tris": 3516
+ },
+ "SM_Wep_Preset_A_SMG_01": {
+  "category": "weapons",
+  "size": [
+   0.094,
+   0.401,
+   0.856
+  ],
+  "tris": 3834
+ },
+ "SM_Wep_Preset_A_Sniper_01": {
+  "category": "weapons",
+  "size": [
+   0.094,
+   0.39,
+   1.57
+  ],
+  "tris": 6674
+ },
+ "SM_Wep_Preset_B_Complex_01": {
+  "category": "weapons",
+  "size": [
+   0.157,
+   0.494,
+   1.641
+  ],
+  "tris": 7420
+ },
+ "SM_Wep_Preset_B_Heavy_01": {
+  "category": "weapons",
+  "size": [
+   0.245,
+   0.422,
+   1.331
+  ],
+  "tris": 2920
+ },
+ "SM_Wep_Preset_B_Rifle_01": {
+  "category": "weapons",
+  "size": [
+   0.09,
+   0.456,
+   1.15
+  ],
+  "tris": 3846
+ },
+ "SM_Wep_Preset_B_Rifle_02": {
+  "category": "weapons",
+  "size": [
+   0.076,
+   0.417,
+   1.012
+  ],
+  "tris": 2884
+ },
+ "SM_Wep_Preset_B_Rifle_03": {
+  "category": "weapons",
+  "size": [
+   0.093,
+   0.391,
+   1.306
+  ],
+  "tris": 3608
+ },
+ "SM_Wep_Preset_B_SMG_01": {
+  "category": "weapons",
+  "size": [
+   0.09,
+   0.398,
+   0.55
+  ],
+  "tris": 2596
+ },
+ "SM_Wep_Preset_B_Sniper_01": {
+  "category": "weapons",
+  "size": [
+   0.091,
+   0.342,
+   1.644
+  ],
+  "tris": 3728
+ },
+ "SM_Wep_RPG_01": {
+  "category": "weapons",
+  "size": [
+   0.166,
+   0.363,
+   1.842
+  ],
+  "tris": 2820
+ },
+ "SM_Wep_RPG_Rocket_Seperate_01": {
+  "category": "weapons",
+  "size": [
+   0.113,
+   0.113,
+   1.004
+  ],
+  "tris": 430
+ },
+ "SM_Wep_Rifle_01": {
+  "category": "weapons",
+  "size": [
+   0.063,
+   0.201,
+   1.44
+  ],
+  "tris": 1203
+ },
+ "SM_Wep_RocketLauncher_01": {
+  "category": "weapons",
+  "size": [
+   0.242,
+   0.338,
+   1.436
+  ],
+  "tris": 1748
+ },
+ "SM_Wep_RocketLauncher_MIssile_01": {
+  "category": "weapons",
+  "size": [
+   0.1,
+   0.1,
+   0.643
+  ],
+  "tris": 336
+ },
+ "SM_Wep_Shotgun_01": {
+  "category": "weapons",
+  "size": [
+   0.072,
+   0.22,
+   1.26
+  ],
+  "tris": 1252
+ },
+ "SM_Wep_Sniper_01": {
+  "category": "weapons",
+  "size": [
+   0.123,
+   0.229,
+   1.534
+  ],
+  "tris": 1266
+ },
+ "SM_Wep_Sword_01": {
+  "category": "weapons",
+  "size": [
+   0.054,
+   1.61,
+   0.15
+  ],
+  "tris": 534
+ },
+ "SM_Chr_Soldier_Male_01": {
+  "category": "characters",
+  "size": [
+   2.046,
+   1.788,
+   0.363
+  ],
+  "tris": 2996
+ },
+ "SM_Chr_Soldier_Male_02": {
+  "category": "characters",
+  "size": [
+   2.045,
+   1.788,
+   0.355
+  ],
+  "tris": 2090
+ },
+ "SM_Chr_Soldier_Female_01": {
+  "category": "characters",
+  "size": [
+   2.041,
+   1.789,
+   0.372
+  ],
+  "tris": 3050
+ },
+ "SM_Chr_Insurgent_Male_01": {
+  "category": "characters",
+  "size": [
+   2.047,
+   1.79,
+   0.322
+  ],
+  "tris": 1978
+ },
+ "SM_Chr_Insurgent_Male_02": {
+  "category": "characters",
+  "size": [
+   2.048,
+   1.791,
+   0.325
+  ],
+  "tris": 2200
+ },
+ "SM_Chr_Insurgent_Male_03": {
+  "category": "characters",
+  "size": [
+   2.048,
+   1.791,
+   0.376
+  ],
+  "tris": 2036
+ },
+ "SM_Chr_Insurgent_Male_04": {
+  "category": "characters",
+  "size": [
+   2.048,
+   1.791,
+   0.351
+  ],
+  "tris": 2030
+ },
+ "SM_Chr_Leader_Male_01": {
+  "category": "characters",
+  "size": [
+   2.048,
+   1.791,
+   0.351
+  ],
+  "tris": 1884
+ },
+ "SM_Chr_Ghillie_Male_01": {
+  "category": "characters",
+  "size": [
+   2.045,
+   1.85,
+   0.48
+  ],
+  "tris": 5219
+ },
+ "SM_Chr_Civilian_Male_01": {
+  "category": "characters",
+  "size": [
+   2.048,
+   1.791,
+   0.348
+  ],
+  "tris": 1756
+ },
+ "SM_Chr_Civilian_Female_01": {
+  "category": "characters",
+  "size": [
+   2.041,
+   1.817,
+   0.338
+  ],
+  "tris": 1856
+ },
+ "SM_Chr_Pilot_Male_01": {
+  "category": "characters",
+  "size": [
+   2.045,
+   1.789,
+   0.381
+  ],
+  "tris": 2216
+ }
+}
