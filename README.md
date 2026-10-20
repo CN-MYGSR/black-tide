@@ -78,4 +78,7 @@ godot --headless --path . --export-release "Windows Desktop" "build/BlackTide.ex
 模型来自 **Synty POLYGON Military**，通过 `_tools/` 里的 Blender 无头流水线
 从 Unity `.unitypackage` 转换为 glTF（详见 `docs/设计与技术方案.md`）。
 
-> ⚠️ Synty 素材为商业授权资源，本仓库设为 **private**，请勿公开分发模型文件。
+> ⚠️ **素材版权说明**
+> `assets/` 下的模型与贴图来自 Synty Studios 的 **POLYGON Military** 商业素材包，
+> 版权归 Synty Studios 所有，此处仅作学习与演示用途。
+> 如需商用请自行购买授权；请勿将素材文件单独再分发或用于其他项目。
