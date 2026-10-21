@@ -30,6 +30,8 @@ var squad = null                   ## 所属小队（Squad）
 var squad_role: String = "rifleman"
 var _suppress: bool = false
 var _retreating: bool = false
+var _rescue_t: float = 0.0
+var _last_hit_head: bool = false
 
 var _patrol_idx: int = 0
 var _target: Node3D = null
@@ -43,6 +45,7 @@ var _strafe_dir: float = 1.0
 var _strafe_t: float = 0.0
 var _percept_cd: float = 0.0
 var _bob: float = 0.0
+var _visual_elapsed: float = 0.0
 var _bleed: float = 45.0
 
 const RIG_SCRIPT := preload("res://src/ai/character_rig.gd")
@@ -51,11 +54,13 @@ var model: Node3D
 var rig                     ## CharacterRig 实例（不写死类型，避免类缓存失效时整条链崩掉）
 var _capsule: CollisionShape3D
 var _muzzle: Node3D
+var _weapon_id: String = "SM_Wep_Rifle_01"
 
 
 func _ready() -> void:
+	_percept_cd = randf_range(0.0, 0.18)
 	collision_layer = 4
-	collision_mask = 1 | 2 | 4
+	collision_mask = 1 | 2 | 4 | 16
 	add_to_group("combatant")
 	_sync_groups()
 
@@ -77,6 +82,7 @@ func _ready() -> void:
 
 func configure(p_faction: String, model_name: String, difficulty: float = 1.0, weapon_model: String = "") -> void:
 	faction = p_faction
+	_weapon_id = weapon_model if weapon_model != "" else ("SM_Wep_Rifle_01" if faction == "opfor" else "SM_Wep_Preset_A_Rifle_01")
 	_sync_groups()
 	accuracy = clampf(0.42 + 0.22 * difficulty, 0.2, 0.92)
 	weapon_damage = 12.0 + 6.0 * difficulty
@@ -98,6 +104,7 @@ func configure(p_faction: String, model_name: String, difficulty: float = 1.0, w
 		model_name = "SM_Chr_Insurgent_Male_01" if faction == "opfor" else "SM_Chr_Soldier_Male_02"
 	model = AssetLib.spawn(model_name, self, Vector3.ZERO, 0.0, true)
 	if model != null:
+		model.rotation.y = PI
 		rig = RIG_SCRIPT.new()
 		rig.setup(model)
 		_attach_weapon(weapon_model if weapon_model != "" else
@@ -121,7 +128,7 @@ func is_alive() -> bool:
 
 
 func _physics_process(delta: float) -> void:
-	if state == AIState.DEAD:
+	if state == AIState.DEAD or not GameState.in_raid:
 		return
 	if not is_on_floor():
 		velocity.y -= GRAVITY * delta
@@ -133,6 +140,11 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		if _bleed <= 0.0:
 			_die()
+		return
+
+	if _try_rescue(delta):
+		_update_visual(delta)
+		move_and_slide()
 		return
 
 	_percept_cd -= delta
@@ -154,6 +166,27 @@ func _physics_process(delta: float) -> void:
 
 	_update_visual(delta)
 	move_and_slide()
+
+
+func _try_rescue(delta: float) -> bool:
+	if faction != "blufor" or not is_instance_valid(follow_target) or not follow_target is Player or follow_target.state != Player.State.DOWNED:
+		_rescue_t = 0.0
+		return false
+	var offset := follow_target.global_position - global_position
+	if offset.length() > 2.3:
+		_rescue_t = 0.0
+		offset.y = 0.0
+		_move_towards(offset.normalized(), RUN, delta)
+	else:
+		_slow_down(delta)
+		if _has_los(follow_target.global_position):
+			_rescue_t += delta
+			if _rescue_t >= 3.0:
+				follow_target.revive()
+				_rescue_t = 0.0
+		else:
+			_rescue_t = 0.0
+	return true
 
 
 # ---------------------------------------------------------------- 感知
@@ -237,7 +270,7 @@ func _in_fov(pos: Vector3) -> bool:
 
 func _has_los(pos: Vector3) -> bool:
 	var from := global_position + Vector3(0, 1.5, 0)
-	var q := PhysicsRayQueryParameters3D.create(from, pos + Vector3(0, 1.2, 0), 1)
+	var q := PhysicsRayQueryParameters3D.create(from, pos + Vector3(0, 1.2, 0), 1 | 16)
 	var hit := get_world_3d().direct_space_state.intersect_ray(q)
 	return hit.is_empty()
 
@@ -402,7 +435,7 @@ func _shoot_at(target: Node3D, dist: float) -> void:
 	var r := Vector2(randf_range(-1, 1), randf_range(-1, 1)) * tan(spread)
 	dir = (dir + basis.x * r.x + basis.y * r.y).normalized()
 
-	var q := PhysicsRayQueryParameters3D.create(from, from + dir * weapon_range, 1 | 2 | 4, [get_rid()])
+	var q := PhysicsRayQueryParameters3D.create(from, from + dir * weapon_range, 1 | 2 | 4 | 16, [get_rid()])
 	var hit := get_world_3d().direct_space_state.intersect_ray(q)
 	var end := from + dir * weapon_range
 	if not hit.is_empty():
@@ -414,12 +447,14 @@ func _shoot_at(target: Node3D, dist: float) -> void:
 				head = end.y - (c as Node3D).global_position.y > 1.45
 			c.take_damage(weapon_damage * (2.2 if head else 1.0), end, self)
 	EventBus.shot_fired.emit(self, from, end, not hit.is_empty())
+	AudioSfx.weapon_shot(_weapon_id, from)
 
 
 # ---------------------------------------------------------------- 受伤
 func take_damage(amount: float, hit_pos: Vector3, source: Node) -> void:
-	if state == AIState.DEAD:
+	if state == AIState.DEAD or not GameState.in_raid:
 		return
+	_last_hit_head = hit_pos.y - global_position.y > 1.45
 	health -= amount
 	_last_seen = source.global_position if source is Node3D else hit_pos
 	_see_timer = 0.0
@@ -438,7 +473,7 @@ func _go_down() -> void:
 	state = AIState.DOWNED
 	_bleed = 40.0
 	if model != null:
-		model.rotation_degrees = Vector3(-80, 0, 0)
+		model.rotation_degrees = Vector3(-80, 180, 0)
 		model.position.y = 0.25
 	if rig != null:
 		rig.pose_downed()
@@ -450,9 +485,12 @@ func revive() -> void:
 		return
 	state = AIState.PATROL
 	health = 45.0
+	_rescue_t = 0.0
 	if model != null:
-		model.rotation_degrees = Vector3.ZERO
+		model.rotation_degrees = Vector3(0, 180, 0)
 		model.position.y = 0.0
+	if rig != null:
+		rig.reset()
 
 
 func _die(source: Node = null) -> void:
@@ -463,20 +501,19 @@ func _die(source: Node = null) -> void:
 	collision_mask = 0
 	remove_from_group("combatant")
 	if model != null:
-		model.rotation_degrees = Vector3(-88, 0, 0)
+		model.rotation_degrees = Vector3(-88, 180, 0)
 		model.position.y = 0.2
 	if rig != null:
 		rig.pose_dead()
-	var headshot := false
-	if source is Player:
-		headshot = randf() < 0.25
+	var headshot := source is Player and _last_hit_head
 	if squad != null and is_instance_valid(squad):
 		squad.on_member_down(self)
-	EventBus.enemy_killed.emit(self, headshot, faction)
-	if faction == "opfor":
+	var killer_faction := str(source.get("faction")) if is_instance_valid(source) else ""
+	if faction == "opfor" and source is Player and GameState.in_raid:
 		GameState.raid_kills += 1
 		GameState.kills_total += 1
 		GameState.raid_loot += GameState.KILL_REWARD
+	EventBus.enemy_killed.emit(self, headshot, killer_faction)
 	var tw := create_tween()
 	tw.tween_interval(12.0)
 	tw.tween_callback(queue_free)
@@ -486,6 +523,14 @@ func _die(source: Node = null) -> void:
 func _update_visual(delta: float) -> void:
 	if model == null:
 		return
+	_visual_elapsed += delta
+	var camera := get_viewport().get_camera_3d()
+	var distance_sq := global_position.distance_squared_to(camera.global_position) if camera != null else 0.0
+	var interval := 1.0 / (60.0 if distance_sq < 144 else (30.0 if distance_sq < 1600 else 15.0))
+	if _visual_elapsed + 0.00001 < interval:
+		return
+	delta = _visual_elapsed
+	_visual_elapsed = 0
 	var spd := velocity.length()
 	_bob += spd * delta * 3.2
 	# 上下起伏交给骨骼动画，模型层不再整体晃
@@ -506,6 +551,13 @@ func interact_prompt() -> String:
 	return ""
 
 
+func interact(player: Node) -> void:
+	if faction == "blufor" and state == AIState.DOWNED and player is Player and player.state == Player.State.ALIVE and GameState.in_raid:
+		if global_position.distance_to(player.global_position) <= 3.2:
+			revive()
+			EventBus.notify.emit("已救起队友")
+
+
 func _sync_groups() -> void:
 	## configure() 可能在 _ready() 之后才调用，阵营分组必须跟着刷新
 	for g in ["opfor", "blufor", "rival"]:
@@ -519,17 +571,4 @@ func _attach_weapon(weapon: String) -> void:
 	## 注意骨骼空间是厘米（祖先节点带 0.01 缩放），所以枪要放大 100 倍才回到米。
 	if rig == null or not rig.ready or rig.skel == null:
 		return
-	var hand: int = rig.skel.find_bone("Hand_R")
-	if hand < 0:
-		return
-	var att := BoneAttachment3D.new()
-	att.name = "WeaponBone"
-	att.bone_name = "Hand_R"
-	rig.skel.add_child(att)
-	var w: Node3D = AssetLib.spawn(weapon, att, Vector3.ZERO, 0.0, true)
-	if w == null:
-		att.queue_free()
-		return
-	w.scale = Vector3.ONE * 100.0
-	w.position = Vector3(6.0, -3.0, 4.0)
-	w.rotation_degrees = Vector3(0, 90, -90)
+	rig.attach_weapon(weapon, model)

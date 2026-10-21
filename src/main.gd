@@ -3,6 +3,10 @@ extends Node3D
 ## 一局流程：落地在铁砧基地 -> 夺取敌方据点 -> 呼叫直升机 -> 登机结算。
 
 const ENEMY_CAP := 34
+var progressive_loading: bool = true
+var generation_seed: int = -1
+var loading_complete: bool = false
+signal level_ready
 
 var world: WorldRoot
 var player: Player
@@ -36,21 +40,71 @@ var _tracers: int = 0
 
 
 func _ready() -> void:
-	randomize()
-	_build_world()
+	if generation_seed < 0:
+		generation_seed = int(Time.get_unix_time_from_system()) % 100000
+	seed(generation_seed)
+	GameState.raid_loot = 0
+	GameState.raid_kills = 0
+	GameState.raid_time = 0.0
+	GameState.last_raid = {}
+	EventBus.mission_completed.connect(_on_mission_completed)
+	var loading: CanvasLayer
+	if progressive_loading:
+		loading = CanvasLayer.new()
+		loading.layer = 100
+		add_child(loading)
+		var shade := ColorRect.new()
+		shade.color = Color(0.04, 0.05, 0.06)
+		shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		loading.add_child(shade)
+		var label := Label.new()
+		label.name = "LoadingProgress"
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		label.add_theme_font_size_override("font_size", 24)
+		label.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		shade.add_child(label)
+		world = WorldRoot.new()
+		world.name = "World"
+		add_child(world)
+		world.loading_progress.connect(func(message: String, progress: float): label.text = "正在准备行动  %d%%\n%s" % [int(progress * 90), message])
+		var models: Array = US_GUNS + RU_GUNS + [Loadout.primary, Loadout.secondary, "SM_Chr_Soldier_Male_01", "SM_Veh_Helicopter_Transport_01", "SM_Prop_Crate_Ammo_01"]
+		for weapon in [Loadout.primary, Loadout.secondary]:
+			var viewmodel := Player.first_person_model(weapon)
+			models.append(viewmodel if viewmodel != "" else ("BT_Arms_Pistol" if weapon.contains("Pistol") else "BT_Arms_Rifle"))
+		models.append_array(["BT_Hand_R_Rifle", "BT_Hand_L_Rifle", "BT_Hand_R_Pistol", "BT_Hand_L_Pistol"])
+		if Loadout.vehicle != "none":
+			models.append(Loadout.vehicle)
+		var paths: Array = []
+		for model in models:
+			paths.append(AssetLib.model_path(model))
+		await world.generate_async(generation_seed, paths)
+		label.text = "正在部署角色…"
+		await get_tree().process_frame
+	else:
+		_build_world()
 	_spawn_player()
+	GameState.in_raid = false
 	_build_hud()
-	_spawn_allies()
-	_spawn_enemies()
-	_spawn_rivals()
-	_spawn_loot()
+	if progressive_loading:
+		await get_tree().process_frame
+	await _spawn_allies()
+	await _spawn_enemies()
+	await _spawn_rivals()
+	await _spawn_loot()
 	_spawn_vehicle()
+	AssetLib.get_scene("SM_Veh_Helicopter_Transport_01")
+	GameState.in_raid = true
 	_start_mission()
 	EventBus.shot_fired.connect(_on_shot_fired)
 	EventBus.enemy_killed.connect(_on_enemy_killed)
 	EventBus.outpost_captured.connect(_on_outpost_captured)
 	EventBus.player_died.connect(_on_player_died)
-	EventBus.mission_completed.connect(_on_mission_completed)
+	loading_complete = true
+	level_ready.emit()
+	if loading != null:
+		loading.queue_free()
 
 
 # ---------------------------------------------------------------- 构建
@@ -58,7 +112,7 @@ func _build_world() -> void:
 	world = WorldRoot.new()
 	world.name = "World"
 	add_child(world)
-	world.generate(int(Time.get_unix_time_from_system()) % 100000)
+	world.generate(generation_seed)
 
 
 func _spawn_player() -> void:
@@ -104,6 +158,8 @@ func _spawn_allies() -> void:
 		s.follow_target = player
 		ally_squad.add_member(s)
 		_allies.append(s)
+		if progressive_loading:
+			await get_tree().process_frame
 
 
 func _spawn_enemies() -> void:
@@ -124,6 +180,8 @@ func _spawn_enemies() -> void:
 			p += Vector3(randf_range(-3, 3), 0.4, randf_range(-3, 3))
 			var s := _spawn_one_enemy(p, poi)
 			sq.add_member(s)
+			if progressive_loading:
+				await get_tree().process_frame
 
 
 func _spawn_one_enemy(pos: Vector3, poi: Dictionary) -> Soldier:
@@ -185,6 +243,8 @@ func _spawn_rivals() -> void:
 				pts.append(Vector3(px, world.terrain.height_at(px, pz) + 1.2, pz))
 			s.patrol_points = pts
 			sq.add_member(s)
+			if progressive_loading:
+				await get_tree().process_frame
 
 
 
@@ -201,15 +261,16 @@ func _spawn_vehicle() -> void:
 		return
 	var center: Vector2 = fob["pos"]
 	var kind := str(info.get("kind", "ground"))
-	var off := Vector2(12, 24) if kind == "ground" else Vector2(-18, 6)
+	var off := Vector2(0, 16) if kind == "ground" else Vector2(0, -5)
 	var wx := center.x + off.x
 	var wz := center.y + off.y
 	var v := Vehicle.new()
 	v.name = "PlayerVehicle"
-	add_child(v)
-	v.global_position = Vector3(wx, world.terrain.height_at(wx, wz) + 0.6, wz)
 	v.setup(Loadout.vehicle, kind, float(info.get("speed", 18.0)),
 		float(info.get("armor", 0.0)), str(info.get("label", "载具")))
+	add_child(v)
+	var lift := 0.6 if kind == "ground" else AssetLib.size_of("SM_Env_Helipad_01").y + 0.25
+	v.global_position = Vector3(wx, world.terrain.height_at(wx, wz) + lift, wz)
 	_vehicle = v
 
 
@@ -222,6 +283,8 @@ func _spawn_loot() -> void:
 			add_child(c)
 			c.global_position = lp
 			c.setup(int(randf_range(120, 320)))
+			if progressive_loading:
+				await get_tree().process_frame
 
 
 # ---------------------------------------------------------------- 任务
@@ -252,14 +315,14 @@ func _update_objective() -> void:
 		)
 
 
-func _on_outpost_captured(outpost: Node, _owner: String) -> void:
-	if outpost == _target_outpost and _mission_state == "active":
+func _on_outpost_captured(outpost: Node, owner: String) -> void:
+	if outpost == _target_outpost and owner == "blufor" and _mission_state == "active":
 		_mission_state = "extract"
 		_update_objective()
 
 
-func _on_enemy_killed(enemy: Node, _headshot: bool, _faction: String) -> void:
-	if enemy.get("faction") != "opfor":
+func _on_enemy_killed(enemy: Node, _headshot: bool, killer_faction: String) -> void:
+	if enemy.get("faction") != "opfor" or killer_faction != "player" or _mission_state == "done":
 		return
 	_kill_now += 1
 	if _mission_state == "active":
@@ -267,23 +330,36 @@ func _on_enemy_killed(enemy: Node, _headshot: bool, _faction: String) -> void:
 
 
 func _on_player_died() -> void:
-	_death_t = 2.5
+	if _mission_state != "done" and GameState.in_raid:
+		_death_t = 2.5
 
 
 func _on_mission_completed(credits: int, _xp: int) -> void:
-	if _mission_state == "done":
+	if _mission_state == "done" or not GameState.in_raid or player.state != Player.State.ALIVE:
 		return
 	_mission_state = "done"
+	_death_t = -1.0
 	GameState.end_raid(true, credits)
+	_stop_action()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
+func _stop_action() -> void:
+	AudioSfx.stop_world()
+	for child in get_children():
+		if child.name != "UI":
+			child.process_mode = Node.PROCESS_MODE_DISABLED
+
+
 func _process(delta: float) -> void:
+	if not loading_complete or _mission_state == "done":
+		return
 	if _death_t > 0.0:
 		_death_t -= delta
 		if _death_t <= 0.0:
 			_mission_state = "done"
 			GameState.end_raid(false, 0)
+			_stop_action()
 			EventBus.mission_failed.emit("你在行动中阵亡，损失了部分信用点")
 
 	# 增援：敌方据点会持续补人，逼玩家别磨蹭
@@ -315,7 +391,7 @@ func _reinforce() -> void:
 
 # ---------------------------------------------------------------- 撤离
 func _call_extraction() -> void:
-	if _mission_state != "extract" or heli != null:
+	if _mission_state != "extract" or heli != null or player.state != Player.State.ALIVE:
 		return
 	heli = ExtractionHeli.new()
 	heli.name = "ExtractionHeli"
@@ -329,6 +405,8 @@ func _call_extraction() -> void:
 
 # ---------------------------------------------------------------- 输入
 func _unhandled_input(event: InputEvent) -> void:
+	if not loading_complete:
+		return
 	if event.is_action_pressed("call_extract"):
 		_call_extraction()
 	elif event.is_action_pressed("ui_cancel"):
@@ -338,7 +416,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	elif event.is_action_pressed("ui_accept"):
 		if hud != null and hud._show_debrief:
-			get_tree().reload_current_scene()
+			get_tree().change_scene_to_file("res://src/ui/menu.tscn")
 
 
 # ---------------------------------------------------------------- 曳光弹

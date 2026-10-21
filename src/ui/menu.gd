@@ -20,12 +20,27 @@ var _tabs: Array[Button] = []
 var _preview: SubViewport
 var _preview_model: Node3D
 var _selected_weapon: String = ""
+var _weapon_slot: int = 0
+var _toast_label: Label
+var _pages: Dictionary = {}
+var _dirty_pages: Dictionary = {}
+var _starting: bool = false
 
 
 func _ready() -> void:
 	set_anchors_preset(Control.PRESET_FULL_RECT)
 	_selected_weapon = Loadout.primary
 	_build_shell()
+	_toast_label = _mk_label("", 16, ACCENT)
+	_toast_label.set_anchors_preset(Control.PRESET_BOTTOM_WIDE)
+	_toast_label.offset_left = 300
+	_toast_label.offset_right = -30
+	_toast_label.offset_top = -44
+	_toast_label.offset_bottom = -12
+	_toast_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_toast_label.z_index = 10
+	add_child(_toast_label)
+	EventBus.notify.connect(_toast)
 	_switch_tab(0)
 
 
@@ -69,7 +84,7 @@ func _build_shell() -> void:
 	for i in names.size():
 		var b := _mk_button(names[i], 20)
 		b.custom_minimum_size = Vector2(230, 54)
-		b.pressed.connect(_switch_tab.bind(i))
+		b.pressed.connect(_switch_tab.bind(i, false))
 		side.add_child(b)
 		_tabs.append(b)
 
@@ -85,8 +100,28 @@ func _build_shell() -> void:
 
 	var quit := _mk_button("退出", 16)
 	quit.custom_minimum_size = Vector2(230, 44)
-	quit.pressed.connect(func(): get_tree().quit())
+	quit.pressed.connect(GameState.request_quit)
 	side.add_child(quit)
+	var attribution := _mk_button("素材署名", 16)
+	attribution.custom_minimum_size = Vector2(230, 44)
+	attribution.pressed.connect(func():
+		var dialog := AcceptDialog.new()
+		dialog.title = "素材署名与许可"
+		add_child(dialog)
+		var text := RichTextLabel.new()
+		text.text = FileAccess.get_file_as_string("res://assets/data/third_party_credits.txt")
+		text.selection_enabled = true
+		text.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		text.offset_left = 20
+		text.offset_top = 16
+		text.offset_right = -20
+		text.offset_bottom = -58
+		dialog.add_child(text)
+		dialog.confirmed.connect(dialog.queue_free)
+		dialog.canceled.connect(dialog.queue_free)
+		dialog.popup_centered(Vector2i(1050, 740))
+	)
+	side.add_child(attribution)
 
 	# 内容区
 	_content = Control.new()
@@ -96,7 +131,7 @@ func _build_shell() -> void:
 	_content.offset_left = 300
 	_content.offset_top = 100
 	_content.offset_right = -40
-	_content.offset_bottom = -30
+	_content.offset_bottom = -70
 	add_child(_content)
 
 	_refresh_credits()
@@ -125,6 +160,7 @@ func _mk_button(text: String, size: int = 16) -> Button:
 	b.add_theme_stylebox_override("hover", _sb(CARD_HI))
 	b.add_theme_stylebox_override("pressed", _sb(PANEL))
 	b.add_theme_stylebox_override("disabled", _sb(PANEL))
+	b.pressed.connect(AudioSfx.play_ui.bind("click"))
 	return b
 
 
@@ -142,11 +178,13 @@ func _sb(color: Color, border: int = 0) -> StyleBoxFlat:
 	return s
 
 
-func _clear() -> void:
-	for c in _content.get_children():
-		c.queue_free()
-	_preview = null
-	_preview_model = null
+func _clear(tab: int) -> void:
+	if _pages.has(tab):
+		_pages[tab].queue_free()
+		_pages.erase(tab)
+	if tab == 1:
+		_preview = null
+		_preview_model = null
 
 
 func _card(parent: Control, height: float = 74.0) -> PanelContainer:
@@ -158,22 +196,30 @@ func _card(parent: Control, height: float = 74.0) -> PanelContainer:
 	return p
 
 
-func _switch_tab(i: int) -> void:
+func _switch_tab(i: int, refresh: bool = true) -> void:
 	_tab = i
 	for k in _tabs.size():
 		_tabs[k].add_theme_color_override("font_color", ACCENT if k == i else TEXT)
-	_clear()
-	match i:
-		0:
-			_build_home()
-		1:
-			_build_armory()
-		2:
-			_build_gear()
-		3:
-			_build_vehicles()
-		4:
-			_build_settings()
+	for tab in _pages:
+		_pages[tab].hide()
+		if refresh:
+			_dirty_pages[tab] = true
+	if not _pages.has(i) or _dirty_pages.get(i, false):
+		_clear(i)
+		match i:
+			0:
+				_build_home()
+			1:
+				_build_armory()
+			2:
+				_build_gear()
+			3:
+				_build_vehicles()
+			4:
+				_build_settings()
+		_pages[i] = _content.get_child(-1)
+		_dirty_pages.erase(i)
+	_pages[i].show()
 	_refresh_credits()
 
 
@@ -231,6 +277,17 @@ func _build_armory() -> void:
 	left.add_theme_constant_override("separation", 6)
 	root.add_child(left)
 	left.add_child(_mk_label("武器", 22, TEXT))
+	var slots := OptionButton.new()
+	slots.name = "WeaponSlot"
+	slots.add_item("装备到：主武器", 0)
+	slots.add_item("装备到：副武器", 1)
+	slots.selected = _weapon_slot
+	slots.item_selected.connect(func(slot: int):
+		_weapon_slot = slot
+		_selected_weapon = Loadout.primary if slot == 0 else Loadout.secondary
+		_switch_tab(1)
+	)
+	left.add_child(slots)
 
 	var scroll := ScrollContainer.new()
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -253,15 +310,18 @@ func _build_armory() -> void:
 	root.add_child(right)
 
 	right.add_child(_make_preview())
-	right.add_child(_mk_label("配件", 20, TEXT))
-	for slot in ItemDB.ATTACHMENTS.keys():
-		right.add_child(_attachment_row(str(slot)))
+	if _weapon_slot == 0:
+		right.add_child(_mk_label("配件", 20, TEXT))
+		for slot in ItemDB.ATTACHMENTS.keys():
+			right.add_child(_attachment_row(str(slot)))
+	else:
+		right.add_child(_mk_label("副武器使用标准配置", 16, DIM))
 
 
 func _weapon_row(id: String) -> Control:
 	var w: Dictionary = ItemDB.weapon(id)
 	var owned := Loadout.has_weapon(id)
-	var equipped := Loadout.primary == id
+	var equipped := (Loadout.primary if _weapon_slot == 0 else Loadout.secondary) == id
 	var p := _card(null, 62)
 	var h := HBoxContainer.new()
 	h.add_theme_constant_override("separation", 12)
@@ -284,7 +344,7 @@ func _weapon_row(id: String) -> Control:
 	elif owned:
 		btn.text = "装备"
 		btn.pressed.connect(func():
-			Loadout.equip_weapon(0, id)
+			Loadout.equip_weapon(_weapon_slot, id)
 			_selected_weapon = id
 			_switch_tab(1)
 		)
@@ -293,7 +353,8 @@ func _weapon_row(id: String) -> Control:
 		btn.pressed.connect(func():
 			var r := Loadout.buy("weapon", id)
 			_toast(str(r["msg"]))
-			_switch_tab(1)
+			if bool(r["ok"]):
+				_switch_tab(1)
 		)
 	h.add_child(btn)
 	return p
@@ -326,6 +387,8 @@ func _attachment_row(slot: String) -> Control:
 	opt.selected = cur_idx
 	opt.item_selected.connect(func(idx: int):
 		var aid := str(keys[idx])
+		if str(Loadout.attachments.get(slot, "")) == aid:
+			return
 		if Loadout.has_attachment(slot, aid):
 			Loadout.equip_attachment(slot, aid)
 			_toast("已装备 %s" % ItemDB.attachment_label(slot, aid))
@@ -335,7 +398,9 @@ func _attachment_row(slot: String) -> Control:
 			_toast(str(r["msg"]))
 			if bool(r["ok"]):
 				Loadout.equip_attachment(slot, aid)
-			_switch_tab(1)
+				_switch_tab(1)
+			else:
+				opt.select(cur_idx)
 	)
 	h.add_child(opt)
 	return p
@@ -350,9 +415,40 @@ func _make_preview() -> Control:
 	vp.size = Vector2i(560, 300)
 	vp.own_world_3d = true
 	vp.transparent_bg = true
-	vp.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+	vp.render_target_update_mode = SubViewport.UPDATE_DISABLED
 	holder.add_child(vp)
 	_preview = vp
+	var loading := _mk_label("正在加载模型预览…", 16, DIM)
+	loading.set_anchors_preset(Control.PRESET_FULL_RECT)
+	loading.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	loading.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	loading.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	holder.add_child(loading)
+	_populate_preview.call_deferred(weakref(holder), _selected_weapon)
+	return holder
+
+
+func _populate_preview(request: WeakRef, weapon: String) -> void:
+	var holder := request.get_ref() as Control
+	if holder == null:
+		return
+	var vp := holder.get_child(0) as SubViewport
+	var loading := holder.get_child(1) as Label
+	if _preview != vp:
+		return
+	var path := AssetLib.model_path(weapon)
+	var error := ResourceLoader.load_threaded_request(path, "PackedScene")
+	if error != OK and error != ERR_BUSY:
+		loading.text = "模型预览加载失败"
+		return
+	while ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
+		await get_tree().process_frame
+	var scene := ResourceLoader.load_threaded_get(path) as PackedScene
+	if not is_instance_valid(holder) or _preview != vp:
+		return
+	if scene == null:
+		loading.text = "模型预览加载失败"
+		return
 
 	var env := WorldEnvironment.new()
 	var e := Environment.new()
@@ -368,15 +464,17 @@ func _make_preview() -> Control:
 	sun.light_energy = 1.6
 	vp.add_child(sun)
 
-	_preview_model = AssetLib.spawn(_selected_weapon, vp, Vector3.ZERO, 0.0, true)
-	if _preview_model != null:
-		AssetLib.apply_tint(_preview_model, Loadout.camo_color())
+	var model := AssetLib.spawn(weapon, vp, Vector3.ZERO, 0.0, true)
+	if model == null:
+		loading.text = "模型预览加载失败"
+		return
+	_preview_model = model
+	AssetLib.apply_tint(model, Loadout.camo_color())
 
 	# 按模型真实包围盒取景 + 居中（枪的轴心不在几何中心）
-	var box := _node_aabb(_preview_model)
+	var box := _node_aabb(model)
 	var sz := box.size
-	if _preview_model != null:
-		_preview_model.position = -box.get_center()
+	model.position = -box.get_center()
 	var longest: float = maxf(sz.x, maxf(sz.y, sz.z))
 	if longest < 0.2:
 		longest = 1.0
@@ -388,13 +486,13 @@ func _make_preview() -> Control:
 	# 枪的长轴在 Z 上，相机固定在 +Z 会正对枪口 —— 把模型先转 90°，从侧面看
 	cam.look_at_from_position(Vector3(0.05, dist * 0.22, dist), Vector3.ZERO, Vector3.UP)
 	cam.current = true
-	if _preview_model != null:
-		_preview_model.rotation_degrees.y = 90.0
-	return holder
+	model.rotation_degrees.y = 90.0
+	loading.hide()
+	vp.render_target_update_mode = SubViewport.UPDATE_WHEN_VISIBLE
 
 
 func _process(delta: float) -> void:
-	if _preview_model != null:
+	if _tab == 1 and is_instance_valid(_preview_model):
 		_preview_model.rotation_degrees.y += delta * 22.0
 
 
@@ -423,14 +521,17 @@ func _build_gear() -> void:
 		var col: Color = c["color"]
 		b.add_theme_stylebox_override("normal", _sb(Color(col.r * 0.5, col.g * 0.5, col.b * 0.5)))
 		b.pressed.connect(func():
+			if Loadout.camo == str(cid):
+				return
 			if Loadout.has_any("camo", str(cid)):
 				Loadout.equip_simple("camo", str(cid))
 				_toast("涂装：%s" % str(c["label"]))
 			else:
 				var r := Loadout.buy("camo", str(cid))
 				_toast(str(r["msg"]))
-				if bool(r["ok"]):
-					Loadout.equip_simple("camo", str(cid))
+				if not bool(r["ok"]):
+					return
+				Loadout.equip_simple("camo", str(cid))
 			_switch_tab(2)
 		)
 		colors.add_child(b)
@@ -479,7 +580,7 @@ func _gear_group(parent: Control, title: String, category: String, table: Dictio
 				_toast(str(r["msg"]))
 				if bool(r["ok"]):
 					Loadout.equip_simple(category, str(id))
-				_switch_tab(2)
+					_switch_tab(2)
 			)
 		h.add_child(btn)
 
@@ -530,7 +631,7 @@ func _build_vehicles() -> void:
 				_toast(str(r["msg"]))
 				if bool(r["ok"]):
 					Loadout.equip_simple("vehicle", str(id))
-				_switch_tab(3)
+					_switch_tab(3)
 			)
 		h.add_child(btn)
 
@@ -551,6 +652,7 @@ func _build_settings() -> void:
 	vol_lbl.custom_minimum_size = Vector2(120, 0)
 	row1.add_child(vol_lbl)
 	var slider := HSlider.new()
+	slider.name = "MasterVolume"
 	slider.min_value = 0
 	slider.max_value = 100
 	slider.step = 1
@@ -563,6 +665,7 @@ func _build_settings() -> void:
 		GameState.master_volume = val / 100.0
 		GameState.apply_audio()
 		vol_val.text = "%d%%" % int(val)
+		GameState.queue_save()
 	)
 
 	# 分辨率
@@ -582,6 +685,7 @@ func _build_settings() -> void:
 	res_opt.item_selected.connect(func(idx: int):
 		GameState.resolution = modes[idx]
 		GameState.apply_display()
+		_save_settings()
 	)
 	row2.add_child(res_opt)
 
@@ -599,25 +703,69 @@ func _build_settings() -> void:
 		if GameState.display_mode == int(m[1]):
 			b.add_theme_color_override("font_color", ACCENT)
 		b.pressed.connect(func():
+			if GameState.display_mode == int(m[1]):
+				return
 			GameState.display_mode = int(m[1])
 			GameState.apply_display()
+			_save_settings()
 			_switch_tab(4)
 		)
 		row3.add_child(b)
 
-	v.add_child(_mk_label("设置会自动保存。", 13, DIM))
+	var quality := OptionButton.new()
+	quality.name = "GraphicsQuality"
+	for label in ["画质：高品质", "画质：均衡", "画质：性能"]:
+		quality.add_item(label)
+	quality.selected = GameState.graphics_quality
+	quality.item_selected.connect(func(index: int):
+		GameState.graphics_quality = index
+		GameState.apply_graphics()
+		_save_settings()
+	)
+	v.add_child(quality)
+	v.add_child(_mk_label("高品质保留完整特效；均衡/性能降低抗锯齿、阴影与后期处理开销。设置自动保存。", 13, DIM))
 
 
 # ---------------------------------------------------------------- 交互
 func _toast(msg: String) -> void:
 	if msg == "":
 		return
-	EventBus.notify.emit(msg)
+	if _toast_label != null:
+		_toast_label.text = msg
 	_refresh_credits()
 
 
+func _save_settings() -> void:
+	if not GameState.save_profile():
+		GameState.queue_save(2.0)
+		_toast("设置保存失败，稍后自动重试")
+
+
 func _on_start() -> void:
-	GameState.save_profile()
+	if _starting:
+		return
+	if not GameState.save_profile():
+		_toast("存档失败，暂时无法开始行动")
+		return
+	_starting = true
+	var loading := ColorRect.new()
+	loading.name = "LoadingScreen"
+	loading.color = Color(0.04, 0.05, 0.06, 0.96)
+	loading.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	loading.z_index = 20
+	loading.focus_mode = Control.FOCUS_ALL
+	add_child(loading)
+	loading.grab_focus()
+	var label := _mk_label("正在准备行动…\n生成地图并加载角色，请稍候", 24, TEXT)
+	label.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	loading.add_child(label)
+	# 先显示加载提示，再执行关卡初始化。
+	await get_tree().process_frame
+	if DisplayServer.get_name() != "headless":
+		await RenderingServer.frame_post_draw
 	get_tree().change_scene_to_file("res://src/main.tscn")
 
 func _node_aabb(root: Node) -> AABB:

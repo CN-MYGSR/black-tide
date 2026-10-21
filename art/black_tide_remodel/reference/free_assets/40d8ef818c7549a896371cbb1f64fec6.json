@@ -1,0 +1,217 @@
+{
+  "animationCount": 0,
+  "categories": [
+    {
+      "uid": "3badf36bd9f549bdba295334d75e04d3",
+      "name": "Weapons & Military",
+      "slug": "weapons-military",
+      "uri": "https://api.sketchfab.com/v3/categories/3badf36bd9f549bdba295334d75e04d3",
+      "icon": "https://static.sketchfab.com/static/builds/web/dist/static/assets/images/icons/categories/6f71af8dadcca706c7404c9a0f82c1a3-v2.svg",
+      "thumbnails": [
+        {
+          "width": "512",
+          "height": "288",
+          "url": "https://static.sketchfab.com/categories/3badf36bd9f549bdba295334d75e04d3/512x288.png"
+        },
+        {
+          "width": "800",
+          "height": "450",
+          "url": "https://static.sketchfab.com/categories/3badf36bd9f549bdba295334d75e04d3/800x450.png"
+        }
+      ]
+    }
+  ],
+  "commentCount": 15,
+  "createdAt": "2023-03-23T02:54:34.414962",
+  "embedUrl": "https://sketchfab.com/models/40d8ef818c7549a896371cbb1f64fec6/embed",
+  "faceCount": 82902,
+  "isAgeRestricted": false,
+  "license": {
+    "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+    "label": "CC Attribution",
+    "fullName": "Creative Commons Attribution",
+    "requirements": "Author must be credited. Commercial use is allowed.",
+    "url": "http://creativecommons.org/licenses/by/4.0/",
+    "slug": "by"
+  },
+  "likeCount": 182,
+  "name": "M4A1",
+  "publishedAt": "2023-03-23T14:22:44.10625",
+  "soundCount": 0,
+  "staffpickedAt": null,
+  "tags": [
+    {
+      "name": "m4a1",
+      "slug": "m4a1",
+      "uri": "https://api.sketchfab.com/v3/tags/m4a1"
+    },
+    {
+      "name": "m4",
+      "slug": "m4",
+      "uri": "https://api.sketchfab.com/v3/tags/m4"
+    },
+    {
+      "name": "action",
+      "slug": "action",
+      "uri": "https://api.sketchfab.com/v3/tags/action"
+    },
+    {
+      "name": "fps",
+      "slug": "fps",
+      "uri": "https://api.sketchfab.com/v3/tags/fps"
+    },
+    {
+      "name": "shooter",
+      "slug": "shooter",
+      "uri": "https://api.sketchfab.com/v3/tags/shooter"
+    },
+    {
+      "name": "firearm",
+      "slug": "firearm",
+      "uri": "https://api.sketchfab.com/v3/tags/firearm"
+    },
+    {
+      "name": "ar15",
+      "slug": "ar15",
+      "uri": "https://api.sketchfab.com/v3/tags/ar15"
+    },
+    {
+      "name": "Assault Rifle",
+      "slug": "assault-rifle",
+      "uri": "https://api.sketchfab.com/v3/tags/assault-rifle"
+    },
+    {
+      "name": "weapon",
+      "slug": "weapon",
+      "uri": "https://api.sketchfab.com/v3/tags/weapon"
+    },
+    {
+      "name": "game",
+      "slug": "game",
+      "uri": "https://api.sketchfab.com/v3/tags/game"
+    },
+    {
+      "name": "gameasset",
+      "slug": "gameasset",
+      "uri": "https://api.sketchfab.com/v3/tags/gameasset"
+    },
+    {
+      "name": "usa",
+      "slug": "usa",
+      "uri": "https://api.sketchfab.com/v3/tags/usa"
+    },
+    {
+      "name": "gun",
+      "slug": "gun",
+      "uri": "https://api.sketchfab.com/v3/tags/gun"
+    },
+    {
+      "name": "war",
+      "slug": "war",
+      "uri": "https://api.sketchfab.com/v3/tags/war"
+    },
+    {
+      "name": "gameready",
+      "slug": "gameready",
+      "uri": "https://api.sketchfab.com/v3/tags/gameready"
+    }
+  ],
+  "thumbnails": {
+    "images": [
+      {
+        "uid": "7dc7d6c9f21848aca5969b98327436f8",
+        "width": 1920,
+        "height": 1080,
+        "size": 239639,
+        "url": "https://media.sketchfab.com/models/40d8ef818c7549a896371cbb1f64fec6/thumbnails/a32b246e273443638b445a435eb77320/44544f91a1944908bae4dd4988c989a7.jpeg"
+      },
+      {
+        "uid": "c88272e149c64a43b8be2b6fe1b7cecd",
+        "width": 1024,
+        "height": 576,
+        "size": 64417,
+        "url": "https://media.sketchfab.com/models/40d8ef818c7549a896371cbb1f64fec6/thumbnails/a32b246e273443638b445a435eb77320/d78c9fc32aad43d3a06f6356a4c8127c.jpeg"
+      },
+      {
+        "uid": "ef1c0ac3e9a844268ebff6009f4b0628",
+        "width": 720,
+        "height": 405,
+        "size": 36113,
+        "url": "https://media.sketchfab.com/models/40d8ef818c7549a896371cbb1f64fec6/thumbnails/a32b246e273443638b445a435eb77320/eb2bfd61067a4661a59e6122d0738b1e.jpeg"
+      },
+      {
+        "uid": "ba8b758da4604e7e8a0452646114609b",
+        "width": 256,
+        "height": 144,
+        "size": 6560,
+        "url": "https://media.sketchfab.com/models/40d8ef818c7549a896371cbb1f64fec6/thumbnails/a32b246e273443638b445a435eb77320/2991fbade2004a90953dca9671df8a0d.jpeg"
+      },
+      {
+        "uid": "49f7b48cbd19464594862f8824811b7d",
+        "width": 64,
+        "height": 36,
+        "size": 1253,
+        "url": "https://media.sketchfab.com/models/40d8ef818c7549a896371cbb1f64fec6/thumbnails/a32b246e273443638b445a435eb77320/f5921cfad02a4fa28f3df5e5c40400ca.jpeg"
+      }
+    ]
+  },
+  "uid": "40d8ef818c7549a896371cbb1f64fec6",
+  "uri": "https://api.sketchfab.com/v3/models/40d8ef818c7549a896371cbb1f64fec6",
+  "user": {
+    "uid": "e132101b8018419294d5423644942eeb",
+    "username": "Firewarden",
+    "displayName": "Firewarden3D",
+    "account": "basic",
+    "profileUrl": "https://sketchfab.com/Firewarden",
+    "avatar": {
+      "uid": "e163299b808847ba9002b0e3a295fce2",
+      "uri": "https://api.sketchfab.com/v3/avatars/e163299b808847ba9002b0e3a295fce2",
+      "images": [
+        {
+          "width": 32,
+          "height": 32,
+          "size": 1835,
+          "url": "https://media.sketchfab.com/avatars/e163299b808847ba9002b0e3a295fce2/28953f29d7fa426cbaf1fe37d5535c39.png"
+        },
+        {
+          "width": 48,
+          "height": 48,
+          "size": 3336,
+          "url": "https://media.sketchfab.com/avatars/e163299b808847ba9002b0e3a295fce2/2463f6fece3345f590f7face17db1c7d.png"
+        },
+        {
+          "width": 90,
+          "height": 90,
+          "size": 6736,
+          "url": "https://media.sketchfab.com/avatars/e163299b808847ba9002b0e3a295fce2/56eeed4e41684d3f8716ab1568d86cdf.png"
+        },
+        {
+          "width": 100,
+          "height": 100,
+          "size": 7390,
+          "url": "https://media.sketchfab.com/avatars/e163299b808847ba9002b0e3a295fce2/86bcd1428a3e4f4682aa2ee542e663f3.png"
+        }
+      ]
+    },
+    "uri": "https://api.sketchfab.com/v3/users/e132101b8018419294d5423644942eeb"
+  },
+  "vertexCount": 42583,
+  "viewCount": 24578,
+  "viewerUrl": "https://sketchfab.com/3d-models/m4a1-40d8ef818c7549a896371cbb1f64fec6",
+  "isDownloadable": true,
+  "isProtected": false,
+  "description": "",
+  "price": null,
+  "downloadCount": 2049,
+  "editorUrl": "https://sketchfab.com/models/40d8ef818c7549a896371cbb1f64fec6/edit",
+  "status": {
+    "warning": {},
+    "processing": "SUCCEEDED"
+  },
+  "source": "website",
+  "hasCommentsDisabled": false,
+  "updatedAt": "2025-05-07T20:29:51.814751",
+  "pbrType": "metalness",
+  "textureCount": 10,
+  "materialCount": 2
+}

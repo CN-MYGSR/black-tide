@@ -21,7 +21,7 @@ var font: Font
 
 
 func _ready() -> void:
-	set_anchors_preset(Control.PRESET_FULL_RECT)
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	font = ThemeDB.fallback_font
 	EventBus.notify.connect(_on_notify)
@@ -52,14 +52,16 @@ func _on_objective(main: String, detail: String) -> void:
 	_objective_sub = detail
 
 
-func _on_completed(credits: int, xp: int) -> void:
+func _on_completed(_credits: int, _xp: int) -> void:
+	if not GameState.last_raid.get("ok", false):
+		return
 	_show_debrief = true
-	_debrief = {"ok": true, "credits": credits, "xp": xp, "kills": GameState.raid_kills}
+	_debrief = GameState.last_raid.duplicate()
 
 
 func _on_failed(reason: String) -> void:
 	_show_debrief = true
-	_debrief = {"ok": false, "reason": reason, "kills": GameState.raid_kills}
+	_debrief = {"ok": false, "reason": reason, "kills": GameState.last_raid.get("kills", 0)}
 
 
 func _process(delta: float) -> void:
@@ -157,8 +159,8 @@ func _draw_ammo() -> void:
 	_text(Vector2(right - 220, s.y - 96), str(def["label"]), 15, Color(0.85, 0.86, 0.84), HORIZONTAL_ALIGNMENT_RIGHT, 220)
 	var mag := "%d" % player.ammo_mag
 	var res := " / %d" % player.ammo_reserve
-	_text(Vector2(right - 120, s.y - 52), mag, 40, Color(0.96, 0.96, 0.92), HORIZONTAL_ALIGNMENT_RIGHT, 120)
-	_text(Vector2(right - 100, s.y - 54), res, 18, Color(0.7, 0.72, 0.7), HORIZONTAL_ALIGNMENT_LEFT, 100)
+	_text(Vector2(right - 220, s.y - 52), mag, 40, Color(0.96, 0.96, 0.92), HORIZONTAL_ALIGNMENT_RIGHT, 110)
+	_text(Vector2(right - 104, s.y - 54), res, 18, Color(0.7, 0.72, 0.7), HORIZONTAL_ALIGNMENT_LEFT, 104)
 	if player.is_reloading():
 		_text(Vector2(right - 220, s.y - 26), "换弹中…", 14, Color(0.95, 0.75, 0.3), HORIZONTAL_ALIGNMENT_RIGHT, 220)
 

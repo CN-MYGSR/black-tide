@@ -1,5 +1,6 @@
 class_name Outpost
 extends Node3D
+signal owner_changed(faction: String)
 ## 可争夺据点。规则参考 BRM5 的"据点控制"：站在圈里、圈里没有敌人，进度条才涨。
 
 const CAPTURE_RATE := 9.0        ## 每秒进度
@@ -18,7 +19,6 @@ var _area: Area3D
 var _flag: MeshInstance3D
 var _pole: MeshInstance3D
 var _bodies: Array[Node3D] = []
-var _captured_once: bool = false
 
 const COL_OPFOR := Color(0.72, 0.16, 0.14)
 const COL_BLUFOR := Color(0.16, 0.42, 0.78)
@@ -105,41 +105,47 @@ func _on_body_exited(body: Node3D) -> void:
 
 
 func _process(delta: float) -> void:
-	if not capturable or _captured_once and owner_faction == "blufor":
+	if not capturable:
 		return
 
 	var attackers := 0
 	var defenders := 0
+	var rivals := 0
 	var alive: Array[Node3D] = []
 	for b in _bodies:
 		if not is_instance_valid(b):
 			continue
+		alive.append(b)
 		if b.has_method("is_alive") and not b.is_alive():
 			continue
-		alive.append(b)
+		if b is Player and b.state != Player.State.ALIVE:
+			continue
 		if b.get("faction") == "player" or b.get("faction") == "blufor":
 			attackers += 1
 		elif b.get("faction") == "opfor":
 			defenders += 1
+		elif b.get("faction") == "rival":
+			rivals += 1
 	_bodies = alive
 
-	contested = attackers > 0 and defenders > 0
+	contested = (attackers > 0 and defenders + rivals > 0) or (defenders > 0 and rivals > 0)
 
 	if owner_faction == "blufor":
 		# 已经拿下来了，敌人站进来会反推
-		if defenders > 0 and attackers == 0:
+		if defenders > 0 and attackers == 0 and rivals == 0:
 			progress = maxf(0.0, progress - DECAY_RATE * delta)
 			if progress <= 0.0:
 				_set_owner("opfor")
+				EventBus.notify.emit("据点失守：%s" % display_name)
+		elif attackers > 0 and defenders == 0 and rivals == 0:
+			progress = minf(MAX_PROGRESS, progress + DECAY_RATE * delta)
 		return
 
-	if attackers > 0 and defenders == 0:
+	if attackers > 0 and defenders == 0 and rivals == 0:
 		progress = minf(MAX_PROGRESS, progress + CAPTURE_RATE * delta)
 		EventBus.outpost_progress.emit(self, progress)
 		if progress >= MAX_PROGRESS:
 			_set_owner("blufor")
-			_captured_once = true
-			EventBus.outpost_captured.emit(self, "blufor")
 			EventBus.notify.emit("据点已控制：%s" % display_name)
 	elif attackers == 0 and progress > 0.0:
 		progress = maxf(0.0, progress - DECAY_RATE * delta)
@@ -148,7 +154,7 @@ func _process(delta: float) -> void:
 
 func _set_owner(faction: String) -> void:
 	owner_faction = faction
-	progress = 0.0
+	progress = MAX_PROGRESS if faction == "blufor" else 0.0
 	if _flag != null:
 		var m := StandardMaterial3D.new()
 		m.albedo_color = _owner_color()
@@ -157,6 +163,8 @@ func _set_owner(faction: String) -> void:
 		m.emission_enabled = true
 		m.emission = _owner_color() * 0.35
 		_flag.material_override = m
+	owner_changed.emit(faction)
+	EventBus.outpost_captured.emit(self, faction)
 
 
 func is_owned_by_player() -> bool:

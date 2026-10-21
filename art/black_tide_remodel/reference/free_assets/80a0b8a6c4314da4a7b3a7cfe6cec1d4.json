@@ -1,0 +1,297 @@
+{
+  "animationCount": 0,
+  "categories": [
+    {
+      "uid": "3badf36bd9f549bdba295334d75e04d3",
+      "name": "Weapons & Military",
+      "slug": "weapons-military",
+      "uri": "https://api.sketchfab.com/v3/categories/3badf36bd9f549bdba295334d75e04d3",
+      "icon": "https://static.sketchfab.com/static/builds/web/dist/static/assets/images/icons/categories/6f71af8dadcca706c7404c9a0f82c1a3-v2.svg",
+      "thumbnails": [
+        {
+          "width": "512",
+          "height": "288",
+          "url": "https://static.sketchfab.com/categories/3badf36bd9f549bdba295334d75e04d3/512x288.png"
+        },
+        {
+          "width": "800",
+          "height": "450",
+          "url": "https://static.sketchfab.com/categories/3badf36bd9f549bdba295334d75e04d3/800x450.png"
+        }
+      ]
+    }
+  ],
+  "commentCount": 7,
+  "createdAt": "2022-06-16T19:05:10.798312",
+  "embedUrl": "https://sketchfab.com/models/80a0b8a6c4314da4a7b3a7cfe6cec1d4/embed",
+  "faceCount": 23160,
+  "isAgeRestricted": false,
+  "license": {
+    "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+    "label": "CC Attribution",
+    "fullName": "Creative Commons Attribution",
+    "requirements": "Author must be credited. Commercial use is allowed.",
+    "url": "http://creativecommons.org/licenses/by/4.0/",
+    "slug": "by"
+  },
+  "likeCount": 365,
+  "name": "M1911 pistol",
+  "publishedAt": "2022-06-16T19:26:01.739781",
+  "soundCount": 0,
+  "staffpickedAt": null,
+  "tags": [
+    {
+      "name": "rifle",
+      "slug": "rifle",
+      "uri": "https://api.sketchfab.com/v3/tags/rifle"
+    },
+    {
+      "name": "red",
+      "slug": "red",
+      "uri": "https://api.sketchfab.com/v3/tags/red"
+    },
+    {
+      "name": "ww2",
+      "slug": "ww2",
+      "uri": "https://api.sketchfab.com/v3/tags/ww2"
+    },
+    {
+      "name": "empire",
+      "slug": "empire",
+      "uri": "https://api.sketchfab.com/v3/tags/empire"
+    },
+    {
+      "name": "soviet",
+      "slug": "soviet",
+      "uri": "https://api.sketchfab.com/v3/tags/soviet"
+    },
+    {
+      "name": "army",
+      "slug": "army",
+      "uri": "https://api.sketchfab.com/v3/tags/army"
+    },
+    {
+      "name": "handgun",
+      "slug": "handgun",
+      "uri": "https://api.sketchfab.com/v3/tags/handgun"
+    },
+    {
+      "name": "45",
+      "slug": "45",
+      "uri": "https://api.sketchfab.com/v3/tags/45"
+    },
+    {
+      "name": "carbine",
+      "slug": "carbine",
+      "uri": "https://api.sketchfab.com/v3/tags/carbine"
+    },
+    {
+      "name": "acp",
+      "slug": "acp",
+      "uri": "https://api.sketchfab.com/v3/tags/acp"
+    },
+    {
+      "name": "russian",
+      "slug": "russian",
+      "uri": "https://api.sketchfab.com/v3/tags/russian"
+    },
+    {
+      "name": "browning",
+      "slug": "browning",
+      "uri": "https://api.sketchfab.com/v3/tags/browning"
+    },
+    {
+      "name": "john",
+      "slug": "john",
+      "uri": "https://api.sketchfab.com/v3/tags/john"
+    },
+    {
+      "name": "old",
+      "slug": "old",
+      "uri": "https://api.sketchfab.com/v3/tags/old"
+    },
+    {
+      "name": "Pistol",
+      "slug": "pistol",
+      "uri": "https://api.sketchfab.com/v3/tags/pistol"
+    },
+    {
+      "name": "realism",
+      "slug": "realism",
+      "uri": "https://api.sketchfab.com/v3/tags/realism"
+    },
+    {
+      "name": "Semi-Automatic",
+      "slug": "semi-automatic",
+      "uri": "https://api.sketchfab.com/v3/tags/semi-automatic"
+    },
+    {
+      "name": "45ACP",
+      "slug": "45acp",
+      "uri": "https://api.sketchfab.com/v3/tags/45acp"
+    },
+    {
+      "name": "Moses",
+      "slug": "moses",
+      "uri": "https://api.sketchfab.com/v3/tags/moses"
+    },
+    {
+      "name": "coldwar",
+      "slug": "coldwar",
+      "uri": "https://api.sketchfab.com/v3/tags/coldwar"
+    },
+    {
+      "name": "m1911a1",
+      "slug": "m1911a1",
+      "uri": "https://api.sketchfab.com/v3/tags/m1911a1"
+    },
+    {
+      "name": "ww2weapons",
+      "slug": "ww2weapons",
+      "uri": "https://api.sketchfab.com/v3/tags/ww2weapons"
+    },
+    {
+      "name": "automatic-weapon",
+      "slug": "automatic-weapon",
+      "uri": "https://api.sketchfab.com/v3/tags/automatic-weapon"
+    },
+    {
+      "name": "legendary-weapon",
+      "slug": "legendary-weapon",
+      "uri": "https://api.sketchfab.com/v3/tags/legendary-weapon"
+    },
+    {
+      "name": "browninghipower",
+      "slug": "browninghipower",
+      "uri": "https://api.sketchfab.com/v3/tags/browninghipower"
+    },
+    {
+      "name": "browning-m1911",
+      "slug": "browning-m1911",
+      "uri": "https://api.sketchfab.com/v3/tags/browning-m1911"
+    },
+    {
+      "name": "usa",
+      "slug": "usa",
+      "uri": "https://api.sketchfab.com/v3/tags/usa"
+    },
+    {
+      "name": "gun",
+      "slug": "gun",
+      "uri": "https://api.sketchfab.com/v3/tags/gun"
+    },
+    {
+      "name": "colt",
+      "slug": "colt",
+      "uri": "https://api.sketchfab.com/v3/tags/colt"
+    },
+    {
+      "name": "1911",
+      "slug": "1911",
+      "uri": "https://api.sketchfab.com/v3/tags/1911"
+    },
+    {
+      "name": "war",
+      "slug": "war",
+      "uri": "https://api.sketchfab.com/v3/tags/war"
+    }
+  ],
+  "thumbnails": {
+    "images": [
+      {
+        "uid": "a5b14fbf929f4117aaa266cf204ae522",
+        "width": 1920,
+        "height": 1080,
+        "size": 270502,
+        "url": "https://media.sketchfab.com/models/80a0b8a6c4314da4a7b3a7cfe6cec1d4/thumbnails/b9c506eaf4844b279a7b27f017d4ddfb/68e90c5c874d4988a340dc06a41b43ca.jpeg"
+      },
+      {
+        "uid": "1c0d256b0c85478da8faee01028c8440",
+        "width": 1024,
+        "height": 576,
+        "size": 59695,
+        "url": "https://media.sketchfab.com/models/80a0b8a6c4314da4a7b3a7cfe6cec1d4/thumbnails/b9c506eaf4844b279a7b27f017d4ddfb/4a6d82f77f4845df86215c29b759a8a1.jpeg"
+      },
+      {
+        "uid": "0fcebc25185c43888bc7061e8ab733f6",
+        "width": 720,
+        "height": 405,
+        "size": 31458,
+        "url": "https://media.sketchfab.com/models/80a0b8a6c4314da4a7b3a7cfe6cec1d4/thumbnails/b9c506eaf4844b279a7b27f017d4ddfb/926b10b79cc64f90b32ed4e275768575.jpeg"
+      },
+      {
+        "uid": "bde4b3396b214915b39c314e5047bc60",
+        "width": 256,
+        "height": 144,
+        "size": 5514,
+        "url": "https://media.sketchfab.com/models/80a0b8a6c4314da4a7b3a7cfe6cec1d4/thumbnails/b9c506eaf4844b279a7b27f017d4ddfb/08e62c8d799b4b12b16bd296dfd2c7cd.jpeg"
+      },
+      {
+        "uid": "92842b5a0b8740f592943a711c527b99",
+        "width": 64,
+        "height": 36,
+        "size": 1155,
+        "url": "https://media.sketchfab.com/models/80a0b8a6c4314da4a7b3a7cfe6cec1d4/thumbnails/b9c506eaf4844b279a7b27f017d4ddfb/ab58ed153ea7448a968bde0fa6c5d101.jpeg"
+      }
+    ]
+  },
+  "uid": "80a0b8a6c4314da4a7b3a7cfe6cec1d4",
+  "uri": "https://api.sketchfab.com/v3/models/80a0b8a6c4314da4a7b3a7cfe6cec1d4",
+  "user": {
+    "uid": "e06cc8c50ea84d08bffc06891a8656b0",
+    "username": "egorbelous",
+    "displayName": "e.belous",
+    "account": "basic",
+    "profileUrl": "https://sketchfab.com/egorbelous",
+    "avatar": {
+      "uid": "24d4344be8a34d6c9ce01c2b564026f2",
+      "uri": "https://api.sketchfab.com/v3/avatars/24d4344be8a34d6c9ce01c2b564026f2",
+      "images": [
+        {
+          "width": 32,
+          "height": 32,
+          "size": 3263,
+          "url": "https://media.sketchfab.com/avatars/24d4344be8a34d6c9ce01c2b564026f2/90b8c3da95e8433b9d3a963c57bb81af.png"
+        },
+        {
+          "width": 48,
+          "height": 48,
+          "size": 6813,
+          "url": "https://media.sketchfab.com/avatars/24d4344be8a34d6c9ce01c2b564026f2/993f37f29c5e477c92d8bfafb4e3f725.png"
+        },
+        {
+          "width": 90,
+          "height": 90,
+          "size": 21379,
+          "url": "https://media.sketchfab.com/avatars/24d4344be8a34d6c9ce01c2b564026f2/1a838584f53e4e0b8bd14dcfa8a7b67f.png"
+        },
+        {
+          "width": 100,
+          "height": 100,
+          "size": 25555,
+          "url": "https://media.sketchfab.com/avatars/24d4344be8a34d6c9ce01c2b564026f2/1126a1ef414a4d6cb4178ab1a91bae10.png"
+        }
+      ]
+    },
+    "uri": "https://api.sketchfab.com/v3/users/e06cc8c50ea84d08bffc06891a8656b0"
+  },
+  "vertexCount": 12270,
+  "viewCount": 23031,
+  "viewerUrl": "https://sketchfab.com/3d-models/m1911-pistol-80a0b8a6c4314da4a7b3a7cfe6cec1d4",
+  "isDownloadable": true,
+  "isProtected": false,
+  "description": "ArtStation: https://www.artstation.com/artwork/4XBB5q\nM1911 — legendary automatic handun made by firearm designer John Moses Browning\n\nFILE| .fbx\n\nINFO| 11,061 tris\n\nTEXTURES| 2 texture sets, 4096-2048, albedo, specular, roughness (4k), metallic, normal (4k)",
+  "price": null,
+  "downloadCount": 5835,
+  "editorUrl": "https://sketchfab.com/models/80a0b8a6c4314da4a7b3a7cfe6cec1d4/edit",
+  "status": {
+    "warning": {},
+    "processing": "SUCCEEDED"
+  },
+  "source": "website",
+  "hasCommentsDisabled": false,
+  "updatedAt": "2022-07-21T17:20:56.094321",
+  "pbrType": "metalness",
+  "textureCount": 12,
+  "materialCount": 2
+}

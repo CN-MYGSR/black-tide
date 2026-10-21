@@ -1,0 +1,196 @@
+{
+  "animationCount": 8,
+  "categories": [
+    {
+      "uid": "93e6d27da62149c6b963039835f45997",
+      "name": "People",
+      "slug": "people",
+      "uri": "https://api.sketchfab.com/v3/categories/93e6d27da62149c6b963039835f45997",
+      "icon": "https://static.sketchfab.com/static/builds/web/dist/static/assets/images/icons/categories/63980e30d4668c8fba3671a767c90954-v2.svg",
+      "thumbnails": [
+        {
+          "width": "512",
+          "height": "288",
+          "url": "https://static.sketchfab.com/categories/93e6d27da62149c6b963039835f45997/512x288.png"
+        },
+        {
+          "width": "800",
+          "height": "450",
+          "url": "https://static.sketchfab.com/categories/93e6d27da62149c6b963039835f45997/800x450.png"
+        }
+      ]
+    },
+    {
+      "uid": "3badf36bd9f549bdba295334d75e04d3",
+      "name": "Weapons & Military",
+      "slug": "weapons-military",
+      "uri": "https://api.sketchfab.com/v3/categories/3badf36bd9f549bdba295334d75e04d3",
+      "icon": "https://static.sketchfab.com/static/builds/web/dist/static/assets/images/icons/categories/6f71af8dadcca706c7404c9a0f82c1a3-v2.svg",
+      "thumbnails": [
+        {
+          "width": "512",
+          "height": "288",
+          "url": "https://static.sketchfab.com/categories/3badf36bd9f549bdba295334d75e04d3/512x288.png"
+        },
+        {
+          "width": "800",
+          "height": "450",
+          "url": "https://static.sketchfab.com/categories/3badf36bd9f549bdba295334d75e04d3/800x450.png"
+        }
+      ]
+    }
+  ],
+  "commentCount": 76,
+  "createdAt": "2022-12-08T08:44:47.483324",
+  "embedUrl": "https://sketchfab.com/models/94be8385c402474cacd39bc096c6ca14/embed",
+  "faceCount": 40024,
+  "isAgeRestricted": false,
+  "license": {
+    "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+    "label": "CC Attribution",
+    "fullName": "Creative Commons Attribution",
+    "requirements": "Author must be credited. Commercial use is allowed.",
+    "url": "http://creativecommons.org/licenses/by/4.0/",
+    "slug": "by"
+  },
+  "likeCount": 558,
+  "name": "FPS AK-74m animations",
+  "publishedAt": "2022-12-08T09:00:40.295056",
+  "soundCount": 0,
+  "staffpickedAt": null,
+  "tags": [
+    {
+      "name": "fps",
+      "slug": "fps",
+      "uri": "https://api.sketchfab.com/v3/tags/fps"
+    },
+    {
+      "name": "akm",
+      "slug": "akm",
+      "uri": "https://api.sketchfab.com/v3/tags/akm"
+    },
+    {
+      "name": "ak74",
+      "slug": "ak74",
+      "uri": "https://api.sketchfab.com/v3/tags/ak74"
+    },
+    {
+      "name": "weapon",
+      "slug": "weapon",
+      "uri": "https://api.sketchfab.com/v3/tags/weapon"
+    },
+    {
+      "name": "animation",
+      "slug": "animation",
+      "uri": "https://api.sketchfab.com/v3/tags/animation"
+    },
+    {
+      "name": "gun",
+      "slug": "gun",
+      "uri": "https://api.sketchfab.com/v3/tags/gun"
+    },
+    {
+      "name": "ak47",
+      "slug": "ak47",
+      "uri": "https://api.sketchfab.com/v3/tags/ak47"
+    }
+  ],
+  "thumbnails": {
+    "images": [
+      {
+        "uid": "ebd8d06a0e564ccca5a32b638cd831b5",
+        "width": 1920,
+        "height": 1080,
+        "size": 264843,
+        "url": "https://media.sketchfab.com/models/94be8385c402474cacd39bc096c6ca14/thumbnails/1155c31af4e04ac8a816e594f7d3a7ed/73a47f70f6d44926a573a1d8d34d0fed.jpeg"
+      },
+      {
+        "uid": "d1f1d714ba454ba0a4187ec01ca61426",
+        "width": 1024,
+        "height": 576,
+        "size": 40193,
+        "url": "https://media.sketchfab.com/models/94be8385c402474cacd39bc096c6ca14/thumbnails/1155c31af4e04ac8a816e594f7d3a7ed/7a83f3875050420bbb0397565354ff7f.jpeg"
+      },
+      {
+        "uid": "337cf15a11d24cf293abf49ba1c882b4",
+        "width": 720,
+        "height": 405,
+        "size": 18118,
+        "url": "https://media.sketchfab.com/models/94be8385c402474cacd39bc096c6ca14/thumbnails/1155c31af4e04ac8a816e594f7d3a7ed/7ed61618118742e4905de1384cbfdd1b.jpeg"
+      },
+      {
+        "uid": "688dc140c3444eb7a47c866619cbec71",
+        "width": 256,
+        "height": 144,
+        "size": 3073,
+        "url": "https://media.sketchfab.com/models/94be8385c402474cacd39bc096c6ca14/thumbnails/1155c31af4e04ac8a816e594f7d3a7ed/87d0506e42554dd48492804f0933dd28.jpeg"
+      },
+      {
+        "uid": "dcf22f21c1a247969d7e1c533137f241",
+        "width": 64,
+        "height": 36,
+        "size": 949,
+        "url": "https://media.sketchfab.com/models/94be8385c402474cacd39bc096c6ca14/thumbnails/1155c31af4e04ac8a816e594f7d3a7ed/2fec98b4ab364ef3b3266743bed632c7.jpeg"
+      }
+    ]
+  },
+  "uid": "94be8385c402474cacd39bc096c6ca14",
+  "uri": "https://api.sketchfab.com/v3/models/94be8385c402474cacd39bc096c6ca14",
+  "user": {
+    "uid": "4b3d4e54ddc941e4bebb5cd0d83dc7b2",
+    "username": "ccransh",
+    "displayName": "Cransh",
+    "account": "basic",
+    "profileUrl": "https://sketchfab.com/ccransh",
+    "avatar": {
+      "uid": "718fae5aed5e4b5383efbf9af079ecde",
+      "uri": "https://api.sketchfab.com/v3/avatars/718fae5aed5e4b5383efbf9af079ecde",
+      "images": [
+        {
+          "width": 32,
+          "height": 32,
+          "size": 1081,
+          "url": "https://media.sketchfab.com/avatars/718fae5aed5e4b5383efbf9af079ecde/d7e4e1a41e5844f2af59e9433084e56d.jpeg"
+        },
+        {
+          "width": 48,
+          "height": 48,
+          "size": 1537,
+          "url": "https://media.sketchfab.com/avatars/718fae5aed5e4b5383efbf9af079ecde/e0c6e4b707bd4ce3b8a6612ada0aad73.jpeg"
+        },
+        {
+          "width": 90,
+          "height": 90,
+          "size": 3348,
+          "url": "https://media.sketchfab.com/avatars/718fae5aed5e4b5383efbf9af079ecde/e0abf35914454f0c9c2fe27bc0e028b9.jpeg"
+        },
+        {
+          "width": 100,
+          "height": 100,
+          "size": 3876,
+          "url": "https://media.sketchfab.com/avatars/718fae5aed5e4b5383efbf9af079ecde/8812f27652dc49369e755c4b6b918c4f.jpeg"
+        }
+      ]
+    },
+    "uri": "https://api.sketchfab.com/v3/users/4b3d4e54ddc941e4bebb5cd0d83dc7b2"
+  },
+  "vertexCount": 20823,
+  "viewCount": 61097,
+  "viewerUrl": "https://sketchfab.com/3d-models/fps-ak-74m-animations-94be8385c402474cacd39bc096c6ca14",
+  "isDownloadable": true,
+  "isProtected": false,
+  "description": "Hello! Some AK animations. AK-74m by creationwasteland (@creationwasteland) and FP-ARMS by DJMaesen @bumstrum",
+  "price": null,
+  "downloadCount": 14961,
+  "editorUrl": "https://sketchfab.com/models/94be8385c402474cacd39bc096c6ca14/edit",
+  "status": {
+    "warning": {},
+    "processing": "SUCCEEDED"
+  },
+  "source": "website",
+  "hasCommentsDisabled": false,
+  "updatedAt": "2026-09-09T18:19:43.228984",
+  "pbrType": "metalness",
+  "textureCount": 8,
+  "materialCount": 2
+}

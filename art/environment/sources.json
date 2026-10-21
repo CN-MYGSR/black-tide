@@ -1,0 +1,195 @@
+{
+  "license": "CC0-1.0",
+  "license_url": "https://docs.ambientcg.com/license/",
+  "assets": [
+    {
+      "id": "Grass001",
+      "package": "Grass001_2K-JPG.zip",
+      "source": "https://ambientcg.com/a/Grass001",
+      "download": "https://ambientcg.com/get?file=Grass001_2K-JPG.zip",
+      "archive_sha256": "a47570077b55f260a6c54890a560087caffb9eb8b2b78a84f8247ba1966d7d1d",
+      "files": [
+        {
+          "path": "assets/textures/environment/Grass001/Color.jpg",
+          "sha256": "8a8bfcffd087134caad2a7def216f3dd2d307fbe02340ca47e3c5c71f49d50b4"
+        },
+        {
+          "path": "assets/textures/environment/Grass001/NormalGL.jpg",
+          "sha256": "7ccaf9e28ea7a533e590c2e07a39e141017a5a5db8b7241730a3c287c540e881"
+        },
+        {
+          "path": "assets/textures/environment/Grass001/Roughness.jpg",
+          "sha256": "2a2a3f9220a351f14858075d4c6ba1ff7fde8bedd7009c94cb432bc2b9a362e4"
+        }
+      ]
+    },
+    {
+      "id": "Rock030",
+      "package": "Rock030_2K-JPG.zip",
+      "source": "https://ambientcg.com/a/Rock030",
+      "download": "https://ambientcg.com/get?file=Rock030_2K-JPG.zip",
+      "archive_sha256": "18992ddc09f8f0cc60eceb875243c0c2449666c662ab7fedbd8bdea4b3d15a99",
+      "files": [
+        {
+          "path": "assets/textures/environment/Rock030/Color.jpg",
+          "sha256": "c7169827afa47148833a3d778bd2827f12b124852efcabf3364910b1cb6d4beb"
+        },
+        {
+          "path": "assets/textures/environment/Rock030/NormalGL.jpg",
+          "sha256": "bf4b029b98fc771887e80807e28f97488c3a8936369152bd1020b2535415a5af"
+        },
+        {
+          "path": "assets/textures/environment/Rock030/Roughness.jpg",
+          "sha256": "a057169aa693438170a969249eb7e1113078f04c38b3fc2766fdccf21d5a918f"
+        }
+      ]
+    },
+    {
+      "id": "Ground054",
+      "package": "Ground054_2K-JPG.zip",
+      "source": "https://ambientcg.com/a/Ground054",
+      "download": "https://ambientcg.com/get?file=Ground054_2K-JPG.zip",
+      "archive_sha256": "643e7c8689bac041f17c660eff6a5459bfe0535d4466737beb0e64902b23235a",
+      "files": [
+        {
+          "path": "assets/textures/environment/Ground054/Color.jpg",
+          "sha256": "9f9459ae378584f568c9da887a30ab5987890df422af5a157763a51992e61245"
+        },
+        {
+          "path": "assets/textures/environment/Ground054/NormalGL.jpg",
+          "sha256": "39fd2827adfdd4fe53ad58d3ebcae686f789eb9f171d996de8356431ec6fc90d"
+        },
+        {
+          "path": "assets/textures/environment/Ground054/Roughness.jpg",
+          "sha256": "2f977986be51d4e07e7a3a03051e49049f9c94cefb0246a714400d2a076c8044"
+        }
+      ]
+    },
+    {
+      "id": "Concrete034",
+      "package": "Concrete034_1K-JPG.zip",
+      "source": "https://ambientcg.com/a/Concrete034",
+      "download": "https://ambientcg.com/get?file=Concrete034_1K-JPG.zip",
+      "archive_sha256": "5839d284d94ffb8d2a56df742ec522b13dd311c52dbd42b8fd33f0409ceedb81",
+      "files": [
+        {
+          "path": "assets/textures/environment/Concrete034/Color.jpg",
+          "sha256": "8ceb9186d990b31fce785e06fdc6974c160f1d27c43f6160266f164deba713aa"
+        },
+        {
+          "path": "assets/textures/environment/Concrete034/NormalGL.jpg",
+          "sha256": "e509eb9dfa978e780fbebfd2acacc2ce158b5b7ced722ddc0759039dd51e18ca"
+        },
+        {
+          "path": "assets/textures/environment/Concrete034/Roughness.jpg",
+          "sha256": "a4a9e39857a19afd23a778e5abf44fcdf6bd7f93918f1cf6878b41933e553511"
+        }
+      ]
+    },
+    {
+      "id": "Asphalt012",
+      "package": "Asphalt012_2K-JPG.zip",
+      "source": "https://ambientcg.com/a/Asphalt012",
+      "download": "https://ambientcg.com/get?file=Asphalt012_2K-JPG.zip",
+      "archive_sha256": "9a1265d8c1ab367560e378c2a8a9641bf4af84cd50bda6d13fb85c41abd48a92",
+      "files": [
+        {
+          "path": "assets/textures/environment/Asphalt012/Color.jpg",
+          "sha256": "40517abe931e321b0fe059314720b6be0166159437220592afab49d79244e9de"
+        },
+        {
+          "path": "assets/textures/environment/Asphalt012/NormalGL.jpg",
+          "sha256": "bf87b1095ed1f994a6fd63a079536a7df2fce07a2732d2fefdb2af9af1c094ca"
+        },
+        {
+          "path": "assets/textures/environment/Asphalt012/Roughness.jpg",
+          "sha256": "b7a6f2e17842ae0136f89424aacfa8b0f357cffafab99365a990d5d00927925c"
+        }
+      ]
+    },
+    {
+      "id": "WoodFloor051",
+      "package": "WoodFloor051_1K-JPG.zip",
+      "source": "https://ambientcg.com/a/WoodFloor051",
+      "download": "https://ambientcg.com/get?file=WoodFloor051_1K-JPG.zip",
+      "archive_sha256": "3f493484eab1ec5e1c466b90e515003b286fc6d7f84ff8ff6485900bfc26cef5",
+      "files": [
+        {
+          "path": "assets/textures/environment/WoodFloor051/Color.jpg",
+          "sha256": "ffbe4de8765619f278c5f819cd751e003808fa671eb99603abdf82b94ca85e9a"
+        },
+        {
+          "path": "assets/textures/environment/WoodFloor051/NormalGL.jpg",
+          "sha256": "5b026049b8a2d84c5b135d0880563dcd555c5cdcac71d0101ee47cedc562022e"
+        },
+        {
+          "path": "assets/textures/environment/WoodFloor051/Roughness.jpg",
+          "sha256": "967f0339ee6762fc0a40b222ed9801a37c626090f236f51b294878845ed38559"
+        }
+      ]
+    },
+    {
+      "id": "Ground109",
+      "package": "Ground109_2K-JPG.zip",
+      "source": "https://ambientcg.com/a/Ground109",
+      "download": "https://ambientcg.com/get?file=Ground109_2K-JPG.zip",
+      "archive_sha256": "1f32c5ffa599e32c61405417d9b682dcc23e6ccc38f8a3a09880f204a481e0c8",
+      "files": [
+        {
+          "path": "assets/textures/environment/Ground109/Color.jpg",
+          "sha256": "0d96216c34be43b166151172e2b884849ec9b3fc24b221a0179a27c4dc876d0b"
+        },
+        {
+          "path": "assets/textures/environment/Ground109/NormalGL.jpg",
+          "sha256": "68b01962ac79d49b86fcaabbdf2d24f957b4d76fa03617da729869650fde4ef0"
+        },
+        {
+          "path": "assets/textures/environment/Ground109/Roughness.jpg",
+          "sha256": "495ac3077f9a36b542a4feb4599f19fd58d9221107a7983a9534a10795c3c2b2"
+        }
+      ]
+    },
+    {
+      "id": "Fabric029",
+      "package": "Fabric029_1K-JPG.zip",
+      "source": "https://ambientcg.com/a/Fabric029",
+      "download": "https://ambientcg.com/get?file=Fabric029_1K-JPG.zip",
+      "archive_sha256": "bbb083cc11e668a87d1639b516621fbe3f51b7c0d619a44bf4d6e6aa8ac2d6a4",
+      "files": [
+        {
+          "path": "assets/textures/environment/Fabric029/Color.jpg",
+          "sha256": "07e4dc1786b26e1ec16902d396f69f7a6688e21a5c31f74d13b1674b63e5859f"
+        },
+        {
+          "path": "assets/textures/environment/Fabric029/NormalGL.jpg",
+          "sha256": "111c3f64f1656bc3eeaae1f4dd5a23ca2e6cf9d7813ae349a15b78d74b4832fc"
+        },
+        {
+          "path": "assets/textures/environment/Fabric029/Roughness.jpg",
+          "sha256": "6887e36bba2b4e70f3ae3319a277f7eec5000c77788b7829498a225a210a8505"
+        }
+      ]
+    },
+    {
+      "id": "Metal032",
+      "package": "Metal032_1K-JPG.zip",
+      "source": "https://ambientcg.com/a/Metal032",
+      "download": "https://ambientcg.com/get?file=Metal032_1K-JPG.zip",
+      "archive_sha256": "9e4f363905a647958c273154fa125d2a6440892d0e583f9b3af24bb08b5afc3c",
+      "files": [
+        {
+          "path": "assets/textures/environment/Metal032/Color.jpg",
+          "sha256": "49493d6ade78ccbbbd270c6a15e4b4c9b1a097e66ddf28a1073de3e85712d9af"
+        },
+        {
+          "path": "assets/textures/environment/Metal032/NormalGL.jpg",
+          "sha256": "8537c1015de5cc33d20231e5b6aa27309edcb983e1c37e608d08bb00f733747d"
+        },
+        {
+          "path": "assets/textures/environment/Metal032/Roughness.jpg",
+          "sha256": "55d3eee2b69008ad3701b18977495531d0e3515105102e56f40a4d1098d10bce"
+        }
+      ]
+    }
+  ]
+}

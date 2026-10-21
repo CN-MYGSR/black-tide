@@ -6802,5 +6802,462 @@
    0.381
   ],
   "tris": 2216
+ },
+ "BT_Operator": {
+  "category": "characters",
+  "size": [
+   1.2998,
+   1.7999,
+   0.3722
+  ],
+  "tris": 76589
+ },
+ "BT_FP_M4": {
+  "category": "viewmodels",
+  "size": [
+   0.7166,
+   0.4535,
+   0.9568
+  ],
+  "tris": 42621
+ },
+ "BT_Arms_Rifle": {
+  "category": "viewmodels",
+  "size": [
+   0.7166,
+   0.3525,
+   0.7325
+  ],
+  "tris": 14852
+ },
+ "BT_M4A1": {
+  "category": "weapons",
+  "size": [
+   0.0673,
+   0.2598,
+   0.84
+  ],
+  "tris": 27769
+ },
+ "BT_FP_AK": {
+  "category": "viewmodels",
+  "size": [
+   0.7211,
+   0.466,
+   1.0552
+  ],
+  "tris": 45299
+ },
+ "BT_Arms_AK": {
+  "category": "viewmodels",
+  "size": [
+   0.7211,
+   0.4405,
+   0.846
+  ],
+  "tris": 14852
+ },
+ "BT_AK47": {
+  "category": "weapons",
+  "size": [
+   0.0552,
+   0.2637,
+   0.88
+  ],
+  "tris": 30447
+ },
+ "BT_FP_M1911": {
+  "category": "viewmodels",
+  "size": [
+   0.6898,
+   0.3735,
+   0.5543
+  ],
+  "tris": 25913
+ },
+ "BT_Arms_Pistol": {
+  "category": "viewmodels",
+  "size": [
+   0.6898,
+   0.3543,
+   0.4358
+  ],
+  "tris": 14852
+ },
+ "BT_M1911": {
+  "category": "weapons",
+  "size": [
+   0.0336,
+   0.1357,
+   0.216
+  ],
+  "tris": 11061
+ },
+ "BT_Hand_R_Rifle": {
+  "category": "viewmodels",
+  "size": [
+   0.1435,
+   0.1249,
+   0.2571
+  ],
+  "tris": 7325
+ },
+ "BT_Hand_L_Rifle": {
+  "category": "viewmodels",
+  "size": [
+   0.2035,
+   0.1591,
+   0.1896
+  ],
+  "tris": 7299
+ },
+ "BT_Hand_R_Pistol": {
+  "category": "viewmodels",
+  "size": [
+   0.1288,
+   0.1443,
+   0.2269
+  ],
+  "tris": 7324
+ },
+ "BT_Hand_L_Pistol": {
+  "category": "viewmodels",
+  "size": [
+   0.1546,
+   0.1338,
+   0.2041
+  ],
+  "tris": 7310
+ },
+ "BT_Fitted_SM_Wep_RocketLauncher_01": {
+  "category": "weapons",
+  "size": [
+   0.1697,
+   0.2363,
+   1.0055
+  ],
+  "tris": 1748
+ },
+ "BT_FP_SM_Wep_RocketLauncher_01": {
+  "category": "viewmodels",
+  "size": [
+   0.7218,
+   0.4626,
+   1.0055
+  ],
+  "tris": 16600
+ },
+ "BT_Operator_Batched": {
+  "category": "characters",
+  "size": [
+   1.2998,
+   1.7999,
+   0.3722
+  ],
+  "tris": 76589,
+  "source_sha256": "b743eda181582fb39460b5fd13b6ecef3b18b2a87051319f7b2392821a7a900b"
+ },
+ "BT_Fitted_SM_Wep_Preset_A_Rifle_02": {
+  "category": "weapons",
+  "size": [
+   0.0661,
+   0.2736,
+   0.8381
+  ],
+  "tris": 6120
+ },
+ "BT_FP_SM_Wep_Preset_A_Rifle_02": {
+  "category": "viewmodels",
+  "size": [
+   0.7209,
+   0.4454,
+   1.0068
+  ],
+  "tris": 20972
+ },
+ "BT_Fitted_SM_Wep_Preset_A_Complex_01": {
+  "category": "weapons",
+  "size": [
+   0.1218,
+   0.2974,
+   0.9885
+  ],
+  "tris": 7842
+ },
+ "BT_FP_SM_Wep_Preset_A_Complex_01": {
+  "category": "viewmodels",
+  "size": [
+   0.7283,
+   0.4786,
+   1.082
+  ],
+  "tris": 22694
+ },
+ "BT_Fitted_SM_Wep_Preset_A_SMG_01": {
+  "category": "weapons",
+  "size": [
+   0.0661,
+   0.281,
+   0.5989
+  ],
+  "tris": 3834
+ },
+ "BT_FP_SM_Wep_Preset_A_SMG_01": {
+  "category": "viewmodels",
+  "size": [
+   0.7302,
+   0.4398,
+   0.7538
+  ],
+  "tris": 18686
+ },
+ "BT_Fitted_SM_Wep_Preset_A_Heavy_01": {
+  "category": "weapons",
+  "size": [
+   0.2005,
+   0.256,
+   0.9557
+  ],
+  "tris": 8240
+ },
+ "BT_FP_SM_Wep_Preset_A_Heavy_01": {
+  "category": "viewmodels",
+  "size": [
+   0.7066,
+   0.481,
+   1.077
+  ],
+  "tris": 23092
+ },
+ "BT_Fitted_SM_Wep_Preset_A_Sniper_01": {
+  "category": "weapons",
+  "size": [
+   0.0661,
+   0.273,
+   1.0987
+  ],
+  "tris": 6674
+ },
+ "BT_FP_SM_Wep_Preset_A_Sniper_01": {
+  "category": "viewmodels",
+  "size": [
+   0.7066,
+   0.4837,
+   1.2037
+  ],
+  "tris": 21526
+ },
+ "BT_Fitted_SM_Wep_MachineGun_USA_01": {
+  "category": "weapons",
+  "size": [
+   0.1305,
+   0.2141,
+   0.9027
+  ],
+  "tris": 5940
+ },
+ "BT_FP_SM_Wep_MachineGun_USA_01": {
+  "category": "viewmodels",
+  "size": [
+   0.7128,
+   0.4454,
+   0.9892
+  ],
+  "tris": 20792
+ },
+ "BT_Fitted_SM_Wep_Pistol_01": {
+  "category": "weapons",
+  "size": [
+   0.0303,
+   0.1308,
+   0.1954
+  ],
+  "tris": 1038
+ },
+ "BT_FP_SM_Wep_Pistol_01": {
+  "category": "viewmodels",
+  "size": [
+   0.6898,
+   0.3668,
+   0.5281
+  ],
+  "tris": 15890
+ },
+ "BT_Fitted_SM_Wep_Shotgun_01": {
+  "category": "weapons",
+  "size": [
+   0.0506,
+   0.1542,
+   0.8818
+  ],
+  "tris": 1252
+ },
+ "BT_FP_SM_Wep_Shotgun_01": {
+  "category": "viewmodels",
+  "size": [
+   0.7183,
+   0.3855,
+   1.0145
+  ],
+  "tris": 16104
+ },
+ "BT_Fitted_SM_Wep_Preset_B_Complex_01": {
+  "category": "weapons",
+  "size": [
+   0.1102,
+   0.346,
+   1.1487
+  ],
+  "tris": 7420
+ },
+ "BT_FP_SM_Wep_Preset_B_Complex_01": {
+  "category": "viewmodels",
+  "size": [
+   0.7153,
+   0.4951,
+   1.2118
+  ],
+  "tris": 22272
+ },
+ "BT_Fitted_SM_Wep_Preset_B_SMG_01": {
+  "category": "weapons",
+  "size": [
+   0.063,
+   0.2787,
+   0.3848
+  ],
+  "tris": 2596
+ },
+ "BT_FP_SM_Wep_Preset_B_SMG_01": {
+  "category": "viewmodels",
+  "size": [
+   0.729,
+   0.4423,
+   0.7348
+  ],
+  "tris": 17448
+ },
+ "BT_Fitted_SM_Wep_Preset_B_Heavy_01": {
+  "category": "weapons",
+  "size": [
+   0.1713,
+   0.2955,
+   0.9316
+  ],
+  "tris": 2920
+ },
+ "BT_FP_SM_Wep_Preset_B_Heavy_01": {
+  "category": "viewmodels",
+  "size": [
+   0.7066,
+   0.4,
+   1.0604
+  ],
+  "tris": 17772
+ },
+ "BT_Fitted_SM_Wep_Preset_B_Sniper_01": {
+  "category": "weapons",
+  "size": [
+   0.0635,
+   0.2391,
+   1.1505
+  ],
+  "tris": 3728
+ },
+ "BT_FP_SM_Wep_Preset_B_Sniper_01": {
+  "category": "viewmodels",
+  "size": [
+   0.7153,
+   0.4614,
+   1.2136
+  ],
+  "tris": 18580
+ },
+ "BT_Fitted_SM_Wep_Sniper_01": {
+  "category": "weapons",
+  "size": [
+   0.0859,
+   0.16,
+   1.0737
+  ],
+  "tris": 1266
+ },
+ "BT_FP_SM_Wep_Sniper_01": {
+  "category": "viewmodels",
+  "size": [
+   0.7158,
+   0.3841,
+   1.1806
+  ],
+  "tris": 16118
+ },
+ "BT_Fitted_SM_Wep_Pistol_Small_01": {
+  "category": "weapons",
+  "size": [
+   0.0337,
+   0.1199,
+   0.1665
+  ],
+  "tris": 898
+ },
+ "BT_FP_SM_Wep_Pistol_Small_01": {
+  "category": "viewmodels",
+  "size": [
+   0.6898,
+   0.3664,
+   0.5077
+  ],
+  "tris": 15750
+ },
+ "BT_Fitted_SM_Wep_MachineGun_Bandit_01": {
+  "category": "weapons",
+  "size": [
+   0.2143,
+   0.2091,
+   0.8932
+  ],
+  "tris": 4584
+ },
+ "BT_FP_SM_Wep_MachineGun_Bandit_01": {
+  "category": "viewmodels",
+  "size": [
+   0.7159,
+   0.4066,
+   0.999
+  ],
+  "tris": 19436
+ },
+ "BT_Fitted_SM_Wep_RPG_01": {
+  "category": "weapons",
+  "size": [
+   0.1161,
+   0.2544,
+   1.2893
+  ],
+  "tris": 2820
+ },
+ "BT_FP_SM_Wep_RPG_01": {
+  "category": "viewmodels",
+  "size": [
+   0.7365,
+   0.4732,
+   1.2893
+  ],
+  "tris": 17672
+ },
+ "BT_Operator_LOD": {
+  "category": "characters",
+  "size": [
+   1.2998,
+   1.7999,
+   0.3722
+  ],
+  "tris": 76589,
+  "source_sha256": "b5281cb5276ca545bb6d49fbea23fea2b652313dfb8e7f8b031ceef070ad2a31",
+  "lod_tris": [
+   76589,
+   18380,
+   5360
+  ]
  }
 }

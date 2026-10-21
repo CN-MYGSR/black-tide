@@ -260,7 +260,7 @@ const VEHICLES := {
 		"desc": "移动堡垒，慢。"},
 	"SM_Veh_Helicopter_Transport_01": {"label": "UH-60 运输直升机", "price": 14000, "kind": "air",
 		"speed": 38.0, "armor": 40.0, "seats": 8,
-		"desc": "能飞越整张地图。W/S 升降，A/D 转向。"},
+		"desc": "能飞越整张地图。W/S 前后，A/D 转向，空格/C 升降。"},
 	"SM_Veh_Helicopter_Attack_01": {"label": "AH-64 武装直升机", "price": 22000, "kind": "air",
 		"speed": 45.0, "armor": 70.0, "seats": 2,
 		"desc": "更快更硬，但只有两个座位。"},

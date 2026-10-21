@@ -103,16 +103,32 @@ func nvg_gain() -> float:
 # ---------------------------------------------------------------- 购买
 ## 返回 {ok: bool, msg: String}
 func buy(category: String, id: String) -> Dictionary:
+	if not _valid_item(category, id):
+		return {"ok": false, "msg": "无效的物品"}
 	if _owned(category, id):
 		return {"ok": false, "msg": "已经拥有了"}
 	var price := _price(category, id)
 	if GameState.credits < price:
 		return {"ok": false, "msg": "信用点不足（还差 %d）" % (price - GameState.credits)}
+	var before := to_data().duplicate(true)
 	GameState.credits -= price
 	_grant(category, id)
-	GameState.save_profile()
-	save_data()
+	if not save_data():
+		GameState.credits += price
+		apply_data(before)
+		return {"ok": false, "msg": "存档失败，购买已取消，信用点未扣除"}
 	return {"ok": true, "msg": "已购买 %s（-%d）" % [_label(category, id), price]}
+
+
+func _valid_item(category: String, id: String) -> bool:
+	if category == "weapon":
+		return ItemDB.WEAPONS.has(id)
+	if category == "attachment":
+		var parts := id.split(":")
+		return parts.size() == 2 and not ItemDB.attachment(parts[0], parts[1]).is_empty()
+	var tables := {"armor": ItemDB.ARMOR, "helmet": ItemDB.HELMET,
+		"nvg": ItemDB.NVG, "camo": ItemDB.CAMO, "vehicle": ItemDB.VEHICLES}
+	return tables.has(category) and tables[category].has(id)
 
 
 func _owned(category: String, id: String) -> bool:
@@ -224,11 +240,15 @@ func equip_simple(category: String, id: String) -> void:
 
 
 # ---------------------------------------------------------------- 存档
-func save_data() -> void:
-	var f := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
-	if f == null:
-		return
-	f.store_string(JSON.stringify({
+func save_data() -> bool:
+	var ok := GameState.save_profile()
+	if not ok:
+		EventBus.notify.emit("军械库存档失败，请检查磁盘和存档目录")
+	return ok
+
+
+func to_data() -> Dictionary:
+	return {
 		"owned_weapons": owned_weapons,
 		"owned_attachments": owned_attachments,
 		"owned_armor": owned_armor,
@@ -244,10 +264,13 @@ func save_data() -> void:
 		"nvg": nvg,
 		"camo": camo,
 		"vehicle": vehicle,
-	}, "\t"))
+	}
 
 
 func load_data() -> void:
+	if not GameState.saved_armory.is_empty():
+		apply_data(GameState.saved_armory)
+		return
 	if not FileAccess.file_exists(SAVE_PATH):
 		return
 	var f := FileAccess.open(SAVE_PATH, FileAccess.READ)
@@ -256,6 +279,10 @@ func load_data() -> void:
 	var d: Variant = JSON.parse_string(f.get_as_text())
 	if typeof(d) != TYPE_DICTIONARY:
 		return
+	apply_data(d)
+
+
+func apply_data(d: Dictionary) -> void:
 	owned_weapons = _arr(d.get("owned_weapons", owned_weapons))
 	owned_armor = _arr(d.get("owned_armor", owned_armor))
 	owned_helmets = _arr(d.get("owned_helmets", owned_helmets))

@@ -29,6 +29,7 @@ func _ready() -> void:
 	_model = AssetLib.spawn("SM_Veh_Helicopter_Transport_01", self, Vector3.ZERO, 0.0, true)
 	if _model != null:
 		_model.scale = Vector3.ONE * 1.1
+	AudioSfx.create_engine(self, true).play()
 
 
 func _process(delta: float) -> void:
@@ -56,8 +57,9 @@ func interact_prompt() -> String:
 	return ""
 
 
-func interact(_player: Node) -> void:
-	if state != "landed":
+func interact(player: Node) -> void:
+	if state != "landed" or not GameState.in_raid or not player is Player or player.state != Player.State.ALIVE:
 		return
 	state = "gone"
-	EventBus.mission_completed.emit(1200 + GameState.raid_loot, int(600 + GameState.raid_loot * 0.4))
+	var credits := 1200 + GameState.raid_loot
+	EventBus.mission_completed.emit(credits, GameState.xp_for_credits(credits))

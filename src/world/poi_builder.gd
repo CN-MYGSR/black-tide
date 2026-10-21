@@ -14,6 +14,8 @@ var _rng := RandomNumberGenerator.new()
 var _node: Node3D
 var _spawns: Array[Vector3] = []
 var _loot: Array[Vector3] = []
+var _planning: bool = false
+var _required: Dictionary = {}
 
 
 func setup(p_terrain: Terrain, p_world: Node3D) -> void:
@@ -33,7 +35,8 @@ func build(poi: Dictionary) -> Dictionary:
 	_node = Node3D.new()
 	_node.name = "POI_" + str(poi["id"])
 	_node.position = _center
-	world.add_child(_node)
+	if not _planning:
+		world.add_child(_node)
 
 	match str(poi["type"]):
 		"fob":
@@ -61,6 +64,15 @@ func build(poi: Dictionary) -> Dictionary:
 	return poi
 
 
+func required_models(poi: Dictionary) -> Array:
+	_planning = true
+	_required.clear()
+	build(poi.duplicate())
+	_node.free()
+	_planning = false
+	return _required.keys()
+
+
 # ---------------------------------------------------------------- 基础摆放
 func _needs_collision(model: String) -> bool:
 	## 只有"能挡住人"的东西才加碰撞：建筑、载具、墙体、围栏、大箱子。
@@ -69,7 +81,7 @@ func _needs_collision(model: String) -> bool:
 	if cat == "buildings" or cat == "vehicles":
 		return true
 	for k in ["Barrier", "Fence", "Wall", "Crate_Stack", "Container", "Gastank",
-			"Pipeline_Tank", "WaterTank", "Gate", "Locker", "Generator"]:
+			"Pipeline_Tank", "WaterTank", "Gate", "Locker", "Generator", "Helipad"]:
 		if model.findn(k) >= 0:
 			return true
 	return false
@@ -79,11 +91,14 @@ func _put(model: String, local: Vector2, rot_deg: float = 0.0, y_off: float = 0.
 		shadow: bool = true, scale: float = 1.0) -> Node3D:
 	if model == "" or not AssetLib.has_model(model):
 		return null
+	if _planning:
+		_required[model] = true
+		return null
 	var wp := _center + Vector3(local.x, 0.0, local.y)
 	wp.y = terrain.height_at(wp.x, wp.z) + y_off
 	# _node 本身已经放在 _center，这里必须转成局部坐标，否则会叠加两次偏移
 	var lp := wp - _center
-	var n := AssetLib.spawn(model, _node, lp, deg_to_rad(rot_deg), shadow, _needs_collision(model))
+	var n := EnvironmentAssets.spawn(model, _node, lp, deg_to_rad(rot_deg), shadow, _needs_collision(model))
 	if n != null and not is_equal_approx(scale, 1.0):
 		n.scale = Vector3.ONE * scale
 	return n
@@ -92,9 +107,13 @@ func _put(model: String, local: Vector2, rot_deg: float = 0.0, y_off: float = 0.
 func _put_local(model: String, local: Vector3, rot_deg: float = 0.0, shadow: bool = true) -> Node3D:
 	if model == "" or not AssetLib.has_model(model):
 		return null
+	if _planning:
+		_required[model] = true
+		return null
 	var wp := _center + local
 	wp.y = terrain.height_at(wp.x, wp.z) + local.y
-	return AssetLib.spawn(model, _node, wp - _center, deg_to_rad(rot_deg), shadow, _needs_collision(model))
+	var n := EnvironmentAssets.spawn(model, _node, wp - _center, deg_to_rad(rot_deg), shadow, _needs_collision(model))
+	return n
 
 
 ## ---------------------------------------------------------------- 墙 / 围栏

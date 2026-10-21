@@ -1,0 +1,201 @@
+{
+  "animationCount": 5,
+  "categories": [
+    {
+      "uid": "93e6d27da62149c6b963039835f45997",
+      "name": "People",
+      "slug": "people",
+      "uri": "https://api.sketchfab.com/v3/categories/93e6d27da62149c6b963039835f45997",
+      "icon": "https://static.sketchfab.com/static/builds/web/dist/static/assets/images/icons/categories/63980e30d4668c8fba3671a767c90954-v2.svg",
+      "thumbnails": [
+        {
+          "width": "512",
+          "height": "288",
+          "url": "https://static.sketchfab.com/categories/93e6d27da62149c6b963039835f45997/512x288.png"
+        },
+        {
+          "width": "800",
+          "height": "450",
+          "url": "https://static.sketchfab.com/categories/93e6d27da62149c6b963039835f45997/800x450.png"
+        }
+      ]
+    },
+    {
+      "uid": "3badf36bd9f549bdba295334d75e04d3",
+      "name": "Weapons & Military",
+      "slug": "weapons-military",
+      "uri": "https://api.sketchfab.com/v3/categories/3badf36bd9f549bdba295334d75e04d3",
+      "icon": "https://static.sketchfab.com/static/builds/web/dist/static/assets/images/icons/categories/6f71af8dadcca706c7404c9a0f82c1a3-v2.svg",
+      "thumbnails": [
+        {
+          "width": "512",
+          "height": "288",
+          "url": "https://static.sketchfab.com/categories/3badf36bd9f549bdba295334d75e04d3/512x288.png"
+        },
+        {
+          "width": "800",
+          "height": "450",
+          "url": "https://static.sketchfab.com/categories/3badf36bd9f549bdba295334d75e04d3/800x450.png"
+        }
+      ]
+    }
+  ],
+  "commentCount": 42,
+  "createdAt": "2022-08-23T05:55:33.206446",
+  "embedUrl": "https://sketchfab.com/models/0d7a343dcb6f401197a73c91aee93f6d/embed",
+  "faceCount": 32670,
+  "isAgeRestricted": false,
+  "license": {
+    "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+    "label": "CC Attribution",
+    "fullName": "Creative Commons Attribution",
+    "requirements": "Author must be credited. Commercial use is allowed.",
+    "url": "http://creativecommons.org/licenses/by/4.0/",
+    "slug": "by"
+  },
+  "likeCount": 450,
+  "name": "FPS pistol animations",
+  "publishedAt": "2022-08-23T06:45:41.348651",
+  "soundCount": 0,
+  "staffpickedAt": null,
+  "tags": [
+    {
+      "name": "army",
+      "slug": "army",
+      "uri": "https://api.sketchfab.com/v3/tags/army"
+    },
+    {
+      "name": "handgun",
+      "slug": "handgun",
+      "uri": "https://api.sketchfab.com/v3/tags/handgun"
+    },
+    {
+      "name": "fps",
+      "slug": "fps",
+      "uri": "https://api.sketchfab.com/v3/tags/fps"
+    },
+    {
+      "name": "firearm",
+      "slug": "firearm",
+      "uri": "https://api.sketchfab.com/v3/tags/firearm"
+    },
+    {
+      "name": "arms",
+      "slug": "arms",
+      "uri": "https://api.sketchfab.com/v3/tags/arms"
+    },
+    {
+      "name": "hands",
+      "slug": "hands",
+      "uri": "https://api.sketchfab.com/v3/tags/hands"
+    },
+    {
+      "name": "Pistol",
+      "slug": "pistol",
+      "uri": "https://api.sketchfab.com/v3/tags/pistol"
+    },
+    {
+      "name": "animation",
+      "slug": "animation",
+      "uri": "https://api.sketchfab.com/v3/tags/animation"
+    }
+  ],
+  "thumbnails": {
+    "images": [
+      {
+        "uid": "f32ca14d76e644b19ba3efb0425b526a",
+        "width": 1920,
+        "height": 1080,
+        "size": 203372,
+        "url": "https://media.sketchfab.com/models/0d7a343dcb6f401197a73c91aee93f6d/thumbnails/ea16400c7f3b4b3784a91af6cd1595b0/1f574bd2e8914794aa2128cd95e3e399.jpeg"
+      },
+      {
+        "uid": "ed78a78697554991acf9dd74366b7a10",
+        "width": 1024,
+        "height": 576,
+        "size": 39811,
+        "url": "https://media.sketchfab.com/models/0d7a343dcb6f401197a73c91aee93f6d/thumbnails/ea16400c7f3b4b3784a91af6cd1595b0/1597d39e5671499b82de025ed6e1c460.jpeg"
+      },
+      {
+        "uid": "5644e9d4c1184128b76e9f600e4c15ca",
+        "width": 720,
+        "height": 405,
+        "size": 19577,
+        "url": "https://media.sketchfab.com/models/0d7a343dcb6f401197a73c91aee93f6d/thumbnails/ea16400c7f3b4b3784a91af6cd1595b0/4a27d889a28b461ca6f6834e9af93cca.jpeg"
+      },
+      {
+        "uid": "a2ebc0118ed747449f83faaa8c7bbe9b",
+        "width": 256,
+        "height": 144,
+        "size": 3292,
+        "url": "https://media.sketchfab.com/models/0d7a343dcb6f401197a73c91aee93f6d/thumbnails/ea16400c7f3b4b3784a91af6cd1595b0/5d7afbd68c3744ff99fa1c303a37d703.jpeg"
+      },
+      {
+        "uid": "f5b09f7bde3a4006a6bdc00082acf6c3",
+        "width": 64,
+        "height": 36,
+        "size": 986,
+        "url": "https://media.sketchfab.com/models/0d7a343dcb6f401197a73c91aee93f6d/thumbnails/ea16400c7f3b4b3784a91af6cd1595b0/b2a9021342474c86a8c67ab63a73c086.jpeg"
+      }
+    ]
+  },
+  "uid": "0d7a343dcb6f401197a73c91aee93f6d",
+  "uri": "https://api.sketchfab.com/v3/models/0d7a343dcb6f401197a73c91aee93f6d",
+  "user": {
+    "uid": "4b3d4e54ddc941e4bebb5cd0d83dc7b2",
+    "username": "ccransh",
+    "displayName": "Cransh",
+    "account": "basic",
+    "profileUrl": "https://sketchfab.com/ccransh",
+    "avatar": {
+      "uid": "718fae5aed5e4b5383efbf9af079ecde",
+      "uri": "https://api.sketchfab.com/v3/avatars/718fae5aed5e4b5383efbf9af079ecde",
+      "images": [
+        {
+          "width": 32,
+          "height": 32,
+          "size": 1081,
+          "url": "https://media.sketchfab.com/avatars/718fae5aed5e4b5383efbf9af079ecde/d7e4e1a41e5844f2af59e9433084e56d.jpeg"
+        },
+        {
+          "width": 48,
+          "height": 48,
+          "size": 1537,
+          "url": "https://media.sketchfab.com/avatars/718fae5aed5e4b5383efbf9af079ecde/e0c6e4b707bd4ce3b8a6612ada0aad73.jpeg"
+        },
+        {
+          "width": 90,
+          "height": 90,
+          "size": 3348,
+          "url": "https://media.sketchfab.com/avatars/718fae5aed5e4b5383efbf9af079ecde/e0abf35914454f0c9c2fe27bc0e028b9.jpeg"
+        },
+        {
+          "width": 100,
+          "height": 100,
+          "size": 3876,
+          "url": "https://media.sketchfab.com/avatars/718fae5aed5e4b5383efbf9af079ecde/8812f27652dc49369e755c4b6b918c4f.jpeg"
+        }
+      ]
+    },
+    "uri": "https://api.sketchfab.com/v3/users/4b3d4e54ddc941e4bebb5cd0d83dc7b2"
+  },
+  "vertexCount": 16607,
+  "viewCount": 69656,
+  "viewerUrl": "https://sketchfab.com/3d-models/fps-pistol-animations-0d7a343dcb6f401197a73c91aee93f6d",
+  "isDownloadable": true,
+  "isProtected": false,
+  "description": "Hi!\nFPS pistol animations, models by: Hands - FP Arms by @bumstrum; Pistol - Springfield Armory XD Mod.2 Sub-Compact by @raimeiyonke. Big thanks for this gorgeous models! \nRIg and animations by me.\nMade in blender.",
+  "price": null,
+  "downloadCount": 15399,
+  "editorUrl": "https://sketchfab.com/models/0d7a343dcb6f401197a73c91aee93f6d/edit",
+  "status": {
+    "warning": {},
+    "processing": "SUCCEEDED"
+  },
+  "source": "website",
+  "hasCommentsDisabled": false,
+  "updatedAt": "2026-09-09T18:19:57.190573",
+  "pbrType": "specular",
+  "textureCount": 8,
+  "materialCount": 2
+}

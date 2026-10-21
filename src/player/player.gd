@@ -2,8 +2,7 @@ class_name Player
 extends CharacterBody3D
 ## 玩家控制器：第一/第三人称、冲刺体力、射击后坐、受伤/倒地/急救。
 ##
-## 刻意不做骨骼动画 —— POLYGON 角色只带一套静态姿势。
-## 这里用程序化的持枪摆动 + 后坐位移来代替动画，观感够用且完全可控。
+## POLYGON 角色没有动画片段，身体姿态由 CharacterRig 驱动。
 
 enum State { ALIVE, DOWNED, DEAD }
 
@@ -48,6 +47,8 @@ var ammo_mag: int = 30
 var ammo_reserve: int = 180
 var sidearm_mag: int = 15
 var sidearm_reserve: int = 90
+var _primary_mag: int = 30
+var _primary_reserve: int = 180
 
 var kills: int = 0
 var damage_dealt: float = 0.0
@@ -59,7 +60,8 @@ var _recoil := Vector2.ZERO
 var _shake: float = 0.0
 var _spread: float = 0.0
 var _fire_cd: float = 0.0
-var _reloading: float = false
+var _step_distance: float = 0.0
+var _reloading: bool = false
 var _reload_t: float = 0.0
 var _ads: bool = false
 var _ads_blend: float = 0.0
@@ -70,6 +72,11 @@ var _bob: float = 0.0
 var _sway := Vector2.ZERO
 var _mouse_delta := Vector2.ZERO
 var _weapon_kick: float = 0.0
+var _ads_position := Vector3(0.0, -0.09, -0.70)
+var _weapon_hip := Vector3(0.28, -0.26, -0.58)
+var _viewmodel_animation: AnimationPlayer
+var _viewmodel_reload: StringName
+var _viewmodel_reload_length := 3.0
 var _interact_target: Node = null
 
 # 节点
@@ -83,6 +90,11 @@ var body_model: Node3D
 var body_rig
 var _body_weapon: Node3D
 const RIG_SCRIPT := preload("res://src/ai/character_rig.gd")
+const FIRST_PERSON_MODELS := {"BT_M4A1": "BT_FP_M4", "BT_AK47": "BT_FP_AK", "BT_M1911": "BT_FP_M1911"}
+
+static func first_person_model(id: String) -> String:
+	var source: String = AssetLib.REALISTIC_WEAPONS.get(id, "")
+	return "BT_FP_" + id if source.begins_with("BT_Fitted_") else str(FIRST_PERSON_MODELS.get(source, ""))
 var _capsule: CollisionShape3D
 var _stand_shape: CapsuleShape3D
 var _crouch_shape: CapsuleShape3D
@@ -140,10 +152,18 @@ func _ready() -> void:
 
 	weapon_id = Loadout.primary
 	sidearm_id = Loadout.secondary
+	AssetLib.get_scene(sidearm_id)
+	AssetLib.get_scene(first_person_model(sidearm_id))
 	max_armor = maxf(0.0, Loadout.armor_value())
 	armor = max_armor
 	_speed_mult = Loadout.speed_mult()
 	_equip(weapon_id)
+	ammo_mag = int(current_def()["mag"])
+	ammo_reserve = int(current_def()["reserve"])
+	var secondary := Loadout.resolved_secondary()
+	sidearm_mag = int(secondary["mag"])
+	sidearm_reserve = int(secondary["reserve"])
+	_build_body()
 	GameState.in_raid = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -151,6 +171,7 @@ func _ready() -> void:
 func _build_body() -> void:
 	body_model = AssetLib.spawn("SM_Chr_Soldier_Male_01", self, Vector3.ZERO, 0.0, true)
 	if body_model != null:
+		body_model.rotation.y = PI
 		body_model.visible = false
 		body_rig = RIG_SCRIPT.new()
 		body_rig.setup(body_model)
@@ -166,16 +187,7 @@ func _attach_body_weapon(id: String) -> void:
 		_body_weapon = null
 	if body_rig.skel.find_bone("Hand_R") < 0:
 		return
-	var att := BoneAttachment3D.new()
-	att.bone_name = "Hand_R"
-	body_rig.skel.add_child(att)
-	_body_weapon = AssetLib.spawn(id, att, Vector3.ZERO, 0.0, true)
-	if _body_weapon == null:
-		att.queue_free()
-		return
-	_body_weapon.scale = Vector3.ONE * 100.0
-	_body_weapon.position = Vector3(6.0, -3.0, 4.0)
-	_body_weapon.rotation_degrees = Vector3(0, 90, -90)
+	_body_weapon = body_rig.attach_weapon(id, body_model)
 
 
 # ---------------------------------------------------------------- 装备
@@ -184,22 +196,46 @@ func _equip(id: String) -> void:
 		weapon_model.queue_free()
 		weapon_model = null
 	_def = ItemDB.resolve(id, Loadout.attachments if active_slot == 0 else {})
-	var def := _def
-	weapon_id = id
-	weapon_model = AssetLib.spawn(id, weapon_mount, Vector3.ZERO, 0.0, true)
+	_viewmodel_animation = null
+	_viewmodel_reload = &""
+	var viewmodel := first_person_model(id)
+	weapon_model = AssetLib.spawn(viewmodel if viewmodel != "" else id, weapon_mount, Vector3.ZERO, 0.0, false)
 	if weapon_model != null:
-		# POLYGON 枪械原点在枪身中部，稍微摆一下才像"端在手上"
-		# 枪的模型原点在枪身中段，1 米的枪放到 -0.44 会直接把镜头糊死。
-		# 往前推 + 缩小 + 右下沉，才是正常的第一人称持枪视角。
-		weapon_model.position = Vector3(0.28, -0.26, -0.58)
+		weapon_model.visible = not _third_person
+		# Detailed viewmodels use the measured firing grip as their origin.
+		_weapon_hip = Vector3(0.16, -0.13, -0.26) if viewmodel != "" else Vector3(0.18, -0.16, -0.28)
+		weapon_model.position = _weapon_hip
 		# 实测：模型枪口朝 +Z，必须转 180° 才指向前方；90° 会让枪横在镜头前
-		weapon_model.rotation_degrees = Vector3(-2, 180, 0)
-		weapon_model.scale = Vector3.ONE * 0.70
+		weapon_model.rotation_degrees = Vector3(0, 180, 0)
+		weapon_model.scale = Vector3.ONE if viewmodel != "" else Vector3.ONE * 0.70
+		if viewmodel == "":
+			# shortcut: remaining guns share a generic grip; author per-gun poses when replacing them.
+			var pistol := id.contains("Pistol")
+			AssetLib.spawn("BT_Arms_Pistol" if pistol else "BT_Arms_Rifle", weapon_model, Vector3.ZERO, 0.0, false)
 		AssetLib.apply_tint(weapon_model, Loadout.camo_color())
 		_set_weapon_layer(weapon_model)
-	if active_slot == 0:
-		ammo_mag = int(def["mag"])
-		ammo_reserve = int(def["reserve"])
+		_ads_position = Vector3(0.0, -0.09, -0.70)
+		var anchor := weapon_model.find_child("BT_AimAnchor", true, false) as Node3D
+		if anchor != null:
+			var anchor_center := weapon_model.to_local(anchor.global_position)
+			_ads_position = Vector3(0, 0, -0.38) - weapon_model.basis * anchor_center
+		for sight in weapon_model.find_children("*Sight_Glass*", "MeshInstance3D", true, false) if anchor == null else []:
+			if "RailCanted" in str(sight.name):
+				continue
+			var center: Vector3 = weapon_model.to_local(sight.to_global(sight.get_aabb().get_center()))
+			_ads_position = Vector3(0, 0, -0.70) - weapon_model.basis * center
+			break
+		var players := weapon_model.find_children("*", "AnimationPlayer", true, false)
+		if viewmodel != "" and not players.is_empty():
+			_viewmodel_animation = players[0] as AnimationPlayer
+			for clip in _viewmodel_animation.get_animation_list():
+				if str(clip).ends_with("Reload"):
+					_viewmodel_reload = clip
+					_viewmodel_reload_length = _viewmodel_animation.get_animation(clip).length
+					_viewmodel_animation.play(clip)
+					_viewmodel_animation.pause()
+					_viewmodel_animation.seek(0, true)
+					break
 	if body_rig != null:
 		_attach_body_weapon(id)
 
@@ -217,7 +253,7 @@ func _set_weapon_layer(n: Node) -> void:
 
 func current_def() -> Dictionary:
 	if _def.is_empty():
-		_def = ItemDB.resolve(weapon_id, {})
+		_def = ItemDB.resolve(weapon_id if active_slot == 0 else sidearm_id, {})
 	return _def
 
 
@@ -227,13 +263,20 @@ func is_alive() -> bool:
 
 # ---------------------------------------------------------------- 输入
 func _unhandled_input(event: InputEvent) -> void:
+	if not GameState.in_raid or state == State.DEAD:
+		return
+	if vehicle != null:
+		if event.is_action_pressed("interact"):
+			vehicle.exit_vehicle()
+		return
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		var mm := event as InputEventMouseMotion
 		_mouse_delta += mm.relative
 		_yaw -= mm.relative.x * GameState.mouse_sensitivity
 		_pitch -= mm.relative.y * GameState.mouse_sensitivity
 		_pitch = clampf(_pitch, deg_to_rad(-88.0), deg_to_rad(88.0))
-	elif event.is_action_pressed("toggle_view"):
+		_apply_look()
+	elif event.is_action_pressed("toggle_view") and state == State.ALIVE:
 		_third_person = not _third_person
 		spring.spring_length = 3.4 if _third_person else 0.0
 		if body_model != null:
@@ -261,11 +304,21 @@ func _unhandled_input(event: InputEvent) -> void:
 func _switch_slot(slot: int) -> void:
 	if slot == active_slot:
 		return
+	if active_slot == 0:
+		_primary_mag = ammo_mag
+		_primary_reserve = ammo_reserve
+	else:
+		sidearm_mag = ammo_mag
+		sidearm_reserve = ammo_reserve
 	active_slot = slot
 	_reloading = false
+	AudioSfx.stop_reload()
+	_burst_left = 0
+	_burst_t = 0.0
 	if slot == 0:
 		_equip(weapon_id)
-		ammo_mag = mini(ammo_mag, int(current_def()["mag"]))
+		ammo_mag = _primary_mag
+		ammo_reserve = _primary_reserve
 	else:
 		_equip(sidearm_id)
 		ammo_mag = sidearm_mag
@@ -274,29 +327,59 @@ func _switch_slot(slot: int) -> void:
 
 # ---------------------------------------------------------------- 主循环
 func _physics_process(delta: float) -> void:
-	if state == State.DEAD:
+	if state == State.DEAD or not GameState.in_raid:
+		return
+	if _check_bounds():
 		return
 	_gravity = float(ProjectSettings.get_setting("physics/3d/default_gravity", 24.0))
 
 	if not is_on_floor():
 		velocity.y -= _gravity * delta
 
-	rotation.y = _yaw
-	cam_pivot.rotation.x = _pitch + _recoil.x
-	cam_pivot.rotation.y = _recoil.y
+	_apply_look()
 
 	if state == State.DOWNED:
 		_process_downed(delta)
 		move_and_slide()
-		_update_camera_fx(delta)
 		return
 
 	_process_movement(delta)
 	_process_combat(delta)
-	_update_camera_fx(delta)
 	_update_interact_target()
 	_update_body_rig(delta)
 	move_and_slide()
+	_update_footsteps(delta)
+
+
+func _update_footsteps(delta: float) -> void:
+	if not is_on_floor() or state != State.ALIVE or vehicle != null:
+		_step_distance = 0.0
+		return
+	var speed := Vector2(velocity.x, velocity.z).length()
+	if speed < 0.5:
+		_step_distance = 0.0
+		return
+	_step_distance += speed * delta
+	if _step_distance >= (2.2 if speed > WALK_SPEED else 1.7):
+		_step_distance = 0.0
+		AudioSfx.play_ui("step", -29.0 if _crouching else -22.0)
+
+
+func _check_bounds() -> bool:
+	var half := Terrain.SIZE * 0.5
+	if absf(global_position.x) <= half and absf(global_position.z) <= half and global_position.y >= -50.0:
+		return false
+	var world := get_parent().get_node_or_null("World") as WorldRoot
+	var safe := world.player_spawn_transform().origin if world != null else Vector3(0, 5, 0)
+	if vehicle != null:
+		var old_vehicle := vehicle
+		old_vehicle.exit_vehicle()
+		old_vehicle.global_position = safe + Vector3(12, 10, 0)
+		old_vehicle.velocity = Vector3.ZERO
+	global_position = safe
+	velocity = Vector3.ZERO
+	EventBus.notify.emit("已离开地图，返回基地安全位置")
+	return true
 
 
 func _process_movement(delta: float) -> void:
@@ -349,7 +432,7 @@ func _process_movement(delta: float) -> void:
 
 func _process_combat(delta: float) -> void:
 	_ads = Input.is_action_pressed("aim") and not _reloading
-	_ads_blend = move_toward(_ads_blend, 1.0 if _ads else 0.0, delta * 7.0)
+	_ads_blend = move_toward(_ads_blend, 1.0 if _ads else 0.0, delta * 7.0 * float(current_def().get("ads_speed", 1.0)))
 	camera.fov = lerpf(78.0, float(current_def()["zoom"]), _ads_blend)
 
 	_fire_cd = maxf(0.0, _fire_cd - delta)
@@ -365,7 +448,7 @@ func _process_combat(delta: float) -> void:
 		_burst_t -= delta
 		if _burst_t <= 0.0 and ammo_mag > 0 and not _reloading:
 			_fire()
-			_burst_left -= 1
+			_burst_left = maxi(0, _burst_left - 1)
 			_burst_t = 60.0 / maxf(60.0, float(current_def().get("rpm", 700.0)))
 	elif Input.is_action_pressed("fire") and _fire_cd <= 0.0 and not _reloading:
 		var mode := str(current_def().get("fire_mode", "auto"))
@@ -378,7 +461,6 @@ func _process_combat(delta: float) -> void:
 			else:
 				_fire()
 
-	_update_weapon_pose(delta)
 
 
 func _fire() -> void:
@@ -397,6 +479,8 @@ func _fire() -> void:
 	get_tree().create_timer(0.05).timeout.connect(_muzzle_off)
 
 	var pellets := int(def.get("pellets", 1))
+	AudioSfx.weapon_shot(weapon_id if active_slot == 0 else sidearm_id, camera.global_position, true,
+		active_slot == 0 and Loadout.attachments.get("muzzle") == "suppressor")
 	for i in pellets:
 		_hitscan(def)
 
@@ -452,7 +536,7 @@ func _spawn_impact(pos: Vector3, normal: Vector3) -> void:
 	mi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	get_parent().add_child(mi)
 	mi.global_position = pos + normal * 0.02
-	mi.look_at(pos + normal, Vector3.UP)
+	mi.look_at(pos + normal, Vector3.FORWARD if absf(normal.dot(Vector3.UP)) > 0.99 else Vector3.UP)
 	var tw := create_tween()
 	tw.tween_property(mi, "scale", Vector3.ZERO, 0.35)
 	tw.tween_callback(mi.queue_free)
@@ -462,11 +546,15 @@ func _start_reload() -> void:
 	if _reloading or ammo_mag >= int(current_def()["mag"]) or ammo_reserve <= 0:
 		return
 	_reloading = true
+	_burst_left = 0
+	_burst_t = 0.0
 	_reload_t = float(current_def()["reload"])
+	AudioSfx.play_reload()
 
 
 func _finish_reload() -> void:
 	_reloading = false
+	AudioSfx.stop_reload()
 	var def := current_def()
 	var need := int(def["mag"]) - ammo_mag
 	var take := mini(need, ammo_reserve)
@@ -492,14 +580,18 @@ func _update_weapon_pose(delta: float) -> void:
 	var bx := sin(_bob) * 0.012 * bob_amt
 	var by := absf(cos(_bob)) * 0.010 * bob_amt
 
-	var hip := Vector3(0.28, -0.26, -0.58)
-	var ads := Vector3(0.0, -0.09, -0.44)
-	var base := hip.lerp(ads, _ads_blend)
+	var hip := _weapon_hip
+	var base := hip.lerp(_ads_position, _ads_blend)
 	var reload_rot := 0.0
 	if _reloading:
 		var t := 1.0 - _reload_t / maxf(0.01, float(current_def()["reload"]))
-		reload_rot = sin(t * PI) * 0.7
-		base.y -= sin(t * PI) * 0.18
+		var authored := _viewmodel_animation != null and _viewmodel_reload != &""
+		reload_rot = sin(t * PI) * (0.35 if authored else 0.7)
+		base.y += sin(t * PI) * (0.06 if authored else -0.18)
+		if _viewmodel_animation != null and _viewmodel_reload != &"":
+			_viewmodel_animation.seek(clampf(t, 0, 1) * _viewmodel_reload_length, true)
+	elif _viewmodel_animation != null and _viewmodel_reload != &"":
+		_viewmodel_animation.seek(0, true)
 
 	weapon_model.position = base + Vector3(bx - _sway.x, by - _sway.y, _weapon_kick * 0.05)
 	weapon_model.rotation_degrees = Vector3(
@@ -520,11 +612,13 @@ func _update_camera_fx(delta: float) -> void:
 		)
 	else:
 		camera.rotation_degrees = Vector3.ZERO
+	# Body-held arms lag the eye's shake instead of sticking to the same screen pixels.
+	weapon_mount.rotation = -camera.rotation * 0.65 - Vector3(_recoil.x, _recoil.y, 0) * 0.35
 
 
 # ---------------------------------------------------------------- 受伤 / 倒地
 func take_damage(amount: float, hit_pos: Vector3, source: Node) -> void:
-	if state == State.DEAD:
+	if state == State.DEAD or not GameState.in_raid:
 		return
 	var to_armor := minf(armor, amount * 0.55)
 	armor -= to_armor
@@ -540,13 +634,16 @@ func take_damage(amount: float, hit_pos: Vector3, source: Node) -> void:
 func _go_down() -> void:
 	if state == State.DOWNED:
 		return
+	AudioSfx.stop_reload()
+	if vehicle != null:
+		vehicle.exit_vehicle()
 	state = State.DOWNED
 	bleed_time = bleed_total
 	_third_person = true
 	spring.spring_length = 3.0
 	if body_model != null:
 		body_model.visible = true
-		body_model.rotation_degrees = Vector3(-80, 0, 0)
+		body_model.rotation_degrees = Vector3(-80, 180, 0)
 		body_model.position.y = 0.25
 	if body_rig != null:
 		body_rig.pose_downed()
@@ -579,8 +676,10 @@ func revive(amount: float = 45.0) -> void:
 	spring.spring_length = 0.0
 	if body_model != null:
 		body_model.visible = false
-		body_model.rotation_degrees = Vector3.ZERO
+		body_model.rotation_degrees = Vector3(0, 180, 0)
 		body_model.position.y = 0.0
+	if body_rig != null:
+		body_rig.reset()
 	if weapon_model != null:
 		weapon_model.visible = true
 	EventBus.player_revived.emit()
@@ -588,9 +687,12 @@ func revive(amount: float = 45.0) -> void:
 
 
 func _die() -> void:
-	if state == State.DEAD:
+	if state == State.DEAD or not GameState.in_raid:
 		return
 	state = State.DEAD
+	AudioSfx.stop_reload()
+	if body_rig != null:
+		body_rig.pose_dead()
 	EventBus.player_died.emit()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
@@ -641,9 +743,10 @@ func _update_interact_target() -> void:
 	_interact_target = null
 	var origin := camera.global_position
 	var dir := -camera.global_transform.basis.z
-	var q := PhysicsRayQueryParameters3D.create(origin, origin + dir * 3.2, 1 | 4 | 16, [get_rid()])
+	var reach := 3.2 + origin.distance_to(cam_pivot.global_position)
+	var q := PhysicsRayQueryParameters3D.create(origin, origin + dir * reach, 1 | 4 | 16, [get_rid()])
 	var hit := get_world_3d().direct_space_state.intersect_ray(q)
-	if not hit.is_empty():
+	if not hit.is_empty() and cam_pivot.global_position.distance_to(hit["position"]) <= 3.2:
 		var c: Object = hit["collider"]
 		if c != null and c.has_method("interact_prompt"):
 			_interact_target = c
@@ -656,17 +759,29 @@ func interact_prompt() -> String:
 
 
 func _interact() -> void:
+	if state != State.ALIVE or not GameState.in_raid:
+		return
+	_update_interact_target()
 	if _interact_target != null and _interact_target.has_method("interact"):
 		_interact_target.interact(self)
-	elif state == State.DOWNED:
-		pass
 
 
 func _process(_delta: float) -> void:
-	if _regen_pool > 0.0 and health < max_health:
+	if GameState.in_raid and state != State.DEAD and vehicle == null:
+		_apply_look()
+		_update_camera_fx(_delta)
+		if state == State.ALIVE:
+			_update_weapon_pose(_delta)
+	if state == State.ALIVE and GameState.in_raid and _regen_pool > 0.0 and health < max_health:
 		var step := minf(_regen_pool, 22.0 * _delta)
 		_regen_pool -= step
 		_heal(step)
+
+
+func _apply_look() -> void:
+	rotation.y = _yaw
+	cam_pivot.rotation.x = _pitch + _recoil.x
+	cam_pivot.rotation.y = _recoil.y
 
 
 # ---------------------------------------------------------------- HUD 取值

@@ -1,6 +1,6 @@
 class_name Terrain
 extends Node3D
-## 程序化地形：噪声高度图 + 据点平台整平 + 平面着色低模网格 + HeightMapShape3D 碰撞。
+## 程序化地形：噪声高度图 + 据点整平 + 混合地表材质 + HeightMapShape3D 碰撞。
 ##
 ## 关键点：先出高度图，再把据点周围"压平"成平台，最后才生成网格和碰撞。
 ## 这样建筑不会浮空，也不用运行时做射线找地面。
@@ -108,6 +108,23 @@ func height_at(wx: float, wz: float) -> float:
 	return lerpf(lerpf(h00, h10, tx), lerpf(h01, h11, tx), tz)
 
 
+func surface_height_at(wx: float, wz: float) -> float:
+	# Plant roots follow the rendered triangles, which differ from bilinear sampling between grid points.
+	var grid := (Vector2(wx, wz) + Vector2.ONE * SIZE * 0.5) / SIZE * float(RES - 1)
+	grid = grid.clamp(Vector2.ZERO, Vector2.ONE * float(RES - 2))
+	var x := int(grid.x)
+	var z := int(grid.y)
+	var tx := grid.x - x
+	var tz := grid.y - z
+	var h00 := heights[z * RES + x]
+	var h10 := heights[z * RES + x + 1]
+	var h01 := heights[(z + 1) * RES + x]
+	var h11 := heights[(z + 1) * RES + x + 1]
+	if tx + tz <= 1.0:
+		return h00 + (h10 - h00) * tx + (h01 - h00) * tz
+	return h11 + (h01 - h11) * (1.0 - tx) + (h10 - h11) * (1.0 - tz)
+
+
 func normal_at(wx: float, wz: float) -> Vector3:
 	var e := 3.0
 	var hl := height_at(wx - e, wz)
@@ -131,41 +148,33 @@ func build_mesh() -> void:
 	var norms := PackedVector3Array()
 	var cols := PackedColorArray()
 	var uvs := PackedVector2Array()
-	var tri_count := (RES - 1) * (RES - 1) * 2
-	verts.resize(tri_count * 3)
-	norms.resize(tri_count * 3)
-	cols.resize(tri_count * 3)
-	uvs.resize(tri_count * 3)
+	var indices := PackedInt32Array()
+	verts.resize(RES * RES)
+	norms.resize(RES * RES)
+	cols.resize(RES * RES)
+	uvs.resize(RES * RES)
+	indices.resize((RES - 1) * (RES - 1) * 6)
 
 	var cell := SIZE / float(RES - 1)
+	for z in RES:
+		for x in RES:
+			var vertex := z * RES + x
+			var point := Vector2(-SIZE * 0.5 + x * cell, -SIZE * 0.5 + z * cell)
+			verts[vertex] = Vector3(point.x, heights[vertex], point.y)
+			norms[vertex] = normal_at(point.x, point.y)
+			cols[vertex] = Color(_ground_wear(point), 0, 0, 1)
+			uvs[vertex] = point * 0.02
 	var vi := 0
 	for z in RES - 1:
 		for x in RES - 1:
-			var wx := -SIZE * 0.5 + float(x) * cell
-			var wz := -SIZE * 0.5 + float(z) * cell
-			var p00 := Vector3(wx, heights[z * RES + x], wz)
-			var p10 := Vector3(wx + cell, heights[z * RES + x + 1], wz)
-			var p01 := Vector3(wx, heights[(z + 1) * RES + x], wz + cell)
-			var p11 := Vector3(wx + cell, heights[(z + 1) * RES + x + 1], wz + cell)
-
-			for tri in 2:
-				var a := p00
-				var b := p10
-				var c := p01
-				if tri == 1:
-					a = p10
-					b = p11
-					c = p01
-				var n := (b - a).cross(c - a).normalized()
-				if n.y < 0.0:
-					n = -n
-				var col := _color_for((a.y + b.y + c.y) / 3.0, 1.0 - n.y, wx, wz)
-				for p in [a, b, c]:
-					verts[vi] = p
-					norms[vi] = n
-					cols[vi] = col
-					uvs[vi] = Vector2(p.x, p.z) * 0.02
-					vi += 1
+			var vertex := z * RES + x
+			indices[vi] = vertex
+			indices[vi + 1] = vertex + 1
+			indices[vi + 2] = vertex + RES
+			indices[vi + 3] = vertex + 1
+			indices[vi + 4] = vertex + RES + 1
+			indices[vi + 5] = vertex + RES
+			vi += 6
 
 	var arrays := []
 	arrays.resize(Mesh.ARRAY_MAX)
@@ -173,16 +182,11 @@ func build_mesh() -> void:
 	arrays[Mesh.ARRAY_NORMAL] = norms
 	arrays[Mesh.ARRAY_COLOR] = cols
 	arrays[Mesh.ARRAY_TEX_UV] = uvs
+	arrays[Mesh.ARRAY_INDEX] = indices
 	var am := ArrayMesh.new()
 	am.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
 
-	var mat := StandardMaterial3D.new()
-	mat.vertex_color_use_as_albedo = true
-	mat.vertex_color_is_srgb = true
-	mat.roughness = 1.0
-	mat.metallic = 0.0
-	mat.specular_mode = BaseMaterial3D.SPECULAR_DISABLED
-	am.surface_set_material(0, mat)
+	am.surface_set_material(0, EnvironmentMaterials.terrain_material())
 
 	mesh_instance = MeshInstance3D.new()
 	mesh_instance.name = "TerrainMesh"
@@ -191,27 +195,13 @@ func build_mesh() -> void:
 	add_child(mesh_instance)
 
 
-func _color_for(h: float, slope: float, wx: float, wz: float) -> Color:
-	var sand := Color(0.60, 0.55, 0.40)
-	var grass := Color(0.27, 0.34, 0.20)
-	var dry := Color(0.40, 0.39, 0.25)
-	var rock := Color(0.36, 0.35, 0.33)
-	var snow := Color(0.78, 0.80, 0.82)
-
-	var c := grass.lerp(dry, clampf((h - 8.0) / 30.0, 0.0, 1.0))
-	if h < 2.5:
-		c = sand.lerp(c, clampf((h - 0.5) / 2.0, 0.0, 1.0))
-	c = c.lerp(rock, clampf((slope - 0.35) / 0.35, 0.0, 1.0))
-	if h > 44.0:
-		c = c.lerp(snow, clampf((h - 44.0) / 12.0, 0.0, 1.0))
-	# 大尺度斑块：让草原不是一整片死绿
-	var macro := sin(wx * 0.0055) * cos(wz * 0.0068) * 0.5 + 0.5
-	c = c.lerp(Color(0.44, 0.41, 0.29), macro * 0.28)
-	var wet := sin(wx * 0.011 + 1.7) * cos(wz * 0.009 - 0.6) * 0.5 + 0.5
-	c = c.lerp(Color(0.22, 0.31, 0.18), wet * 0.22)
-	# 每块面轻微色差，低模才有的颗粒感
-	var j := rng.randf_range(-0.035, 0.035)
-	return Color(clampf(c.r + j, 0, 1), clampf(c.g + j, 0, 1), clampf(c.b + j, 0, 1))
+func _ground_wear(point: Vector2) -> float:
+	var wear := 0.0
+	for pad in pads:
+		var distance := point.distance_to(pad["pos"])
+		wear = maxf(wear, 1.0 - smoothstep(float(pad["radius"]) * 0.55,
+			float(pad["radius"]) + 8.0, distance))
+	return wear
 
 
 # ---------------------------------------------------------------- 碰撞
@@ -235,11 +225,8 @@ func build_collision() -> void:
 func build_water() -> void:
 	var plane := PlaneMesh.new()
 	plane.size = Vector2(SIZE * 1.4, SIZE * 1.4)
-	var mat := StandardMaterial3D.new()
-	mat.albedo_color = Color(0.09, 0.20, 0.26, 0.82)
-	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	mat.roughness = 0.06
-	mat.metallic = 0.55
+	var mat := ShaderMaterial.new()
+	mat.shader = preload("res://assets/shaders/coastal_water.gdshader")
 	plane.material = mat
 	var mi := MeshInstance3D.new()
 	mi.name = "Water"

@@ -1,0 +1,176 @@
+{
+  "animationCount": 0,
+  "categories": [
+    {
+      "uid": "2d643ff5ed03405b9c34ecdffff9d8d8",
+      "name": "Characters & Creatures",
+      "slug": "characters-creatures",
+      "uri": "https://api.sketchfab.com/v3/categories/2d643ff5ed03405b9c34ecdffff9d8d8",
+      "icon": "https://static.sketchfab.com/static/builds/web/dist/static/assets/images/icons/categories/f778c3dbe6efa00a06c257762c0e27ef-v2.svg",
+      "thumbnails": [
+        {
+          "width": "512",
+          "height": "288",
+          "url": "https://static.sketchfab.com/categories/2d643ff5ed03405b9c34ecdffff9d8d8/512x288.png"
+        },
+        {
+          "width": "800",
+          "height": "450",
+          "url": "https://static.sketchfab.com/categories/2d643ff5ed03405b9c34ecdffff9d8d8/800x450.png"
+        }
+      ]
+    },
+    {
+      "uid": "3badf36bd9f549bdba295334d75e04d3",
+      "name": "Weapons & Military",
+      "slug": "weapons-military",
+      "uri": "https://api.sketchfab.com/v3/categories/3badf36bd9f549bdba295334d75e04d3",
+      "icon": "https://static.sketchfab.com/static/builds/web/dist/static/assets/images/icons/categories/6f71af8dadcca706c7404c9a0f82c1a3-v2.svg",
+      "thumbnails": [
+        {
+          "width": "512",
+          "height": "288",
+          "url": "https://static.sketchfab.com/categories/3badf36bd9f549bdba295334d75e04d3/512x288.png"
+        },
+        {
+          "width": "800",
+          "height": "450",
+          "url": "https://static.sketchfab.com/categories/3badf36bd9f549bdba295334d75e04d3/800x450.png"
+        }
+      ]
+    }
+  ],
+  "commentCount": 41,
+  "createdAt": "2021-01-27T18:26:07.339385",
+  "embedUrl": "https://sketchfab.com/models/9452ce4cddde4110a4fd73e555a8e412/embed",
+  "faceCount": 4760,
+  "isAgeRestricted": false,
+  "license": {
+    "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+    "label": "CC Attribution",
+    "fullName": "Creative Commons Attribution",
+    "requirements": "Author must be credited. Commercial use is allowed.",
+    "url": "http://creativecommons.org/licenses/by/4.0/",
+    "slug": "by"
+  },
+  "likeCount": 378,
+  "name": "Fps arms",
+  "publishedAt": "2021-01-27T18:30:30.813437",
+  "soundCount": 0,
+  "staffpickedAt": null,
+  "tags": [
+    {
+      "name": "fps",
+      "slug": "fps",
+      "uri": "https://api.sketchfab.com/v3/tags/fps"
+    },
+    {
+      "name": "fps-arm",
+      "slug": "fps-arm",
+      "uri": "https://api.sketchfab.com/v3/tags/fps-arm"
+    },
+    {
+      "name": "gameready",
+      "slug": "gameready",
+      "uri": "https://api.sketchfab.com/v3/tags/gameready"
+    }
+  ],
+  "thumbnails": {
+    "images": [
+      {
+        "uid": "8ea38e7aa1064140a061ff7982bb25d7",
+        "width": 1920,
+        "height": 1080,
+        "size": 181683,
+        "url": "https://media.sketchfab.com/models/9452ce4cddde4110a4fd73e555a8e412/thumbnails/0111080381df45a3a7854dd771792616/95601a8cf54a4a4f81da1f4afb83a57e.jpeg"
+      },
+      {
+        "uid": "16efe91c680843e09baed6cb5212a53a",
+        "width": 1024,
+        "height": 576,
+        "size": 34078,
+        "url": "https://media.sketchfab.com/models/9452ce4cddde4110a4fd73e555a8e412/thumbnails/0111080381df45a3a7854dd771792616/dd292e293dd540099d1318d8db28d611.jpeg"
+      },
+      {
+        "uid": "682d4a9207db42bea582bd790b6b72b0",
+        "width": 720,
+        "height": 405,
+        "size": 16884,
+        "url": "https://media.sketchfab.com/models/9452ce4cddde4110a4fd73e555a8e412/thumbnails/0111080381df45a3a7854dd771792616/8fb9ec888d754e57a7e5b21fbf43f071.jpeg"
+      },
+      {
+        "uid": "aa0ba279da854e01b21e1668712c9611",
+        "width": 256,
+        "height": 144,
+        "size": 3266,
+        "url": "https://media.sketchfab.com/models/9452ce4cddde4110a4fd73e555a8e412/thumbnails/0111080381df45a3a7854dd771792616/6a8675b5f0dc4136bc22e5144a858516.jpeg"
+      },
+      {
+        "uid": "b6265b4ed2f04562964753048c9b6466",
+        "width": 64,
+        "height": 36,
+        "size": 673,
+        "url": "https://media.sketchfab.com/models/9452ce4cddde4110a4fd73e555a8e412/thumbnails/0111080381df45a3a7854dd771792616/e7d52cef42ef4c0b9e41a34cecadb084.jpeg"
+      }
+    ]
+  },
+  "uid": "9452ce4cddde4110a4fd73e555a8e412",
+  "uri": "https://api.sketchfab.com/v3/models/9452ce4cddde4110a4fd73e555a8e412",
+  "user": {
+    "uid": "6a927738448e4f07a920177aab7f7716",
+    "username": "bumstrum",
+    "displayName": "DJMaesen",
+    "account": "basic",
+    "profileUrl": "https://sketchfab.com/bumstrum",
+    "avatar": {
+      "uid": "86bd800397fb455fb38914eb5aa60cb8",
+      "uri": "https://api.sketchfab.com/v3/avatars/86bd800397fb455fb38914eb5aa60cb8",
+      "images": [
+        {
+          "width": 32,
+          "height": 32,
+          "size": 839,
+          "url": "https://media.sketchfab.com/avatars/86bd800397fb455fb38914eb5aa60cb8/7fa4143fedaa4c39b6ea9dba94e9de27.png"
+        },
+        {
+          "width": 48,
+          "height": 48,
+          "size": 1252,
+          "url": "https://media.sketchfab.com/avatars/86bd800397fb455fb38914eb5aa60cb8/957ad024d1c94ab8a1ccee6111609251.png"
+        },
+        {
+          "width": 90,
+          "height": 90,
+          "size": 2189,
+          "url": "https://media.sketchfab.com/avatars/86bd800397fb455fb38914eb5aa60cb8/385c9f4b18454e4dac200a51da88fdb4.png"
+        },
+        {
+          "width": 100,
+          "height": 100,
+          "size": 2435,
+          "url": "https://media.sketchfab.com/avatars/86bd800397fb455fb38914eb5aa60cb8/fbf10bfab1fd4d4dbb50fb744e450514.png"
+        }
+      ]
+    },
+    "uri": "https://api.sketchfab.com/v3/users/6a927738448e4f07a920177aab7f7716"
+  },
+  "vertexCount": 2384,
+  "viewCount": 53498,
+  "viewerUrl": "https://sketchfab.com/3d-models/fps-arms-9452ce4cddde4110a4fd73e555a8e412",
+  "isDownloadable": true,
+  "isProtected": false,
+  "description": "yet another set of first person arms \n\n2k maps\n\nnot rigged,\n\nmust have made more than a dozen by now ;)",
+  "price": null,
+  "downloadCount": 16865,
+  "editorUrl": "https://sketchfab.com/models/9452ce4cddde4110a4fd73e555a8e412/edit",
+  "status": {
+    "warning": {},
+    "processing": "SUCCEEDED"
+  },
+  "source": "website",
+  "hasCommentsDisabled": false,
+  "updatedAt": "2022-07-21T09:23:53.24427",
+  "pbrType": null,
+  "textureCount": 3,
+  "materialCount": 1
+}

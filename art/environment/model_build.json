@@ -1,0 +1,196 @@
+[
+  {
+    "name": "bush_a",
+    "lod": "near",
+    "source": "wild_rooibos_bush",
+    "triangles": 3500,
+    "height_m": 1.61,
+    "path": "assets/models/environment_hd/wild_rooibos_bush/bush_a_near.gltf"
+  },
+  {
+    "name": "bush_a",
+    "lod": "far",
+    "source": "wild_rooibos_bush",
+    "triangles": 499,
+    "height_m": 1.59,
+    "path": "assets/models/environment_hd/wild_rooibos_bush/bush_a_far.gltf"
+  },
+  {
+    "name": "bush_b",
+    "lod": "near",
+    "source": "wild_rooibos_bush",
+    "triangles": 2499,
+    "height_m": 1.099,
+    "path": "assets/models/environment_hd/wild_rooibos_bush/bush_b_near.gltf"
+  },
+  {
+    "name": "bush_b",
+    "lod": "far",
+    "source": "wild_rooibos_bush",
+    "triangles": 349,
+    "height_m": 1.097,
+    "path": "assets/models/environment_hd/wild_rooibos_bush/bush_b_far.gltf"
+  },
+  {
+    "name": "grass_a",
+    "lod": "near",
+    "source": "grass_bermuda_01",
+    "triangles": 147,
+    "height_m": 0.32,
+    "path": "assets/models/environment_hd/grass_bermuda_01/grass_a_near.gltf"
+  },
+  {
+    "name": "grass_a",
+    "lod": "far",
+    "source": "grass_bermuda_01",
+    "triangles": 119,
+    "height_m": 0.32,
+    "path": "assets/models/environment_hd/grass_bermuda_01/grass_a_far.gltf"
+  },
+  {
+    "name": "grass_b",
+    "lod": "near",
+    "source": "grass_bermuda_01",
+    "triangles": 268,
+    "height_m": 0.42,
+    "path": "assets/models/environment_hd/grass_bermuda_01/grass_b_near.gltf"
+  },
+  {
+    "name": "grass_b",
+    "lod": "far",
+    "source": "grass_bermuda_01",
+    "triangles": 119,
+    "height_m": 0.419,
+    "path": "assets/models/environment_hd/grass_bermuda_01/grass_b_far.gltf"
+  },
+  {
+    "name": "grass_c",
+    "lod": "near",
+    "source": "grass_medium_01",
+    "triangles": 850,
+    "height_m": 0.644,
+    "path": "assets/models/environment_hd/grass_medium_01/grass_c_near.gltf"
+  },
+  {
+    "name": "grass_c",
+    "lod": "far",
+    "source": "grass_medium_01",
+    "triangles": 199,
+    "height_m": 0.644,
+    "path": "assets/models/environment_hd/grass_medium_01/grass_c_far.gltf"
+  },
+  {
+    "name": "fern",
+    "lod": "near",
+    "source": "fern_02",
+    "triangles": 784,
+    "height_m": 0.8,
+    "path": "assets/models/environment_hd/fern_02/fern_near.gltf"
+  },
+  {
+    "name": "fern",
+    "lod": "far",
+    "source": "fern_02",
+    "triangles": 349,
+    "height_m": 0.801,
+    "path": "assets/models/environment_hd/fern_02/fern_far.gltf"
+  },
+  {
+    "name": "rock_a",
+    "lod": "near",
+    "source": "rock_moss_set_01",
+    "triangles": 2200,
+    "height_m": 1.81,
+    "path": "assets/models/environment_hd/rock_moss_set_01/rock_a_near.gltf"
+  },
+  {
+    "name": "rock_a",
+    "lod": "far",
+    "source": "rock_moss_set_01",
+    "triangles": 350,
+    "height_m": 1.817,
+    "path": "assets/models/environment_hd/rock_moss_set_01/rock_a_far.gltf"
+  },
+  {
+    "name": "rock_b",
+    "lod": "near",
+    "source": "rock_moss_set_01",
+    "triangles": 1799,
+    "height_m": 1.1,
+    "path": "assets/models/environment_hd/rock_moss_set_01/rock_b_near.gltf"
+  },
+  {
+    "name": "rock_b",
+    "lod": "far",
+    "source": "rock_moss_set_01",
+    "triangles": 300,
+    "height_m": 1.114,
+    "path": "assets/models/environment_hd/rock_moss_set_01/rock_b_far.gltf"
+  },
+  {
+    "name": "rock_c",
+    "lod": "near",
+    "source": "rock_moss_set_01",
+    "triangles": 2200,
+    "height_m": 2.403,
+    "path": "assets/models/environment_hd/rock_moss_set_01/rock_c_near.gltf"
+  },
+  {
+    "name": "rock_c",
+    "lod": "far",
+    "source": "rock_moss_set_01",
+    "triangles": 350,
+    "height_m": 2.387,
+    "path": "assets/models/environment_hd/rock_moss_set_01/rock_c_far.gltf"
+  },
+  {
+    "name": "rock_d",
+    "lod": "near",
+    "source": "rock_09",
+    "triangles": 2200,
+    "height_m": 1.586,
+    "path": "assets/models/environment_hd/rock_09/rock_d_near.gltf"
+  },
+  {
+    "name": "rock_d",
+    "lod": "far",
+    "source": "rock_09",
+    "triangles": 349,
+    "height_m": 1.577,
+    "path": "assets/models/environment_hd/rock_09/rock_d_far.gltf"
+  },
+  {
+    "name": "tree_a",
+    "lod": "near",
+    "source": "island_tree_01",
+    "triangles": 149999,
+    "height_m": 12.0,
+    "path": "assets/models/environment_hd/island_tree_01/tree_a_near.gltf"
+  },
+  {
+    "name": "tree_a",
+    "lod": "far",
+    "source": "island_tree_01",
+    "triangles": 4,
+    "height_m": 13.44,
+    "path": "assets/models/environment_hd/island_tree_01/tree_a_far.gltf",
+    "technique": "crossed_tree_impostor"
+  },
+  {
+    "name": "tree_b",
+    "lod": "near",
+    "source": "island_tree_02",
+    "triangles": 149999,
+    "height_m": 10.0,
+    "path": "assets/models/environment_hd/island_tree_02/tree_b_near.gltf"
+  },
+  {
+    "name": "tree_b",
+    "lod": "far",
+    "source": "island_tree_02",
+    "triangles": 4,
+    "height_m": 13.834,
+    "path": "assets/models/environment_hd/island_tree_02/tree_b_far.gltf",
+    "technique": "crossed_tree_impostor"
+  }
+]

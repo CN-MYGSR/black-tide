@@ -5,7 +5,7 @@
 # 中间产物 / 原始素材（可由流水线重新生成）
 _source/
 _build/
-_tools/__pycache__/
+**/__pycache__/
 
 # 构建产物
 build/*.exe
@@ -14,7 +14,13 @@ build/*.console.exe
 
 # 截图与本地工具输出
 _shots/
+art/black_tide_remodel/staging/
+art/environment/original-code-*.zip
+art/environment/grass-transition-before-*.zip
 
 # 系统
 Thumbs.db
 .DS_Store
+
+# World shader textures need explicit mipmap imports (shader samplers evade 3D detection).
+!assets/textures/environment/**/*.import

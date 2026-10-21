@@ -26,9 +26,36 @@ var env: WorldEnvironment
 
 var _rng := RandomNumberGenerator.new()
 var _veg_root: Node3D
+var _vegetation_bases: Dictionary = {}
+var _vegetation_batches: Array = []
+var _worker: Thread
+signal loading_progress(message: String, fraction: float)
 
 
 func generate(seed_value: int = 20261019) -> void:
+	_prepare_terrain(seed_value)
+	terrain.build_mesh()
+	terrain.build_collision()
+	terrain.build_water()
+
+	# 3) 铺据点
+	var builder := POIBuilder.new()
+	builder.name = "POIBuilder"
+	add_child(builder)
+	builder.setup(terrain, self)
+	for poi in pois:
+		builder.build(poi)
+
+	# 4) 植被 / 石头散布（MultiMesh，避免几千个节点）
+	_scatter_vegetation()
+
+	# 5) 据点争夺逻辑
+	for poi in pois:
+		if poi["faction"] == "opfor" and poi["type"] in ["outpost", "village", "airfield", "radar", "depot", "checkpoint"]:
+			_make_outpost(poi)
+
+
+func _prepare_terrain(seed_value: int) -> void:
 	world_seed = seed_value
 	_rng.seed = seed_value
 
@@ -51,25 +78,66 @@ func generate(seed_value: int = 20261019) -> void:
 
 	# 2) 压平 -> 建网格 -> 建碰撞
 	terrain.apply_pads()
-	terrain.build_mesh()
-	terrain.build_collision()
-	terrain.build_water()
 
-	# 3) 铺据点
+func generate_async(seed_value: int, extra_paths: Array = []) -> void:
+	loading_progress.emit("预载模型与材质…", 0.05)
+	var paths: Array = extra_paths.duplicate()
+	for id in ["Grass001", "Ground109", "Rock030", "Ground054", "Asphalt012", "Fabric029", "WoodFloor051", "Concrete034", "Metal032"]:
+		for map in (["ColorRoughness", "NormalGL"] if id in ["Grass001", "Ground109", "Rock030", "Ground054"] else ["Color", "NormalGL", "Roughness"]):
+			paths.append(EnvironmentMaterials.ROOT + id + "/" + map + (".png" if map == "ColorRoughness" else ".jpg"))
+	for entry in EnvironmentAssets.MODELS.values():
+		for suffix in ["_near.gltf", "_far.gltf"]:
+			paths.append(EnvironmentAssets.ROOT + entry[0] + suffix)
+	await AssetLib.preload_paths(paths)
+	_prepare_terrain(seed_value)
 	var builder := POIBuilder.new()
 	builder.name = "POIBuilder"
 	add_child(builder)
 	builder.setup(terrain, self)
+	paths.clear()
 	for poi in pois:
-		builder.build(poi)
-
-	# 4) 植被 / 石头散布（MultiMesh，避免几千个节点）
-	_scatter_vegetation()
-
-	# 5) 据点争夺逻辑
+		for model in builder.required_models(poi):
+			paths.append(AssetLib.model_path(model))
+	loading_progress.emit("预载据点…", 0.2)
+	await AssetLib.preload_paths(paths)
+	terrain.build_mesh()
+	terrain.build_collision()
+	terrain.build_water()
+	for i in pois.size():
+		loading_progress.emit("建造" + str(pois[i]["name"]) + "…", 0.25 + i * 0.025)
+		builder.build(pois[i])
+		await get_tree().process_frame
+	_prime_vegetation()
+	loading_progress.emit("生成植被分布…", 0.5)
+	# The worker only reads the fixed heightmap/POI layout and creates transform data.
+	_worker = Thread.new()
+	var chunks: Array
+	if _worker.start(_vegetation_chunks) == OK:
+		while _worker.is_alive():
+			await get_tree().process_frame
+		chunks = _worker.wait_to_finish()
+	else:
+		chunks = _vegetation_chunks()
+	_worker = null
+	_vegetation_batches.clear()
+	_create_vegetation_root()
+	var deadline := Time.get_ticks_usec() + 4000
+	for i in chunks.size():
+		EnvironmentAssets.create_chunk(_veg_root, chunks[i])
+		chunks[i] = {}
+		if Time.get_ticks_usec() >= deadline:
+			loading_progress.emit("铺设植被…", 0.55 + 0.4 * float(i) / chunks.size())
+			await get_tree().process_frame
+			deadline = Time.get_ticks_usec() + 4000
 	for poi in pois:
 		if poi["faction"] == "opfor" and poi["type"] in ["outpost", "village", "airfield", "radar", "depot", "checkpoint"]:
 			_make_outpost(poi)
+	loading_progress.emit("世界已就绪", 1.0)
+
+
+func _exit_tree() -> void:
+	if _worker != null and _worker.is_started():
+		_worker.wait_to_finish()
 
 
 func _build_environment() -> void:
@@ -88,7 +156,7 @@ func _build_environment() -> void:
 	sky.sky_material = sky_mat
 	e.sky = sky
 	e.ambient_light_source = Environment.AMBIENT_SOURCE_SKY
-	e.ambient_light_energy = 0.42
+	e.ambient_light_energy = 0.65
 	e.tonemap_mode = Environment.TONE_MAPPER_ACES
 	e.tonemap_exposure = 1.05
 	e.ssao_enabled = true
@@ -112,6 +180,7 @@ func _build_environment() -> void:
 	sun.directional_shadow_max_distance = 220.0
 	sun.directional_shadow_mode = DirectionalLight3D.SHADOW_PARALLEL_4_SPLITS
 	add_child(sun)
+	GameState.apply_graphics()
 
 
 # ---------------------------------------------------------------- 据点选址
@@ -140,16 +209,35 @@ func _make_outpost(poi: Dictionary) -> void:
 	o.name = "Outpost_" + str(poi["id"])
 	o.position = Vector3(poi["pos"].x, terrain.height_at(poi["pos"].x, poi["pos"].y), poi["pos"].y)
 	o.setup(str(poi["id"]), str(poi["name"]), float(poi["radius"]) * 0.75, str(poi["faction"]))
+	o.owner_changed.connect(func(faction: String): poi["faction"] = faction)
 	add_child(o)
 	outposts.append(o)
 
 
 # ---------------------------------------------------------------- 植被
-func _scatter_vegetation() -> void:
+func _create_vegetation_root() -> void:
 	_veg_root = Node3D.new()
 	_veg_root.name = "Vegetation"
 	add_child(_veg_root)
 
+
+func _prime_vegetation() -> void:
+	for model in EnvironmentAssets.MODELS:
+		_vegetation_bases[model] = EnvironmentAssets.mesh_data(model).get("transform", Transform3D.IDENTITY)
+		EnvironmentAssets.mesh_data(model, true)
+
+
+func _scatter_vegetation() -> void:
+	_prime_vegetation()
+	var chunks := _vegetation_chunks()
+	_vegetation_batches.clear()
+	_create_vegetation_root()
+	for chunk in chunks:
+		EnvironmentAssets.create_chunk(_veg_root, chunk)
+
+
+func _vegetation_chunks() -> Array:
+	_vegetation_batches.clear()
 	var groups := [
 		{"models": ["SM_Env_Tree_01", "SM_Env_Tree_02", "SM_Env_Tree_03", "SM_Env_Tree_Big_01",
 			"SM_Env_Tree_Large_01", "SM_Env_Tree_Round_01"], "count": 1300, "min_h": 3.0, "max_h": 46.0, "max_slope": 0.45},
@@ -157,7 +245,9 @@ func _scatter_vegetation() -> void:
 			"SM_Env_Tree_Bush_01"], "count": 1700, "min_h": 2.0, "max_h": 50.0, "max_slope": 0.6},
 		{"models": ["SM_Env_Rock_01", "SM_Env_Rock_02", "SM_Env_Rock_03", "SM_Env_Rock_04"],
 			"count": 420, "min_h": 1.0, "max_h": 62.0, "max_slope": 1.0},
-		{"models": ["SM_Env_Grass_01", "SM_Env_Grass_02", "SM_Env_Grass_03", "SM_Env_Flowers_01"],
+		{"models": ["SM_Env_Grass_01", "SM_Env_Grass_02", "SM_Env_Grass_03"],
+			"count": 4500, "min_h": 3.0, "max_h": 44.0, "max_slope": 0.25},
+		{"models": ["SM_Env_Flowers_01"],
 			"count": 1400, "min_h": 3.0, "max_h": 34.0, "max_slope": 0.35},
 	]
 
@@ -165,17 +255,63 @@ func _scatter_vegetation() -> void:
 		var per_model := int(float(g["count"]) / float(g["models"].size()))
 		for model in g["models"]:
 			_make_multimesh(model, per_model, g["min_h"], g["max_h"], g["max_slope"])
+	_scatter_meadows()
+	return EnvironmentAssets.chunk_batches(_vegetation_batches)
+
+
+func _scatter_meadows() -> void:
+	var models := ["SM_Env_Grass_01", "SM_Env_Grass_02", "SM_Env_Grass_03"]
+	var batches: Array = [[], [], []]
+	var bases: Array[Transform3D] = []
+	for model in models:
+		bases.append(_vegetation_bases[model])
+	var random := RandomNumberGenerator.new()
+	random.seed = world_seed + 7331
+	var planted := 0
+	var patches := 0
+	for attempt in 1200:
+		if planted >= 90000 or patches >= 120:
+			break
+		var center := Vector2(random.randf_range(-690, 690), random.randf_range(-690, 690))
+		if attempt < pois.size() * 2:
+			var poi: Dictionary = pois[attempt / 2]
+			var direction := Vector2(-0.85, 0.65) if attempt % 2 == 0 else Vector2(0.35, 1.0)
+			center = poi["pos"] + direction.normalized() * (float(poi["radius"]) + 45.0)
+		var height := terrain.height_at(center.x, center.y)
+		if height < 3.5 or height > 44.0 or terrain.slope_at(center.x, center.y) > 0.16 or _near_poi(center, 0.95):
+			continue
+		patches += 1
+		var radius := random.randf_range(18.0, 38.0)
+		var aspect := random.randf_range(0.55, 1.0)
+		var yaw := random.randf() * TAU
+		var candidates := int(PI * radius * radius * aspect * 0.9)
+		for blade in candidates:
+			if planted >= 90000:
+				break
+			var distance := sqrt(random.randf())
+			if random.randf() > 1.0 - smoothstep(0.45, 1.0, distance):
+				continue
+			var angle := random.randf() * TAU
+			var offset := Vector2(cos(angle), sin(angle) * aspect).rotated(yaw) * distance * radius
+			var point := center + offset
+			var h := terrain.surface_height_at(point.x, point.y)
+			if h < 3.0 or h > 46.0 or terrain.slope_at(point.x, point.y) > 0.25 or _near_poi(point, 0.92):
+				continue
+			var pick := random.randf()
+			var index := 0 if pick < 0.3 else (1 if pick < 0.6 else 2)
+			var width := random.randf_range(1.1, 1.6)
+			var tall := random.randf_range(1.45, 2.0)
+			var basis := Basis(Vector3.UP, random.randf() * TAU).scaled(Vector3(width, tall, width))
+			batches[index].append(Transform3D(basis, Vector3(point.x, h - 0.025, point.y)) * bases[index])
+			planted += 1
+	for i in models.size():
+		var transforms: Array[Transform3D] = []
+		transforms.assign(batches[i])
+		_vegetation_batches.append({"model": models[i], "transforms": transforms})
 
 
 func _make_multimesh(model: String, count: int, min_h: float, max_h: float, max_slope: float) -> void:
-	var data := AssetLib.extract_mesh_data(model)
-	var mesh: Mesh = data.get("mesh")
-	if mesh == null:
-		return
-	var base_xf: Transform3D = data.get("transform", Transform3D.IDENTITY)
-	var mm := MultiMesh.new()
-	mm.transform_format = MultiMesh.TRANSFORM_3D
-	mm.mesh = mesh
+	var base_xf: Transform3D = _vegetation_bases[model]
 	var xforms: Array[Transform3D] = []
 	var half := Terrain.SIZE * 0.5 - 30.0
 	var guard := 0
@@ -183,27 +319,19 @@ func _make_multimesh(model: String, count: int, min_h: float, max_h: float, max_
 		guard += 1
 		var x := _rng.randf_range(-half, half)
 		var z := _rng.randf_range(-half, half)
-		var h := terrain.height_at(x, z)
+		var grass := model.contains("Grass") or model.contains("Flowers")
+		var h := terrain.surface_height_at(x, z) if grass else terrain.height_at(x, z)
 		if h < min_h or h > max_h:
 			continue
 		if terrain.slope_at(x, z) > max_slope:
 			continue
 		if _near_poi(Vector2(x, z), 0.92):
 			continue
-		var s := _rng.randf_range(0.85, 1.35)
+		var s := _rng.randf_range(1.2, 1.8) if grass else _rng.randf_range(0.85, 1.35)
 		var b := Basis(Vector3.UP, _rng.randf() * TAU).scaled(Vector3(s, s, s))
-		xforms.append(Transform3D(b, Vector3(x, h - 0.15, z)) * base_xf)
+		xforms.append(Transform3D(b, Vector3(x, h - (0.025 if grass else 0.15), z)) * base_xf)
 
-	mm.instance_count = xforms.size()
-	for i in xforms.size():
-		mm.set_instance_transform(i, xforms[i])
-
-	var mmi := MultiMeshInstance3D.new()
-	mmi.name = "MM_" + model
-	mmi.multimesh = mm
-	mmi.material_override = AssetLib.material_for("PolygonMilitary_Mat_01_A")
-	mmi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
-	_veg_root.add_child(mmi)
+	_vegetation_batches.append({"model": model, "transforms": xforms})
 
 
 func _near_poi(p: Vector2, factor: float = 1.0) -> bool:
@@ -224,7 +352,7 @@ func poi_by_id(id: String) -> Dictionary:
 
 func player_spawn_transform() -> Transform3D:
 	var fob := poi_by_id("fob")
-	var p: Vector2 = fob["pos"]
+	var p: Vector2 = fob["pos"] + Vector2(0, 12)
 	return Transform3D(Basis.IDENTITY, Vector3(p.x, terrain.height_at(p.x, p.y) + 1.2, p.y))
 
 

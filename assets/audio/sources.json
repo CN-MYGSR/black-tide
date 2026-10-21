@@ -1,0 +1,50 @@
+{
+  "rifle": {
+    "pack": "The Free Firearm Sound Library",
+    "member": "AR-15/D_24P.wav",
+    "source_sha256": "4c6a54ca0583150bbb32b7f658bc64da9ad9ba42fd3aca769c6120b44af8d3f0",
+    "prepared_sha256": "aaeade014bb99ee2e9c54534b8ec01c5048acf15f6a8fa967f15214aaa5c7c6b"
+  },
+  "pistol": {
+    "pack": "The Free Firearm Sound Library",
+    "member": "1911/A_34P.wav",
+    "source_sha256": "df95fc52049f3d1e4cf0a8c018fc0f0b4abded12de1d615a279422206c415935",
+    "prepared_sha256": "1f1b949e052a094e64dc3e7cbc834927bed100924980c8fe2fa0112889c3e55d"
+  },
+  "shotgun": {
+    "pack": "The Free Firearm Sound Library",
+    "member": "Mossberg/N_26P.wav",
+    "source_sha256": "311a5b016bebc21e7d812ef0756174fbdc77454229512bd5a64101ec055e8807",
+    "prepared_sha256": "8a7c54adacf0a9b2c15e548596974239fc580e38a792f1c841225b0788755d28"
+  },
+  "reload": {
+    "pack": "Gun reload sounds / SpringySpringo",
+    "member": "assaultriflereload1_0.wav",
+    "source_sha256": "efb2d724d634eabe6ba8d3065686abca848bb7497d4d43a5e4aed5e5ea23016f",
+    "prepared_sha256": "83ce5194cd903c549b393be8f92e621e8e1224e335a5cc641e2c61bb11943b84"
+  },
+  "step": {
+    "pack": "Kenney rpg",
+    "member": "footstep01.ogg",
+    "source_sha256": "313472dba31fd0c855376069fa368bb5a198c27251cc8398ef464578b7047a4c",
+    "prepared_sha256": "440a1781b16d500120636e018599643b47c13a49c40c460bd29615d128bbac29"
+  },
+  "click": {
+    "pack": "Kenney ui",
+    "member": "click_003.ogg",
+    "source_sha256": "2fa929138bc3a0f432696588f66eac94b8f6d463905ec8808c6461ce4b054292",
+    "prepared_sha256": "021db2066128b17b5b9a7a050779954a1de6717be437c77947c44dad65a1d907"
+  },
+  "success": {
+    "pack": "Kenney ui",
+    "member": "confirmation_002.ogg",
+    "source_sha256": "33b17a9a9a2397c62b285c52c33a907fdffb476909c99e42dde603f6a7a8b12c",
+    "prepared_sha256": "7d792475a0ac8f9173b6e13c9290d4921758e48d7e6318cb876fa2528e40a9f0"
+  },
+  "failure": {
+    "pack": "Kenney ui",
+    "member": "error_004.ogg",
+    "source_sha256": "0b574cea597d96507e782ae9764f88482ce49f46e931e57054bf7150047f2d69",
+    "prepared_sha256": "e1fb3a682d9cee717802bf3eb9dbe450e89eb3586e77d9f7e3ee2676064bac1b"
+  }
+}

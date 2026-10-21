@@ -4,7 +4,7 @@ extends CharacterBody3D
 ##
 ## 不做真实车辆物理 —— 这套是"街机手感"：
 ##   地面：W/S 油门刹车，A/D 转向，靠 move_and_slide 贴地
-##   空中：W/S 升降，A/D 转向，Shift 前推，松开就悬停
+##   空中：W/S 前后，A/D 转向，空格/C 升降，Shift 加速
 
 const GRAVITY := 24.0
 
@@ -21,6 +21,7 @@ var _cam: Camera3D
 var _yaw: float = 0.0
 var _pitch: float = 0.0
 var _hover_t: float = 0.0
+var _engine: AudioStreamPlayer3D
 
 
 func setup(id: String, p_kind: String, p_speed: float, p_armor: float, p_name: String) -> void:
@@ -48,6 +49,7 @@ func _ready() -> void:
 
 	_model = AssetLib.spawn(model_id, self, Vector3.ZERO, 0.0, true)
 	if _model != null:
+		_model.rotation.y = PI
 		_model.scale = Vector3.ONE * (1.0 if kind == "ground" else 1.05)
 		AssetLib.apply_tint(_model, Loadout.camo_color())
 
@@ -56,7 +58,7 @@ func _ready() -> void:
 	pivot.position = Vector3(0, 2.2, 0)
 	add_child(pivot)
 	var spring := SpringArm3D.new()
-	spring.spring_length = 8.5 if kind == "air" else 7.0
+	spring.spring_length = maxf(8.5, AssetLib.size_of(model_id).z * 1.05 + 3.0) if kind == "air" else 7.0
 	spring.collision_mask = 1
 	spring.rotation_degrees.x = -12.0
 	pivot.add_child(spring)
@@ -65,6 +67,7 @@ func _ready() -> void:
 	_cam.far = 1600.0
 	spring.add_child(_cam)
 	_cam.current = false
+	_engine = AudioSfx.create_engine(self, kind == "air")
 
 
 # ---------------------------------------------------------------- 上下车
@@ -81,14 +84,21 @@ func interact(player: Node) -> void:
 
 
 func enter(p: Player) -> void:
+	if driver != null or p.vehicle != null or p.state != Player.State.ALIVE:
+		return
 	driver = p
 	p.vehicle = self
 	p.set_physics_process(false)
+	p.collision_layer = 0
+	p.collision_mask = 0
+	p.velocity = Vector3.ZERO
+	p.global_position = global_position
 	p.visible = false
 	if p.camera != null:
 		p.camera.current = false
 	_cam.current = true
 	_yaw = rotation.y
+	_engine.play()
 	EventBus.notify.emit("已进入 %s   （F 下车）" % display_name)
 
 
@@ -97,9 +107,13 @@ func exit_vehicle() -> void:
 		return
 	var p := driver
 	driver = null
+	_engine.stop()
 	p.vehicle = null
 	p.visible = true
-	p.global_position = global_position + Vector3(3.0, 1.0, 0)
+	p.global_position = global_position + global_transform.basis.x * 3.0 + Vector3.UP
+	p.velocity = Vector3.ZERO
+	p.collision_layer = 2
+	p.collision_mask = 1 | 4 | 16
 	p.set_physics_process(true)
 	_cam.current = false
 	if p.camera != null:
@@ -109,6 +123,10 @@ func exit_vehicle() -> void:
 
 # ---------------------------------------------------------------- 驾驶
 func _physics_process(delta: float) -> void:
+	if not GameState.in_raid:
+		return
+	if driver != null:
+		driver._check_bounds()
 	if driver == null:
 		if kind == "ground":
 			velocity.x = move_toward(velocity.x, 0.0, 20.0 * delta)
@@ -122,14 +140,12 @@ func _physics_process(delta: float) -> void:
 	var steer := Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
 	var up := Input.get_action_strength("jump") - Input.get_action_strength("crouch")
 
-	if Input.is_action_just_pressed("interact"):
-		exit_vehicle()
-		return
-
 	if kind == "ground":
 		_drive_ground(delta, throttle, steer)
 	else:
 		_fly(delta, throttle, steer, up)
+	driver.global_position = global_position
+	_engine.pitch_scale = 0.85 + clampf(velocity.length() / max_speed, 0.0, 1.0) * 0.5
 
 
 func _drive_ground(delta: float, throttle: float, steer: float) -> void:
@@ -138,7 +154,7 @@ func _drive_ground(delta: float, throttle: float, steer: float) -> void:
 	else:
 		velocity.y = 0.0
 
-	_yaw -= steer * 1.6 * delta * clampf(velocity.length() / 6.0, 0.25, 1.0)
+	_yaw += steer * 1.6 * delta * clampf(velocity.length() / 6.0, 0.25, 1.0)
 	rotation.y = _yaw
 
 	var fwd := -global_transform.basis.z
@@ -154,7 +170,7 @@ func _drive_ground(delta: float, throttle: float, steer: float) -> void:
 
 func _fly(delta: float, throttle: float, steer: float, up: float) -> void:
 	_hover_t += delta
-	_yaw -= steer * 1.1 * delta
+	_yaw += steer * 1.1 * delta
 	rotation.y = _yaw
 
 	var fwd := -global_transform.basis.z
@@ -173,6 +189,8 @@ func _fly(delta: float, throttle: float, steer: float, up: float) -> void:
 
 
 func take_damage(amount: float, _hit_pos: Vector3, source: Node) -> void:
+	if not GameState.in_raid:
+		return
 	health -= amount * (1.0 - clampf(armor / 150.0, 0.0, 0.8))
 	if health <= 0.0:
 		EventBus.notify.emit("%s 被摧毁" % display_name)

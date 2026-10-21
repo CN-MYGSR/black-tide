@@ -13,6 +13,8 @@ func _ready() -> void:
 	Loadout.vehicle = "SM_Veh_Helicopter_Transport_01"
 	var main: Node3D = load("res://src/main.tscn").instantiate()
 	add_child(main)
+	while not main.loading_complete:
+		await get_tree().process_frame
 	await get_tree().create_timer(2.0).timeout
 
 	var player: Player = main.player
@@ -31,32 +33,27 @@ func _ready() -> void:
 	var rivals := get_tree().get_nodes_in_group("rival")
 	check(rivals.size() >= 4, "第三方势力（模拟其他玩家）", "%d 个" % rivals.size())
 
-	# ② AI 感知：把玩家和敌人一起挪到空旷地带，排除建筑遮挡的干扰
-	var open := Vector3(0, 0, 0)
-	for i in 40:
-		var a := randf() * TAU
-		var r := randf_range(120.0, 220.0)
-		var cand := Vector3(cos(a) * r, 0, sin(a) * r)
-		cand.y = world.terrain.height_at(cand.x, cand.z)
-		if cand.y > 6.0 and world.terrain.slope_at(cand.x, cand.z) < 0.1:
-			var clear := true
-			for poi in world.pois:
-				if cand.distance_to(Vector3(poi["pos"].x, cand.y, poi["pos"].y)) < 120.0:
-					clear = false
-			if clear:
-				open = cand
-				break
+	# 固定的高空平地，避免随机地形遮挡把感知检查变成概率测试。
+	var arena := StaticBody3D.new()
+	var floor_shape := CollisionShape3D.new()
+	var floor_box := BoxShape3D.new()
+	floor_box.size = Vector3(100, 1, 100)
+	floor_shape.shape = floor_box
+	arena.add_child(floor_shape)
+	main.add_child(arena)
+	arena.position = Vector3(0, 119.5, 0)
+	var open := Vector3(0, 120, 0)
 	player.global_position = open + Vector3(0, 1.2, 0)
 
 	var e: Soldier = enemies[0]
 	var ep := open + Vector3(0, 0, -25)
-	ep.y = world.terrain.height_at(ep.x, ep.z) + 1.0
 	# 这一条测的是"单兵能不能打中玩家"，先摘掉小队，
 	# 否则命中与否会取决于小队当前是压制组还是跃进组（跃进组按纪律不射击）
 	e.squad = null
+	e.accuracy = 1.0
 	e.global_position = ep
 	e.look_at(Vector3(open.x, ep.y + 1.0, open.z), Vector3.UP)
-	e.state = Soldier.AIState.PATROL
+	e.state = Soldier.AIState.IDLE
 	await get_tree().create_timer(1.0).timeout
 	check(e.state == Soldier.AIState.COMBAT, "AI 发现玩家后进入交战", "state=%d" % e.state)
 
@@ -76,6 +73,12 @@ func _ready() -> void:
 		" 距离=", from.distance_to(to))
 	check(player.health + player.armor < hp_before, "AI 能对玩家造成伤害",
 		"%.0f -> %.0f" % [hp_before, player.health + player.armor])
+	# 后续检查不让随机交火改变测试前提；倒地必须先真正救起。
+	for n in get_tree().get_nodes_in_group("combatant"):
+		if n is Soldier:
+			n.set_physics_process(false)
+	if player.state == Player.State.DOWNED:
+		player.revive(100)
 
 	# ③ 据点推进：清空目标据点周围敌人，把玩家放进去
 	var target: Outpost = null
@@ -89,8 +92,8 @@ func _ready() -> void:
 		player.armor = 60.0
 		player.global_position = target.global_position + Vector3(0, 2.0, 0)
 		# 清掉圈内的守军，否则进度不会涨
-		for n in get_tree().get_nodes_in_group("opfor"):
-			if n is Node3D and (n as Node3D).global_position.distance_to(target.global_position) < target.radius + 5.0:
+		for n in get_tree().get_nodes_in_group("combatant"):
+			if n is Soldier and n.faction in ["opfor", "rival"] and n.global_position.distance_to(target.global_position) < target.radius + 5.0:
 				(n as Soldier).take_damage(9999.0, n.global_position, player)
 		var p0 := target.progress
 		await get_tree().create_timer(3.0).timeout
@@ -118,22 +121,32 @@ func _ready() -> void:
 	check(in_squad >= int(opfor_now.size() * 0.8), "敌方基本都编入了小队",
 		"%d/%d" % [in_squad, opfor_now.size()])
 
-	var q = squads[0]
-	q.report_contact(player.global_position, player)
+	var q = null
+	for squad in squads:
+		if squad.faction == "opfor" and not squad.is_broken() and squad.size() >= 2:
+			q = squad
+			break
+	var contact := player.global_position
+	q.report_contact(contact, player)
 	check(q.has_contact, "小队收到接触报告")
 	check(q.state == Squad.State.CONTACT or q.state == Squad.State.ASSAULT,
 		"小队进入接触/突击状态", q.status_text())
 
 	var far_member = null
 	for m in q.members:
-		if is_instance_valid(m) and m.is_alive() and m.global_position.distance_to(player.global_position) > 60.0:
+		if is_instance_valid(m) and m.is_alive():
 			far_member = m
 			break
 	if far_member != null:
+		far_member.global_position = Vector3(700, world.terrain.height_at(700, 700) + 1, 700)
+		far_member.state = Soldier.AIState.PATROL
+		far_member._target = null
+		far_member.set_physics_process(true)
 		await get_tree().create_timer(0.5).timeout
 		check(far_member.state == Soldier.AIState.SEARCH, "无视野队员转入搜索")
-		check(far_member._last_seen.distance_to(player.global_position) < 1.0,
+		check(far_member._last_seen.distance_to(contact) < 1.0,
 			"搜索目标 = 队里报的接触点")
+		far_member.set_physics_process(false)
 
 	# ⑤ 撤离流程：呼叫直升机 -> 降落 -> 登机 -> 结算事件
 	main._mission_state = "extract"

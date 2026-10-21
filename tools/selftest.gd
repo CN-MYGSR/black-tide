@@ -93,6 +93,16 @@ func _test_terrain() -> void:
 	var h_edge := t.height_at(760, 760)
 	check(h_center > h_edge, "岛中心高于边缘", "中心 %.1f / 边缘 %.1f" % [h_center, h_edge])
 	check(h_edge < 0.0, "边缘沉到水下", "%.1f" % h_edge)
+	var cell := Terrain.SIZE / float(Terrain.RES - 1)
+	var corner := Vector2(-Terrain.SIZE * 0.5 + 90 * cell, -Terrain.SIZE * 0.5 + 96 * cell)
+	var h00 := t.heights[96 * Terrain.RES + 90]
+	var h10 := t.heights[96 * Terrain.RES + 91]
+	var h01 := t.heights[97 * Terrain.RES + 90]
+	var h11 := t.heights[97 * Terrain.RES + 91]
+	var first := corner + Vector2(0.25, 0.35) * cell
+	var second := corner + Vector2(0.7, 0.8) * cell
+	check(absf(t.surface_height_at(first.x, first.y) - (h00 * 0.4 + h10 * 0.25 + h01 * 0.35)) < 0.001, "草根贴合第一个地形三角形")
+	check(absf(t.surface_height_at(second.x, second.y) - (h11 * 0.5 + h01 * 0.3 + h10 * 0.2)) < 0.001, "草根贴合第二个地形三角形")
 
 	var before := t.height_at(200, 200)
 	t.add_pad(Vector2(200, 200), 30.0, 15.0, 25.0)
@@ -104,9 +114,8 @@ func _test_terrain() -> void:
 	t.build_collision()
 	var verts := 0
 	if t.mesh_instance != null and t.mesh_instance.mesh != null:
-		var arr := (t.mesh_instance.mesh as ArrayMesh).surface_get_arrays(0)
-		verts = (arr[Mesh.ARRAY_VERTEX] as PackedVector3Array).size()
-	check(verts > 100000, "地形网格已生成", "%d 顶点" % verts)
+		verts = t.mesh_instance.mesh.get_faces().size()
+	check(verts > 100000, "地形网格已生成", "%d 三角形顶点" % verts)
 	var has_shape := false
 	for c in t.body.get_children():
 		if c is CollisionShape3D and (c as CollisionShape3D).shape is HeightMapShape3D:
@@ -528,8 +537,8 @@ func _test_loadout() -> void:
 
 	# 载具
 	var v := Vehicle.new()
-	add_child(v)
 	v.setup("SM_Veh_Helicopter_Transport_01", "air", 38.0, 40.0, "UH-60 运输直升机")
+	add_child(v)
 	await get_tree().physics_frame
 	check(v.kind == "air", "直升机构建为空中载具")
 	check(v.interact_prompt() != "", "靠近有驾驶提示", v.interact_prompt())
